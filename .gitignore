@@ -1,0 +1,68 @@
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.env
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# --- Jupyter ----------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# --- TLC working directories and machine-local scratch ----------------------
+# TLC writes fingerprints into a states/ directory next to the specification.
+# Every SymView run copies the specification into a scratch directory instead,
+# so these patterns should only match that scratch area or a manual TLC run.
+states/
+_scratch_lab/
+scratch/
+tools/*.download
+tools/*.jar.part
+
+# --- Large / regenerable outputs -------------------------------------------
+*.zip
+*.tar.gz
+*.tgz
+*.parquet
+*.feather
+*.pkl
+*.h5
+*.mp4
+*.log
+
+# --- OS / editor ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# --- Evidence that must stay tracked ---------------------------------------
+# Raw JSON is the evidence behind every number in the report; keep all of it
+# (including results/raw/analysis, results/raw/runs and results/raw/mutants).
+results/raw/**
+!results/raw/
+!results/raw/**/
+!results/raw/*.json
+!results/raw/**/*.json
+
+# Generated tables and figures are the reviewed artefacts cited by the report.
+!analysis/output/
+!analysis/output/**
+
+# TLC stdout is primary evidence: keep the logs, drop the disk state dirs
+!results/logs/
+!results/logs/**
+states/
+*.aux
