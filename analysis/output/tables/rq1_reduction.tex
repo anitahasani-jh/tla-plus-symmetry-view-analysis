@@ -1,0 +1,40 @@
+\begin{table}[t]
+\centering
+\caption{State-space reduction per model.  'best arm' is the strongest reduction certified for that model; dashes mean the arm was not applicable or the model finished without that reduction.}
+\label{tab:rq1}
+\small
+\begin{tabular}{lllllllllllll}
+\toprule
+model & family & symmetry set & view drops & plain states & symmetry & view & both & manual & best arm & reduction & plain s & best s \\
+\midrule
+AllocatorImplementation & allocation & - & - & 17701 & - & - & - & - & - & - & 8.76 & - \\
+AllocatorRefinement & allocation & - & - & 1690 & - & - & - & - & - & - & 2.94 & - \\
+Lock & auxiliary-variables & - & - & 12 & - & - & - & - & - & - & 1.41 & - \\
+Peterson & auxiliary-variables & - & - & 42 & - & - & - & - & - & - & 1.54 & - \\
+MCFlashWithMutex & cache-coherence & DATA,NODE & - & 8096 & 2024 & - & - & 2024 & symmetry & 75.0\% & 2.35 & 2.06 \\
+MCGermanControl & cache-coherence & NODE & - & 1461 & 735 & - & - & 735 & symmetry & 49.7\% & 1.70 & 1.62 \\
+Consensus & consensus & - & - & 4 & - & - & - & - & - & - & 1.49 & - \\
+Paxos & consensus & - & - & 48514 & - & - & - & 1207 & - & - & 7.50 & - \\
+TLCSailfish1 & consensus & - & - & 109604 & - & - & - & - & - & - & 37.26 & - \\
+MC\_spanning & distributed-algorithm & - & - & 6 & - & - & - & - & - & - & 1.62 & - \\
+clean & distributed-algorithm & - & - & 63 & - & - & - & - & - & - & 1.38 & - \\
+Simple & mutual-exclusion & - & - & 723 & - & - & - & - & - & - & 1.60 & - \\
+SimpleRegular & mutual-exclusion & - & - & 277726 & - & - & - & - & - & - & 6.97 & - \\
+MCChangRoberts & ring-token & - & - & 137 & - & - & - & - & - & - & 1.89 & - \\
+MCEcho & ring-token & - & - & 75 & - & - & - & - & - & - & 1.71 & - \\
+Chameneos & synchronisation & - & - & 34534 & - & - & - & - & - & - & 2.67 & - \\
+EWD840 & termination-detection & - & - & 302 & - & - & - & - & - & - & 2.26 & - \\
+SyncTerminationDetection & termination-detection & - & - & 129 & - & - & - & - & - & - & 1.47 & - \\
+MCTwoPhase & transaction-commit & - & - & 4 & - & - & - & - & - & - & 1.36 & - \\
+TwoPhase & transaction-commit & RM & - & 288 & 80 & - & - & - & symmetry & 72.2\% & 1.63 & 1.45 \\
+LabLock & lab & Proc & - & 20 & 7 & - & - & - & symmetry & 65.0\% & 1.41 & 1.34 \\
+LabLog & lab & Proc & - & 289 & 53 & - & - & - & symmetry & 81.7\% & 1.44 & 1.43 \\
+LabLogNoType & lab & Proc & log & 289 & 53 & 20 & 7 & - & both & 97.6\% & 1.36 & 1.44 \\
+LabLeader & lab & - & - & 20 & - & - & - & - & - & - & 1.35 & - \\
+LabOrdered & lab & - & - & 8 & - & - & - & - & - & - & 1.29 & - \\
+LabChoose & lab & - & - & 20 & - & - & - & - & - & - & 1.32 & - \\
+LabLive & lab & - & - & 54 & - & - & - & - & - & - & 1.65 & - \\
+LabAuxRead & lab & Proc & - & 54 & 16 & - & - & - & symmetry & 70.4\% & 1.36 & 1.36 \\
+\bottomrule
+\end{tabular}
+\end{table}

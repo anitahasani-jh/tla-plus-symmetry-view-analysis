@@ -1,0 +1,133 @@
+{
+  "model_id": "MCFlashWithMutex",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "MCFlashWithMutex-m1",
+      "model_id": "MCFlashWithMutex",
+      "operator": "drop-guard",
+      "module": "FlashWithMutex",
+      "file": "FlashWithMutex.tla",
+      "description": "replace a guard conjunct of NI_Local_Get_Get with TRUE",
+      "line": 299,
+      "original_snippet": "Dir.HeadPtr # src",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "deadlock",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "deadlock",
+          "states": 2641,
+          "distinct": 1198,
+          "seconds": 1.742,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "deadlock",
+          "states": 957,
+          "distinct": 403,
+          "seconds": 1.732,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCFlashWithMutex-m2",
+      "model_id": "MCFlashWithMutex",
+      "operator": "flip-literal",
+      "module": "FlashWithMutex",
+      "file": "FlashWithMutex.tla",
+      "description": "flip TRUE in PI_Local_GetX_PutX_Inv",
+      "line": 207,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": false,
+      "baseline_verdict": "deadlock",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "deadlock",
+          "states": 6189,
+          "distinct": 2494,
+          "seconds": 1.893,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "deadlock",
+          "states": 1562,
+          "distinct": 621,
+          "seconds": 1.772,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCFlashWithMutex-m3",
+      "model_id": "MCFlashWithMutex",
+      "operator": "drop-guard",
+      "module": "FlashWithMutex",
+      "file": "FlashWithMutex.tla",
+      "description": "replace a guard conjunct of NI_Local_Get_Put with TRUE",
+      "line": 313,
+      "original_snippet": "UniMsg[src].Proc = Home",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 30196,
+          "distinct": 8096,
+          "seconds": 2.517,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "ok",
+          "states": 7552,
+          "distinct": 2024,
+          "seconds": 1.895,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCFlashWithMutex-m4",
+      "model_id": "MCFlashWithMutex",
+      "operator": "flip-literal",
+      "module": "FlashWithMutex",
+      "file": "FlashWithMutex.tla",
+      "description": "flip FALSE in NI_Local_Get_Put",
+      "line": 318,
+      "original_snippet": "FALSE",
+      "mutated_snippet": "TRUE",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "Lemma_3"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 251,
+          "distinct": 131,
+          "seconds": 1.614,
+          "violated": [
+            "Lemma_3"
+          ]
+        },
+        "symmetry": {
+          "verdict": "violation",
+          "states": 52,
+          "distinct": 28,
+          "seconds": 1.718,
+          "violated": [
+            "Lemma_3"
+          ]
+        }
+      }
+    }
+  ]
+}

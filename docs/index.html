@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SymView — تشخیص خودکار تقارن و View برای TLC</title>
+<style>
+  :root{
+    --bg:#0f1420; --panel:#171f2e; --ink:#e8eef8; --muted:#9fb0c8;
+    --accent:#6ea8fe; --accent2:#8ce99a; --warn:#ffc078; --bad:#ff8787;
+    --line:#243146;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);
+    font-family:Vazirmatn,"Segoe UI",Tahoma,system-ui,sans-serif;
+    font-feature-settings:"ss01";}
+  .deck{height:100%;display:flex;flex-direction:column}
+  .slide{flex:1;display:none;padding:4vh 6vw;overflow:auto}
+  .slide.active{display:block}
+  h1{font-size:clamp(28px,4.2vw,54px);margin:0 0 .4em;line-height:1.35}
+  h2{font-size:clamp(22px,2.9vw,38px);margin:0 0 .7em;color:var(--accent)}
+  h3{font-size:clamp(16px,1.5vw,20px);margin:1.2em 0 .4em;color:var(--accent2)}
+  p,li{font-size:clamp(15px,1.35vw,21px);line-height:1.9}
+  ul{margin:.3em 0 .3em 0;padding-inline-start:1.2em}
+  .muted{color:var(--muted)}
+  .lead{font-size:clamp(17px,1.7vw,26px);color:var(--muted);line-height:1.9}
+  .grid{display:grid;gap:1.2rem}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:1.1rem 1.3rem}
+  .kpi{font-size:clamp(26px,3vw,44px);font-weight:700;color:var(--accent)}
+  .kpi.g{color:var(--accent2)} .kpi.w{color:var(--warn)}
+  .label{font-size:14px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;font-size:clamp(13px,1.15vw,17px)}
+  th,td{border-bottom:1px solid var(--line);padding:.55em .5em;text-align:right;
+    vertical-align:top}
+  th{color:var(--accent2);font-weight:600}
+  code,.mono{font-family:"Cascadia Mono",Consolas,monospace;direction:ltr;
+    unicode-bidi:embed;font-size:.92em}
+  pre{background:#0b101a;border:1px solid var(--line);border-radius:12px;
+    padding:1rem;overflow:auto;direction:ltr;text-align:left;font-size:14px}
+  .badge{display:inline-block;padding:.15em .6em;border-radius:999px;
+    font-size:13px;border:1px solid var(--line);color:var(--muted)}
+  .ok{color:#0b101a;background:var(--accent2)}
+  .no{color:#0b101a;background:var(--bad)}
+  .w{color:#0b101a;background:var(--warn)}
+  img{max-width:100%;max-height:62vh;border-radius:12px;background:#fff}
+  .bar{display:flex;justify-content:space-between;align-items:center;
+    padding:.6rem 2vw;border-top:1px solid var(--line);color:var(--muted);
+    font-size:13px}
+  .bar button{background:var(--panel);color:var(--ink);border:1px solid var(--line);
+    border-radius:10px;padding:.35rem .8rem;cursor:pointer;font-family:inherit}
+  .flow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:center}
+  .box{background:#101827;border:1px solid var(--line);border-radius:10px;
+    padding:.5rem .8rem;font-size:14px}
+  .arrow{color:var(--accent);font-size:20px}
+  .note{margin-top:.8rem;color:var(--warn);font-size:14px}
+  @media print{
+    .slide{display:block;page-break-after:always;height:auto}
+    .bar{display:none}
+    html,body{background:#fff;color:#000}
+    .card,pre,table{background:#fff}
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 1 -->
+<section class="slide active">
+  <p class="badge">درس روش‌های رسمی · پروژهٔ تیم ۲</p>
+  <h1>SymView</h1>
+  <p class="lead">تشخیص خودکار تقارن و تجرید View برای کاهش فضای حالت در TLA<sup>+</sup> / TLC</p>
+  <div class="grid g3" style="margin-top:2.4rem">
+    <div class="card"><div class="kpi">۷۲٪</div><div class="label">میانهٔ کاهش حالت (۷ مدل دارای کاهش معتبر)</div></div>
+    <div class="card"><div class="kpi g">۰</div><div class="label">نقض ازدست‌رفته در ۱۲ بازوی مقایسه‌شده</div></div>
+    <div class="card"><div class="kpi">۸/۸</div><div class="label">تطابق با پاسخ مرجع مدل‌های آزمایشگاهی</div></div>
+  </div>
+  <p class="muted" style="margin-top:2rem">آنیتا جبلی حسنی و هم‌تیمی‌ها · ۶ نوامبر ۲۰۲۶</p>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <h2>مسئله</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>انفجار فضای حالت</h3>
+      <p>TLC حالت‌ها را می‌شمارد؛ با چند فرایند همسان، تعداد حالت‌ها نمایی می‌شود.</p>
+      <p class="muted">مثال از همین مطالعه: <span class="mono">Paxos</span> بدون کاهش ۴۸٬۵۱۴ حالت، با تنظیم دستی نویسنده ۱٬۲۰۷ حالت.</p>
+    </div>
+    <div class="card">
+      <h3>دو سازوکار خود TLC</h3>
+      <ul>
+        <li><b>SYMMETRY</b>: جایگشت اعضای یک مجموعهٔ ثابت</li>
+        <li><b>VIEW</b>: نگاشت حالت به تصویر کوچک‌تر</li>
+      </ul>
+      <p class="note">هر دو فقط یک خط در فایل <span class="mono">.cfg</span> هستند… و TLC هیچ بررسی‌ای روی درستی‌شان نمی‌کند.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <h2>چرا خودکارسازی خطرناک است</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>سه دام واقعی</h3>
+      <ul>
+        <li><b>عنصر متمایز</b>: <span class="mono">Counter = p1</span> یک عضو مجموعه را جدا می‌کند.</li>
+        <li><b>انتخاب ناهم‌تغییر</b>: <span class="mono">CHOOSE x \in S</span> تحت جایگشت جابه‌جا نمی‌شود.</li>
+        <li><b>زنده‌بودن</b>: کاهش تقارن روی <span class="mono">&lt;&gt;P</span> و انصاف ناسالم است.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>شاهد از خود مخزن</h3>
+      <pre>specifications/allocator/SchedulingAllocator.cfg
+
+\**DOES NOT WORK FOR LIVENESS !
+\* SYMMETRY Symmetry</pre>
+      <p class="muted">۱۶ پیکربندی عمومی <span class="mono">SYMMETRY</span> دارند، ۷ مورد کاهش را کامنت کرده‌اند.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <h2>ایده</h2>
+  <div class="flow" style="margin:1.5rem 0">
+    <span class="box">مشخصات <span class="mono">.tla</span> + <span class="mono">.cfg</span></span>
+    <span class="arrow">←</span>
+    <span class="box">تجزیه‌گر TLA<sup>+</sup></span>
+    <span class="arrow">←</span>
+    <span class="box">کاوش ثابت‌ها با TLC</span>
+    <span class="arrow">←</span>
+    <span class="box">تحلیل تقارن S1–S5</span>
+    <span class="arrow">←</span>
+    <span class="box">گراف تأثیر → View</span>
+  </div>
+  <div class="grid g2">
+    <div class="card">
+      <h3>تولید، بدون تغییر مشخصات</h3>
+      <pre>Module_SymView.tla   ← EXTENDS Module
+  SymViewPerms == Permutations(C1) \cup ...
+  SymViewView  == &lt;&lt;v1, v2&gt;&gt;
+
+Module_sv_{plain,symmetry,view,both}.cfg</pre>
+    </div>
+    <div class="card">
+      <h3>سیاست</h3>
+      <p>هر جا نتوانیم سلامت را <b>اثبات</b> کنیم، کاهش نمی‌دهیم و دلیل را می‌نویسیم.</p>
+      <p class="muted">«نامعلوم» صادقانه‌تر از «احتمالاً درست است».</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <h2>شرط‌های سلامت</h2>
+  <table>
+    <tr><th>شرط</th><th>پرسش</th><th>ماهیت</th></tr>
+    <tr><td>S1</td><td>آیا ثابت مجموعه‌ای از ≥۲ مقدار مدل است؟</td><td>دقیق (از TLC)</td></tr>
+    <tr><td>S2</td><td>آیا مقدار همهٔ ثابت‌های دیگر تحت جایگشت ناورداست؟</td><td><b>دقیق</b>: <span class="mono">k−1</span> جابه‌جایی مجاور = <span class="mono">k!</span> جایگشت</td></tr>
+    <tr><td>S3</td><td>آیا ویژگی بررسی‌شده عضو مشخصی را نام می‌برد؟</td><td>دقیق</td></tr>
+    <tr><td>S4</td><td>آیا مقدار اتم‌دار به عملگر ناهم‌تغییر می‌رسد؟</td><td>تحلیل taint، محافظه‌کارانه</td></tr>
+    <tr><td>S5</td><td>آیا همهٔ ماژول‌ها و عملگرها شناخته‌شده‌اند؟</td><td>وگرنه «نامعلوم»</td></tr>
+  </table>
+  <p class="note">تحلیل taint حساس به فیلد است و از مرز تعریف‌ها، binderها و انتساب‌ها می‌گذرد.</p>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <h2>تجرید View</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>گراف تأثیر</h3>
+      <ul>
+        <li><span class="mono">u → v</span> برای هر خواندن u در <span class="mono">v' = e</span></li>
+        <li>خواندن در guard ⇒ اثر بر فعال‌بودن اکشن</li>
+        <li>متغیر «تاریخی» = به هیچ مشاهده‌پذیری نمی‌رسد</li>
+      </ul>
+      <p class="muted">خودحلقه مجاز است: <span class="mono">log' = Append(log, x)</span></p>
+    </div>
+    <div class="card">
+      <h3>نتیجهٔ عملی</h3>
+      <table>
+        <tr><th>بازو</th><th>حالت‌ها</th></tr>
+        <tr><td>بدون کاهش</td><td>۲۸۹</td></tr>
+        <tr><td>تقارن</td><td>۵۳</td></tr>
+        <tr><td>View</td><td>۲۰</td></tr>
+        <tr><td>هر دو</td><td><b>۷</b></td></tr>
+      </table>
+      <p class="muted">مدل <span class="mono">LabLogNoType</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <h2>مقادیر ثابت‌ها را از کجا می‌آوریم؟</h2>
+  <div class="grid g2">
+    <div class="card">
+      <p>مقدار در متن پیکربندی نیست:</p>
+      <pre>Acceptor &lt;- MCAcceptor
+Ballot   &lt;-[Voting] MCBallot</pre>
+      <p>پس از خودِ TLC می‌پرسیم:</p>
+      <pre>ASSUME SVProbe0 ==
+  PrintT(&lt;&lt;"#SVCONST","Acceptor",Acceptor&gt;&gt;)</pre>
+    </div>
+    <div class="card">
+      <h3>چرا کار می‌کند</h3>
+      <ul>
+        <li>TLC این <span class="mono">ASSUME</span>ها را پیش از محاسبهٔ حالت‌های اولیه ارزیابی می‌کند.</li>
+        <li>SymView به‌محض دیدن همهٔ نشانگرها فرایند را متوقف می‌کند.</li>
+        <li>هزینه ≈ تجزیه، نه مدل‌چکینگ.</li>
+      </ul>
+      <p class="ok badge">نتیجه: مقدار دقیق، با معناشناسی خود TLC</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <h2>طراحی آزمایش</h2>
+  <div class="grid g3">
+    <div class="card"><h3>مخزن</h3><p>۱۰۹ نامزد پین‌شده از <span class="mono">tlaplus/Examples</span>، SHA-256 هر فایل.</p></div>
+    <div class="card"><h3>پیش‌ثبت</h3><p>معیار P1–P5 <b>قبل</b> از دیدن نتایج؛ زیرمجموعهٔ ۲۰ مدلی منجمد.</p></div>
+    <div class="card"><h3>بوجه</h3><p>timeout، worker و heap یکسان برای همهٔ بازوها.</p></div>
+  </div>
+  <h3>بازوها</h3>
+  <table>
+    <tr><th>بازو</th><th>چیست</th></tr>
+    <tr><td><span class="mono">direct / plain</span></td><td>بدون کاهش؛ شاهد شفافیت پوشش</td></tr>
+    <tr><td><span class="mono">symmetry / view / both</span></td><td>کاهش‌های خودکار</td></tr>
+    <tr><td><span class="mono">manual</span></td><td>پیکربندی دستی خود نویسنده</td></tr>
+  </table>
+  <p class="muted">باگ تزریقی: ۳–۴ جهش به‌ازای هر مدل، seed ثابت، فقط جهش‌هایی که Baseline می‌بیند.</p>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <h2>نتیجه ۱ — کاهش</h2>
+  <div class="grid g2">
+    <div><img src="../../analysis/output/figures/fig_rq1_reduction.png" alt="reduction"></div>
+    <div>
+      <div class="card"><div class="kpi">۷۲٪</div><div class="label">میانهٔ کاهش روی ۷ مدل دارای کاهش معتبر</div></div>
+      <div class="card" style="margin-top:.8rem"><div class="kpi g">۹۷٫۶٪</div><div class="label">بیشترین کاهش: <span class="mono">LabLogNoType</span> (۲۸۹ → ۷)</div></div>
+      <div class="card" style="margin-top:.8rem"><div class="kpi">۲/۲</div><div class="label">تطابق دقیق با پیکربندی دستی نویسنده</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <h2>نتیجه ۲ — حفظ نقض و سلامت</h2>
+  <div class="grid g2">
+    <div><img src="../../analysis/output/figures/fig_rq2_preservation.png" alt="preservation"></div>
+    <div>
+      <table>
+        <tr><th>سنجه</th><th>مقدار</th></tr>
+        <tr><td>جهش تولیدشده / کشف‌شده</td><td>۱۰۳ / ۱۸</td></tr>
+        <tr><td>حفظ زیر تقارن</td><td>۵ از ۵</td></tr>
+        <tr><td>حفظ زیر View / ترکیب</td><td>۱ از ۱ / ۱ از ۱</td></tr>
+        <tr><td>اجرای تمیز که با کاهش نقض شد</td><td><b>۰ از ۱۲</b></td></tr>
+      </table>
+      <p class="note">یک باگ واقعی ابزار (F1) همین‌جا پیدا شد: شناساگر زنده‌بودن ارجاع <span class="mono">Alias!Op</span> را دنبال نمی‌کرد.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <h2>نتیجه ۳ — امتناع‌ها و یافتهٔ F1</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>چرا ابزار گاهی «نه» می‌گوید</h3>
+      <ul>
+        <li>۹ مدل ویژگی زنده‌بودن دارند ⇒ <span class="mono">SYMMETRY</span> صادر نمی‌شود</li>
+        <li>۱۴ مدل هیچ مجموعهٔ اتمی ندارند (شناسه‌های عددی/رشته‌ای)</li>
+        <li>عملگر طبقه‌بندی‌نشده یا ماژول حل‌نشده ⇒ «نامعلوم»</li>
+      </ul>
+      <p class="muted">پوشش تقارن ۳۹٪، پوشش View ۴٪ — مرز کاربردپذیری، نه شکست.</p>
+    </div>
+    <div class="card">
+      <h3>F1: نقصی که آزمایش پیدا کرد</h3>
+      <pre>plain : ok, 1690 states
+symmetry : Error: Temporal properties
+           were violated</pre>
+      <p>علت: <span class="mono">PROPERTIES SimpleAllocator</span> به <span class="mono">Simple!SimpleAllocator</span> اشاره می‌کرد.</p>
+      <p class="ok badge">رفع شد + آزمون رگرسیون</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <h2>جمع‌بندی و Go/No-Go</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>تصمیم: Go</h3>
+      <ul>
+        <li>کاهش معنادار حالت ✅</li>
+        <li>هیچ نقض قابل‌مقایسه‌ای از دست نرفت ✅</li>
+        <li>هیچ پیشنهاد ناسالمی رخ نداد ✅</li>
+        <li>بازتولید تصمیم انسان در ۲ از ۲ ✅</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>قدم بعد</h3>
+      <ul>
+        <li>افزودن مدل‌های اتمی برای تقویت RQ1</li>
+        <li>پشتیبانی کامل از <span class="mono">INSTANCE</span> پارامتری</li>
+        <li>گسترش جدول عملگرها</li>
+        <li>نگارش نسخهٔ مقاله</li>
+      </ul>
+    </div>
+  </div>
+  <p class="muted" style="margin-top:1.4rem">همهٔ اعداد: <span class="mono">analysis/output/numbers.json</span> — تولیدشده با اسکریپت از <span class="mono">results/raw/</span>.</p>
+</section>
+
+<!-- 13 -->
+<section class="slide">
+  <h2>دمو (۳ دستور)</h2>
+  <pre>bash setup.sh
+
+python -m symview analyze --spec-dir benchmarks/lab/LabLog \
+    --module LabLog --config LabLog.cfg
+
+python -m symview report --spec-dir benchmarks/lab/LabLog \
+    --module LabLog --config LabLog_notype.cfg \
+    --arms plain symmetry view both</pre>
+  <p class="lead">خروجی: ۲۸۹ → ۵۳ (تقارن) → ۲۰ (View) → <b>۷</b> حالت.</p>
+</section>
+
+<div class="bar">
+  <span>SymView · تیم ۲ · روش‌های رسمی</span>
+  <span><button id="prev">قبلی</button> <span id="pos">1 / 13</span> <button id="next">بعدی</button></span>
+</div>
+</div>
+
+<script>
+  const slides = [...document.querySelectorAll('.slide')];
+  let i = 0;
+  function show(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    document.getElementById('pos').textContent = (i + 1) + ' / ' + slides.length;
+  }
+  document.getElementById('next').onclick = () => show(i + 1);
+  document.getElementById('prev').onclick = () => show(i - 1);
+  addEventListener('keydown', e => {
+    if (['ArrowLeft', 'ArrowDown', ' ', 'PageDown'].includes(e.key)) { show(i + 1); e.preventDefault(); }
+    if (['ArrowRight', 'ArrowUp', 'PageUp'].includes(e.key)) { show(i - 1); e.preventDefault(); }
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  show(0);
+</script>
+</body>
+</html>

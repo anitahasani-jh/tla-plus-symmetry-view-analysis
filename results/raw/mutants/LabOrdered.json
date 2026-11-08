@@ -1,0 +1,84 @@
+{
+  "model_id": "LabOrdered",
+  "seed": 20261106,
+  "generated": 3,
+  "mutants": [
+    {
+      "mutant_id": "LabOrdered-m1",
+      "model_id": "LabOrdered",
+      "operator": "drop-guard",
+      "module": "LabOrdered",
+      "file": "LabOrdered.tla",
+      "description": "drop a guard conjunct of Take",
+      "line": 37,
+      "original_snippet": "/\\ turn = p",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "DoneIsPrefix"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 6,
+          "distinct": 6,
+          "seconds": 1.254,
+          "violated": [
+            "DoneIsPrefix"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "LabOrdered-m2",
+      "model_id": "LabOrdered",
+      "operator": "drop-guard",
+      "module": "LabOrdered",
+      "file": "LabOrdered.tla",
+      "description": "drop a guard conjunct of Take",
+      "line": 38,
+      "original_snippet": "/\\ p \\notin done",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "SumOnFullRing"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 22,
+          "distinct": 17,
+          "seconds": 1.252,
+          "violated": [
+            "SumOnFullRing"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "LabOrdered-m3",
+      "model_id": "LabOrdered",
+      "operator": "drop-guard",
+      "module": "LabOrdered",
+      "file": "LabOrdered.tla",
+      "description": "drop a guard conjunct of Spec",
+      "line": 56,
+      "original_snippet": "Init /\\ [][Next]_vars",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "parse-error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "parse-error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.363,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

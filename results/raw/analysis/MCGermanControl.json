@@ -1,0 +1,449 @@
+{
+  "model": {
+    "model_id": "MCGermanControl",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\GermanProtocol",
+    "module": "MCGermanControl",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\GermanProtocol\\MCGermanControl.cfg",
+    "family": "cache-coherence",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\GermanProtocol",
+    "module_name": "MCGermanControl",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\GermanProtocol\\MCGermanControl.cfg",
+    "modules": [
+      "GermanCMPWithMutex",
+      "GermanControl",
+      "MCGermanControl"
+    ],
+    "module_files": {
+      "MCGermanControl": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\GermanProtocol\\MCGermanControl.tla",
+      "GermanControl": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\GermanProtocol\\GermanControl.tla",
+      "GermanCMPWithMutex": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\GermanProtocol\\GermanCMPWithMutex.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "TLC"
+    ],
+    "constants": {
+      "Other": {
+        "arity": 0,
+        "declared_in": "MCGermanControl",
+        "assignment_form": "=",
+        "assignment_text": "other",
+        "value_text": "other",
+        "value_kind": "atom",
+        "value_source": "tlc-probe"
+      },
+      "NODE": {
+        "arity": 0,
+        "declared_in": "GermanControl",
+        "assignment_form": "=",
+        "assignment_text": "{n1, n2}",
+        "value_text": "{n1, n2}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      },
+      "NoNode": {
+        "arity": 0,
+        "declared_in": "GermanControl",
+        "assignment_form": "=",
+        "assignment_text": "noNode",
+        "value_text": "noNode",
+        "value_kind": "atom",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "cache",
+      "chan1",
+      "chan2",
+      "chan3",
+      "invSet",
+      "shrSet",
+      "exGntd",
+      "curCmd",
+      "curPtr"
+    ],
+    "instances": [],
+    "opdefs": 53,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\GermanProtocol\\MCGermanControl.tla",
+      "module": "MCGermanControl",
+      "bad_tokens": 0,
+      "unknown_nodes": 0,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 31,
+      "cov_covered_tokens": 31,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 0,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\GermanProtocol\\MCGermanControl.cfg",
+      "constants": {
+        "NODE": {
+          "form": "=",
+          "value_text": "{n1, n2}",
+          "line": 4
+        },
+        "NoNode": {
+          "form": "=",
+          "value_text": "noNode",
+          "line": 5
+        },
+        "Other": {
+          "form": "=",
+          "value_text": "other",
+          "line": 6
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "Spec",
+      "invariants": [
+        "TypeOK",
+        "Coherence"
+      ],
+      "properties": [
+        "Refinement"
+      ],
+      "symmetry": "Symmetry",
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [
+        "\\* Smallest meaningful instance: two nodes are required for the mutual-exclusion",
+        "\\* property Coherence (i # j) to be non-vacuous."
+      ],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "MCGermanControl",
+    "constants": [
+      "NODE",
+      "NoNode",
+      "Other"
+    ],
+    "variables": [
+      "cache",
+      "chan1",
+      "chan2",
+      "chan3",
+      "invSet",
+      "shrSet",
+      "exGntd",
+      "curCmd",
+      "curPtr"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 17,
+    "writes": 81,
+    "reads": 166,
+    "invariants": [
+      "TypeOK",
+      "Coherence"
+    ],
+    "properties": [
+      "Refinement"
+    ],
+    "liveness": false,
+    "liveness_reasons": [
+      "the configuration checks temporal PROPERTIES (Refinement) but every definition reachable from them is safety shaped ([]P and [A]_v), which TLC's symmetry reduction preserves"
+    ],
+    "unresolved_names": {
+      "i": 42,
+      "j": 6,
+      "c": 2
+    },
+    "instance_aliases": {
+      "Abstract": "GermanCMPWithMutex"
+    },
+    "notes": [
+      "stutter subscript ignored in Spec"
+    ]
+  },
+  "symmetry": {
+    "candidates": [
+      {
+        "constant": "NODE",
+        "atoms": [
+          "n1",
+          "n2"
+        ],
+        "verdict": "sound",
+        "reasons": [
+          "NODE = {n1, n2} is used only through permutation-equivariant operators and no other constant distinguishes its elements"
+        ],
+        "flags": [],
+        "value_checks": {
+          "NoNode": {
+            "invariant": true,
+            "checked": 1,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "Other": {
+            "invariant": true,
+            "checked": 1,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          }
+        },
+        "unknown_operators": {},
+        "liveness_warning": false,
+        "liveness_reasons": [],
+        "group_order": 2,
+        "manual_symmetry_in_config": "Symmetry"
+      }
+    ],
+    "selected": [
+      "NODE"
+    ],
+    "notes": []
+  },
+  "history": {
+    "retained": [
+      "cache",
+      "chan1",
+      "chan2",
+      "chan3",
+      "invSet",
+      "shrSet",
+      "exGntd",
+      "curCmd",
+      "curPtr"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible"
+    ],
+    "evidence": {
+      "cache": {
+        "name": "cache",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant Coherence",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 3,
+        "read_in_init": 0,
+        "read_in_property": 13,
+        "writes": 9,
+        "influences": [
+          "cache",
+          "exGntd",
+          "cache"
+        ]
+      },
+      "chan1": {
+        "name": "chan1",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 4,
+        "read_in_guard": 3,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 9,
+        "influences": [
+          "exGntd",
+          "curCmd",
+          "chan1",
+          "chan1",
+          "chan1"
+        ]
+      },
+      "chan2": {
+        "name": "chan2",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 5,
+        "read_in_guard": 5,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 9,
+        "influences": [
+          "cache",
+          "chan2",
+          "exGntd",
+          "chan2",
+          "chan2",
+          "chan2"
+        ]
+      },
+      "chan3": {
+        "name": "chan3",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 3,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 9,
+        "influences": [
+          "chan3",
+          "chan3"
+        ]
+      },
+      "invSet": {
+        "name": "invSet",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 1,
+        "read_in_guard": 2,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 9,
+        "influences": [
+          "exGntd",
+          "invSet"
+        ]
+      },
+      "shrSet": {
+        "name": "shrSet",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 3,
+        "read_in_guard": 2,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 9,
+        "influences": [
+          "shrSet",
+          "invSet",
+          "shrSet"
+        ]
+      },
+      "exGntd": {
+        "name": "exGntd",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 3,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 9,
+        "influences": [
+          "exGntd"
+        ]
+      },
+      "curCmd": {
+        "name": "curCmd",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 7,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 9,
+        "influences": [
+          "exGntd",
+          "chan2",
+          "exGntd"
+        ]
+      },
+      "curPtr": {
+        "name": "curPtr",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 2,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 9,
+        "influences": [
+          "exGntd"
+        ]
+      }
+    },
+    "liveness_warning": false,
+    "liveness_reasons": [],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "MCGermanControl_SymView",
+    "wrapper_text": "----------------------------------------------------------------------- MODULE MCGermanControl_SymView -----\n(***************************************************************************)\n(* GENERATED BY SymView 1.0.0 -- DO NOT EDIT.                            *)\n(*                                                                         *)\n(* This wrapper only exists so that a TLC configuration can refer to a      *)\n(* symmetry operator and a view operator.  The original specification is   *)\n(* extended, never modified, so every arm of the experiment checks exactly *)\n(* the same model.                                                         *)\n(***************************************************************************)\nEXTENDS MCGermanControl, TLC\n\n(* Symmetry set proposed by SymView: the constants whose values are sets of model values,\n   used only through permutation-equivariant operators, and not distinguished by any\n   other constant.  TLC requires a set of permutations, hence the Permutations calls. *)\nSymViewPerms == Permutations(NODE)\n\n=============================================================================\n",
+    "configs": {
+      "plain": "\\* Smallest meaningful instance: two nodes are required for the mutual-exclusion\n\\* property Coherence (i # j) to be non-vacuous.\nCONSTANTS\n  NODE = {n1, n2}\n  NoNode = noNode\n  Other = other\n\n\nSPECIFICATION Spec\n\nINVARIANT\n  TypeOK\n  Coherence\n\nPROPERTY Refinement\n",
+      "symmetry": "\\* Smallest meaningful instance: two nodes are required for the mutual-exclusion\n\\* property Coherence (i # j) to be non-vacuous.\nCONSTANTS\n  NODE = {n1, n2}\n  NoNode = noNode\n  Other = other\n\n\nSPECIFICATION Spec\n\nINVARIANT\n  TypeOK\n  Coherence\n\nPROPERTY Refinement\nSYMMETRY SymViewPerms\n",
+      "manual": "\\* Smallest meaningful instance: two nodes are required for the mutual-exclusion\n\\* property Coherence (i # j) to be non-vacuous.\nCONSTANTS\n  NODE = {n1, n2}\n  NoNode = noNode\n  Other = other\n\nSYMMETRY Symmetry\n\nSPECIFICATION Spec\n\nINVARIANT\n  TypeOK\n  Coherence\n\nPROPERTY Refinement\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": true,
+      "view": false,
+      "both": false,
+      "manual": true
+    },
+    "notes": [
+      "the shipped configuration already contained SYMMETRY Symmetry; it is removed for the plain baseline and kept for the manual arm",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.919,
+    "constants": {
+      "Other": "other",
+      "NODE": "{n1, n2}",
+      "NoNode": "noNode"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 1.0,
+  "notes": [
+    "the shipped configuration already contained SYMMETRY Symmetry; it is removed for the plain baseline and kept for the manual arm",
+    "no view abstraction was certified for this model"
+  ]
+}

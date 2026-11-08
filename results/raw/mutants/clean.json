@@ -1,0 +1,99 @@
+{
+  "model_id": "clean",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "clean-m1",
+      "model_id": "clean",
+      "operator": "drop-guard",
+      "module": "clean",
+      "file": "clean.tla",
+      "description": "replace a guard conjunct of extend with TRUE",
+      "line": 61,
+      "original_snippet": "/\\ tee = \"Warm\"",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 127,
+          "distinct": 63,
+          "seconds": 1.327,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "clean-m2",
+      "model_id": "clean",
+      "operator": "weaken-comparison",
+      "module": "clean",
+      "file": "clean.tla",
+      "description": "< -> <= in natMin",
+      "line": 38,
+      "original_snippet": "<",
+      "mutated_snippet": "<=",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 99,
+          "distinct": 63,
+          "seconds": 1.319,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "clean-m3",
+      "model_id": "clean",
+      "operator": "drop-guard",
+      "module": "clean",
+      "file": "clean.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 81,
+      "original_snippet": "Init",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.442,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "clean-m4",
+      "model_id": "clean",
+      "operator": "drop-guard",
+      "module": "clean",
+      "file": "clean.tla",
+      "description": "replace a guard conjunct of cool with TRUE",
+      "line": 48,
+      "original_snippet": "/\\ tee = \"TooHot\"",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 261,
+          "distinct": 98,
+          "seconds": 1.332,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

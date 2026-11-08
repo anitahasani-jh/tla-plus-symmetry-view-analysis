@@ -1,0 +1,14 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 101 and seed 7633775687310670578 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\TokenRing\TokenRing.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TokenRing
+Starting... (2026-11-06 12:33:16)
+Error: The property ALIAS specified in the configuration file
+is not defined in the specification.
+Finished in 00s at (2026-11-06 12:33:16)

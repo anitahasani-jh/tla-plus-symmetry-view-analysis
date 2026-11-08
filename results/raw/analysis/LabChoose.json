@@ -1,0 +1,264 @@
+{
+  "model": {
+    "model_id": "LabChoose",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabChoose",
+    "module": "LabChoose",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabChoose\\LabChoose.cfg",
+    "family": "lab",
+    "source": "authored",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabChoose",
+    "module_name": "LabChoose",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabChoose\\LabChoose.cfg",
+    "modules": [
+      "LabChoose"
+    ],
+    "module_files": {
+      "LabChoose": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabChoose\\LabChoose.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "TLC"
+    ],
+    "constants": {
+      "Proc": {
+        "arity": 0,
+        "declared_in": "LabChoose",
+        "assignment_form": "=",
+        "assignment_text": "{p1, p2, p3}",
+        "value_text": "{p1, p2, p3}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      },
+      "None": {
+        "arity": 0,
+        "declared_in": "LabChoose",
+        "assignment_form": "=",
+        "assignment_text": "None",
+        "value_text": "None",
+        "value_kind": "atom",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "owner",
+      "pending"
+    ],
+    "instances": [],
+    "opdefs": 11,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabChoose\\LabChoose.tla",
+      "module": "LabChoose",
+      "bad_tokens": 0,
+      "unknown_nodes": 0,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 201,
+      "cov_covered_tokens": 201,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 0,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabChoose\\LabChoose.cfg",
+      "constants": {
+        "Proc": {
+          "form": "=",
+          "value_text": "{p1, p2, p3}",
+          "line": 2
+        },
+        "None": {
+          "form": "=",
+          "value_text": "None",
+          "line": 3
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": "Init",
+      "next": "Next",
+      "specification": null,
+      "invariants": [
+        "TypeOK",
+        "MutualExclusion",
+        "NoPendingOwner"
+      ],
+      "properties": [],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "LabChoose",
+    "constants": [
+      "None",
+      "Proc"
+    ],
+    "variables": [
+      "owner",
+      "pending"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 9,
+    "writes": 8,
+    "reads": 52,
+    "invariants": [
+      "TypeOK",
+      "MutualExclusion",
+      "NoPendingOwner"
+    ],
+    "properties": [],
+    "liveness": false,
+    "liveness_reasons": [],
+    "unresolved_names": {
+      "p": 11,
+      "q": 3
+    },
+    "instance_aliases": {},
+    "notes": []
+  },
+  "symmetry": {
+    "candidates": [
+      {
+        "constant": "Proc",
+        "atoms": [
+          "p1",
+          "p2",
+          "p3"
+        ],
+        "verdict": "unsound",
+        "reasons": [
+          "values drawn from Proc reach a non-equivariant operator: CHOOSE (2 occurrence(s)); permuting the set would change the transition relation"
+        ],
+        "flags": [
+          {
+            "operator": "CHOOSE",
+            "reason": "TLC's CHOOSE returns a fixed but arbitrary element; pi(CHOOSE x: P) need not equal CHOOSE x: pi(P), so the transition relation is not equivariant",
+            "definition": "Grant",
+            "line": 45,
+            "tainted_operands": []
+          },
+          {
+            "operator": "CHOOSE",
+            "reason": "TLC's CHOOSE returns a fixed but arbitrary element; pi(CHOOSE x: P) need not equal CHOOSE x: pi(P), so the transition relation is not equivariant",
+            "definition": "Grant",
+            "line": 45,
+            "tainted_operands": []
+          }
+        ],
+        "value_checks": {
+          "None": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          }
+        },
+        "unknown_operators": {},
+        "liveness_warning": false,
+        "liveness_reasons": [],
+        "group_order": 6,
+        "manual_symmetry_in_config": null
+      }
+    ],
+    "selected": [],
+    "notes": []
+  },
+  "history": {
+    "retained": [
+      "owner",
+      "pending"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible"
+    ],
+    "evidence": {
+      "owner": {
+        "name": "owner",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant NoPendingOwner",
+          "read by checked property/invariant NoPendingOwner",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 5,
+        "read_in_init": 0,
+        "read_in_property": 3,
+        "writes": 4,
+        "influences": []
+      },
+      "pending": {
+        "name": "pending",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant NoPendingOwner",
+          "read by checked property/invariant NoPendingOwner",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 4,
+        "read_in_init": 0,
+        "read_in_property": 3,
+        "writes": 4,
+        "influences": [
+          "pending",
+          "pending"
+        ]
+      }
+    },
+    "liveness_warning": false,
+    "liveness_reasons": [],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "CONSTANTS\n  Proc = {p1, p2, p3}\n  None = None\nINIT Init\nNEXT Next\nINVARIANT TypeOK\nINVARIANT MutualExclusion\nINVARIANT NoPendingOwner\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.86,
+    "constants": {
+      "Proc": "{p1, p2, p3}",
+      "None": "None"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 0.901,
+  "notes": [
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}

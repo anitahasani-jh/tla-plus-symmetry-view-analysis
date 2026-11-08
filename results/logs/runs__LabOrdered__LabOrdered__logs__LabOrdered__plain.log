@@ -1,0 +1,26 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 121 and seed 3106482663705944514 with 2 workers on 4 cores with 910MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\LabOrdered\LabOrdered\plain__m_LabOrdered-m3\LabOrdered.tla
+***Parse Error***
+Was expecting "Expression or Instance"
+Encountered "Beginning of definition" at line 60, column 1 and token "==" 
+
+Residual stack trace follows:
+Definition starting at line 55, column 1.
+Module body starting at line 16, column 1.
+Module definition starting at line 1, column 1.
+
+
+Fatal errors while parsing TLA+ spec in file LabOrdered
+
+tla2sany.semantic.AbortException
+*** Abort messages: 1
+
+In module LabOrdered
+
+Could not parse module LabOrdered from file LabOrdered.tla
+
+
+Starting... (2026-11-06 13:06:08)
+Error: Parsing or semantic analysis failed.
+Finished in 00s at (2026-11-06 13:06:08)

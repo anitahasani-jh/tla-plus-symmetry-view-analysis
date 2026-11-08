@@ -1,0 +1,250 @@
+{
+  "model": {
+    "model_id": "LabLock",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabLock",
+    "module": "LabLock",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabLock\\LabLock.cfg",
+    "family": "lab",
+    "source": "authored",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabLock",
+    "module_name": "LabLock",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabLock\\LabLock.cfg",
+    "modules": [
+      "LabLock"
+    ],
+    "module_files": {
+      "LabLock": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabLock\\LabLock.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "TLC"
+    ],
+    "constants": {
+      "Proc": {
+        "arity": 0,
+        "declared_in": "LabLock",
+        "assignment_form": "=",
+        "assignment_text": "{p1, p2, p3}",
+        "value_text": "{p1, p2, p3}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      },
+      "None": {
+        "arity": 0,
+        "declared_in": "LabLock",
+        "assignment_form": "=",
+        "assignment_text": "None",
+        "value_text": "None",
+        "value_kind": "atom",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "owner",
+      "pending"
+    ],
+    "instances": [],
+    "opdefs": 11,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabLock\\LabLock.tla",
+      "module": "LabLock",
+      "bad_tokens": 0,
+      "unknown_nodes": 0,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 191,
+      "cov_covered_tokens": 191,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 0,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabLock\\LabLock.cfg",
+      "constants": {
+        "Proc": {
+          "form": "=",
+          "value_text": "{p1, p2, p3}",
+          "line": 2
+        },
+        "None": {
+          "form": "=",
+          "value_text": "None",
+          "line": 3
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": "Init",
+      "next": "Next",
+      "specification": null,
+      "invariants": [
+        "TypeOK",
+        "MutualExclusion",
+        "NoPendingOwner"
+      ],
+      "properties": [],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "LabLock",
+    "constants": [
+      "None",
+      "Proc"
+    ],
+    "variables": [
+      "owner",
+      "pending"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 9,
+    "writes": 8,
+    "reads": 52,
+    "invariants": [
+      "TypeOK",
+      "MutualExclusion",
+      "NoPendingOwner"
+    ],
+    "properties": [],
+    "liveness": false,
+    "liveness_reasons": [],
+    "unresolved_names": {
+      "p": 15,
+      "q": 2
+    },
+    "instance_aliases": {},
+    "notes": []
+  },
+  "symmetry": {
+    "candidates": [
+      {
+        "constant": "Proc",
+        "atoms": [
+          "p1",
+          "p2",
+          "p3"
+        ],
+        "verdict": "sound",
+        "reasons": [
+          "Proc = {p1, p2, p3} is used only through permutation-equivariant operators and no other constant distinguishes its elements"
+        ],
+        "flags": [],
+        "value_checks": {
+          "None": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          }
+        },
+        "unknown_operators": {},
+        "liveness_warning": false,
+        "liveness_reasons": [],
+        "group_order": 6,
+        "manual_symmetry_in_config": null
+      }
+    ],
+    "selected": [
+      "Proc"
+    ],
+    "notes": []
+  },
+  "history": {
+    "retained": [
+      "owner",
+      "pending"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible"
+    ],
+    "evidence": {
+      "owner": {
+        "name": "owner",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant NoPendingOwner",
+          "read by checked property/invariant NoPendingOwner",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 5,
+        "read_in_init": 0,
+        "read_in_property": 3,
+        "writes": 4,
+        "influences": []
+      },
+      "pending": {
+        "name": "pending",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant NoPendingOwner",
+          "read by checked property/invariant NoPendingOwner",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 2,
+        "read_in_init": 0,
+        "read_in_property": 3,
+        "writes": 4,
+        "influences": [
+          "pending",
+          "pending"
+        ]
+      }
+    },
+    "liveness_warning": false,
+    "liveness_reasons": [],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "LabLock_SymView",
+    "wrapper_text": "----------------------------------------------------------------------- MODULE LabLock_SymView -----\n(***************************************************************************)\n(* GENERATED BY SymView 1.0.0 -- DO NOT EDIT.                            *)\n(*                                                                         *)\n(* This wrapper only exists so that a TLC configuration can refer to a      *)\n(* symmetry operator and a view operator.  The original specification is   *)\n(* extended, never modified, so every arm of the experiment checks exactly *)\n(* the same model.                                                         *)\n(***************************************************************************)\nEXTENDS LabLock, TLC\n\n(* Symmetry set proposed by SymView: the constants whose values are sets of model values,\n   used only through permutation-equivariant operators, and not distinguished by any\n   other constant.  TLC requires a set of permutations, hence the Permutations calls. *)\nSymViewPerms == Permutations(Proc)\n\n=============================================================================\n",
+    "configs": {
+      "plain": "CONSTANTS\n  Proc = {p1, p2, p3}\n  None = None\nINIT Init\nNEXT Next\nINVARIANT TypeOK\nINVARIANT MutualExclusion\nINVARIANT NoPendingOwner\n",
+      "symmetry": "CONSTANTS\n  Proc = {p1, p2, p3}\n  None = None\nINIT Init\nNEXT Next\nINVARIANT TypeOK\nINVARIANT MutualExclusion\nINVARIANT NoPendingOwner\nSYMMETRY SymViewPerms\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": true,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.864,
+    "constants": {
+      "Proc": "{p1, p2, p3}",
+      "None": "None"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 0.909,
+  "notes": [
+    "no view abstraction was certified for this model"
+  ]
+}

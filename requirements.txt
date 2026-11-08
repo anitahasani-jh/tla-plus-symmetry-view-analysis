@@ -1,0 +1,16 @@
+# SymView dependencies.
+#
+# Colab already ships most of these (numpy, pandas, matplotlib, scipy, PyYAML
+# and JupyterLab), so `bash setup.sh` is normally a quick no-op there.
+# Only the static analysis (src/symview) needs PyYAML; pandas/matplotlib/scipy
+# are used by the analysis stage that turns results/raw into tables and figures.
+# Nothing is pinned to an exact patch release: the versions below are the
+# minimum tested, and the experiment metadata records what was actually used.
+
+pyyaml>=6
+pandas>=2.0
+matplotlib>=3.7
+scipy>=1.10
+numpy>=1.24
+jupyterlab>=4
+nbformat>=5

@@ -1,0 +1,43 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 55 and seed 3520826563268301122 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCYoYoPruning\MCYoYoPruning.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCYoYoPruning\YoYoPruning.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCYoYoPruning\UndirectedGraphs.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCYoYoPruning\SequencesExt.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCYoYoPruning\FiniteSetsExt.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCYoYoPruning\Folds.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCYoYoPruning\Functions.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Bags.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Folds
+Semantic processing of module Functions
+Semantic processing of module FiniteSetsExt
+Semantic processing of module Bags
+Semantic processing of module SequencesExt
+Semantic processing of module UndirectedGraphs
+Semantic processing of module YoYoPruning
+Semantic processing of module MCYoYoPruning
+Starting... (2026-11-06 12:33:24)
+Implied-temporal checking--satisfiability problem has 1 branches.
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:33:25.
+Progress(31) at 2026-11-06 12:33:25: 157 states generated, 102 distinct states found, 0 states left on queue.
+Checking temporal properties for the complete state space with 102 total distinct states at (2026-11-06 12:33:25)
+Finished checking temporal properties in 00s at 2026-11-06 12:33:25
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 3.0E-16
+157 states generated, 102 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 31.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 3 and the 95th percentile is 2).
+Finished in 01s at (2026-11-06 12:33:25)

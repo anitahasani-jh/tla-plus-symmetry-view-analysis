@@ -1,0 +1,85 @@
+SymView -- third-party notices
+==============================
+
+SymView is the first-party code in this repository (src/symview, experiments,
+analysis, tests, tools/gen_operators.py, setup.sh, run_all.sh, Makefile,
+Dockerfile, notebooks and documentation).  It is released under the MIT
+License; see LICENSE.  Copyright (c) 2026 The SymView authors.
+
+The files listed below are third-party material.  They remain under their own
+licences, and the MIT licence of SymView does not override them.  Each entry
+states whether the copy in this repository is modified.
+
+1. TLA+ tools (TLC)
+   File      : tools/tla2tools-1.7.1.jar
+   Project   : tlaplus/tlaplus, https://github.com/tlaplus/tlaplus
+   Version   : release v1.7.1; TLC2 Version 2.16 of 31 December 2020
+   SHA-256   : d532ba31aafe17afba1130f92410d9257454ff7393d1eb2fe032f0c07f352da5
+   Licence   : MIT (https://github.com/tlaplus/tlaplus/blob/v1.7.1/LICENSE)
+   State     : unmodified.  Downloaded from
+               https://github.com/tlaplus/tlaplus/releases/download/v1.7.1/tla2tools.jar
+               and hash-checked by setup.sh.
+
+   The jar's manifest declares "Class-Path: CommunityModules.jar".  The JVM
+   resolves that entry relative to the directory that contains tla2tools, so no
+   other jar is kept next to it in tools/.  Community modules are shipped as
+   plain .tla files instead (entry 5).
+
+2. tlaplus/Examples corpus
+   Files     : benchmarks/public/** (562 files), plus
+               benchmarks/public/_licenses/tlaplus--Examples.md
+   Project   : https://github.com/tlaplus/Examples
+   Commit    : ca168055339d5cbcee95b7eefcb97c1ee59f9914
+   Licence   : MIT.  The upstream licence text is kept verbatim at
+               benchmarks/public/_licenses/tlaplus--Examples.md.
+   State     : unmodified.  Only the local directory names are flattened and
+               every file is hash-recorded in benchmarks/PROVENANCE.json.
+
+3. ongardie/raft.tla (one additional corpus file)
+   File      : benchmarks/public/ongardie--raft_tla/raft.tla
+   Project   : https://github.com/ongardie/raft.tla
+   Commit    : 6ecbdbcf1bcde2910367cdfd67f31b0bae447ddd
+   Licence   : the file header states Creative Commons Attribution 4.0
+               International (CC BY 4.0), copyright 2014 Diego Ongaro.
+               Note: config/corpus.yaml currently labels this source "MIT";
+               the file header is authoritative and the metadata should be
+               reconciled before publication.
+   State     : unmodified, redistributed with attribution.
+
+4. TLAPS.tla (proof-only module)
+   File      : benchmarks/support/TLAPS.tla
+   Project   : tlaplus/tlaplus, tag v1.7.1,
+               path tlatools/org.lamport.tlatools/test-model/VoteProof/TLAPS.tla
+   SHA-256   : 720a31f61573f1d925f66c75982b3b539b7bd5b25753b7e233cbf48456b4ada7
+   Licence   : MIT, the same licence as the TLA+ tools repository
+               (https://github.com/tlaplus/tlaplus/blob/v1.7.1/LICENSE).
+   State     : unmodified.  It is a proof-only module: TLC parses proof steps
+               but never evaluates them, so this file lets SANY resolve names
+               that occur inside proofs of benchmark specifications and cannot
+               change a model-checking result.
+
+5. Community modules (extracted from CommunityModules.jar)
+   Files     : benchmarks/support/community/*.tla (34 files)
+   Project   : https://github.com/tlaplus/CommunityModules
+   Build     : CommunityModules.jar release 202609120237
+   Licence   : MIT (https://github.com/tlaplus/CommunityModules/blob/master/LICENSE)
+   State     : unmodified .tla sources extracted from the release jar.  The jar
+               itself is kept in tools/community-disabled/ and is not used: a
+               CommunityModules.jar placed next to TLC 2.16 makes TLC fail with
+               NoClassDefFoundError: tlc2/value/impl/KSubsetValue.
+
+6. FiniteSetTheorems.tla (the one project-authored proof-only stub)
+   File      : benchmarks/support/FiniteSetTheorems.tla
+   Licence   : MIT (first-party, same as the rest of SymView).
+   State     : written for this project.  It declares as TRUE exactly the names
+               that public specifications reference inside proof steps, so that
+               TLC can parse those specifications without the TLAPS prover
+               library.  It contains no model-checking definitions.
+
+7. Java runtime (prerequisite, not redistributed)
+   TLC needs Java 8 or newer.  No JDK or JRE is included in this repository;
+   setup.sh checks for `java` and prints the install command if it is missing.
+   The JDK is distributed by its own vendor under its own licence.
+
+No third-party project endorses SymView.  The names TLA+, TLC, TLAPS and
+Apalache are used only to identify the software and literature discussed.

@@ -1,0 +1,656 @@
+{
+  "model": {
+    "model_id": "Paxos",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\SimplifiedFastPaxos",
+    "module": "Paxos",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\SimplifiedFastPaxos\\Paxos.cfg",
+    "family": "consensus",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\SimplifiedFastPaxos",
+    "module_name": "Paxos",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\SimplifiedFastPaxos\\Paxos.cfg",
+    "modules": [
+      "Paxos"
+    ],
+    "module_files": {
+      "Paxos": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\SimplifiedFastPaxos\\Paxos.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "TLC",
+      "Naturals",
+      "FiniteSets",
+      "Integers"
+    ],
+    "constants": {
+      "any": {
+        "arity": 0,
+        "declared_in": "Paxos",
+        "assignment_form": "=",
+        "assignment_text": "any",
+        "value_text": "any",
+        "value_kind": "atom",
+        "value_source": "tlc-probe"
+      },
+      "none": {
+        "arity": 0,
+        "declared_in": "Paxos",
+        "assignment_form": "=",
+        "assignment_text": "none",
+        "value_text": "none",
+        "value_kind": "atom",
+        "value_source": "tlc-probe"
+      },
+      "Replicas": {
+        "arity": 0,
+        "declared_in": "Paxos",
+        "assignment_form": "=",
+        "assignment_text": "{r1, r2, r3, r4}",
+        "value_text": "{r1, r2, r3, r4}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      },
+      "Values": {
+        "arity": 0,
+        "declared_in": "Paxos",
+        "assignment_form": "=",
+        "assignment_text": "{v1, v2, v3}",
+        "value_text": "{v1, v2, v3}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      },
+      "Ballots": {
+        "arity": 0,
+        "declared_in": "Paxos",
+        "assignment_form": "=",
+        "assignment_text": "{0, 1, 2}",
+        "value_text": "{0, 1, 2}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      },
+      "Quorums": {
+        "arity": 0,
+        "declared_in": "Paxos",
+        "assignment_form": "=",
+        "assignment_text": "{{r1, r2, r3}, {r1, r2, r4}, {r1, r3, r4}, {r2, r3, r4}}",
+        "value_text": "<unknown: not-printed>",
+        "value_kind": "unknown",
+        "value_source": "unresolved"
+      },
+      "r1": {
+        "arity": 0,
+        "declared_in": "<config>",
+        "assignment_form": "=",
+        "assignment_text": "r1",
+        "value_text": "r1",
+        "value_kind": "atom",
+        "value_source": "config-literal"
+      },
+      "r2": {
+        "arity": 0,
+        "declared_in": "<config>",
+        "assignment_form": "=",
+        "assignment_text": "r2",
+        "value_text": "r2",
+        "value_kind": "atom",
+        "value_source": "config-literal"
+      },
+      "r3": {
+        "arity": 0,
+        "declared_in": "<config>",
+        "assignment_form": "=",
+        "assignment_text": "r3",
+        "value_text": "r3",
+        "value_kind": "atom",
+        "value_source": "config-literal"
+      },
+      "r4": {
+        "arity": 0,
+        "declared_in": "<config>",
+        "assignment_form": "=",
+        "assignment_text": "r4",
+        "value_text": "r4",
+        "value_kind": "atom",
+        "value_source": "config-literal"
+      },
+      "v1": {
+        "arity": 0,
+        "declared_in": "<config>",
+        "assignment_form": "=",
+        "assignment_text": "v1",
+        "value_text": "v1",
+        "value_kind": "atom",
+        "value_source": "config-literal"
+      },
+      "v2": {
+        "arity": 0,
+        "declared_in": "<config>",
+        "assignment_form": "=",
+        "assignment_text": "v2",
+        "value_text": "v2",
+        "value_kind": "atom",
+        "value_source": "config-literal"
+      },
+      "v3": {
+        "arity": 0,
+        "declared_in": "<config>",
+        "assignment_form": "=",
+        "assignment_text": "v3",
+        "value_text": "v3",
+        "value_kind": "atom",
+        "value_source": "config-literal"
+      }
+    },
+    "variables": [
+      "messages",
+      "decision",
+      "maxBallot",
+      "maxVBallot",
+      "maxValue"
+    ],
+    "instances": [],
+    "opdefs": 24,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\SimplifiedFastPaxos\\Paxos.tla",
+      "module": "Paxos",
+      "bad_tokens": 0,
+      "unknown_nodes": 14,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 904,
+      "cov_covered_tokens": 904,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 14,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\SimplifiedFastPaxos\\Paxos.cfg",
+      "constants": {
+        "any": {
+          "form": "=",
+          "value_text": "any",
+          "line": 2
+        },
+        "none": {
+          "form": "=",
+          "value_text": "none",
+          "line": 3
+        },
+        "r1": {
+          "form": "=",
+          "value_text": "r1",
+          "line": 4
+        },
+        "r2": {
+          "form": "=",
+          "value_text": "r2",
+          "line": 5
+        },
+        "r3": {
+          "form": "=",
+          "value_text": "r3",
+          "line": 6
+        },
+        "r4": {
+          "form": "=",
+          "value_text": "r4",
+          "line": 7
+        },
+        "Replicas": {
+          "form": "=",
+          "value_text": "{r1, r2, r3, r4}",
+          "line": 8
+        },
+        "v1": {
+          "form": "=",
+          "value_text": "v1",
+          "line": 9
+        },
+        "v2": {
+          "form": "=",
+          "value_text": "v2",
+          "line": 10
+        },
+        "v3": {
+          "form": "=",
+          "value_text": "v3",
+          "line": 11
+        },
+        "Values": {
+          "form": "=",
+          "value_text": "{v1, v2, v3}",
+          "line": 12
+        },
+        "Ballots": {
+          "form": "=",
+          "value_text": "{0, 1, 2}",
+          "line": 13
+        },
+        "Quorums": {
+          "form": "=",
+          "value_text": "{{r1, r2, r3}, {r1, r2, r4}, {r1, r3, r4}, {r2, r3, r4}}",
+          "line": 14
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "PaxosSpec",
+      "invariants": [
+        "PaxosTypeOK",
+        "PaxosNontriviality"
+      ],
+      "properties": [
+        "PaxosConsistency"
+      ],
+      "symmetry": "PaxosSymmetry",
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "Paxos",
+    "constants": [
+      "Ballots",
+      "Quorums",
+      "Replicas",
+      "Values",
+      "any",
+      "none",
+      "r1",
+      "r2",
+      "r3",
+      "r4",
+      "v1",
+      "v2",
+      "v3"
+    ],
+    "variables": [
+      "messages",
+      "decision",
+      "maxBallot",
+      "maxVBallot",
+      "maxValue"
+    ],
+    "init": "PaxosInit",
+    "next": "PaxosNext",
+    "reachable_definitions": 23,
+    "writes": 58,
+    "reads": 934,
+    "invariants": [
+      "PaxosTypeOK",
+      "PaxosNontriviality"
+    ],
+    "properties": [
+      "PaxosConsistency"
+    ],
+    "liveness": true,
+    "liveness_reasons": [
+      "PaxosSpec assumes fairness (SF)"
+    ],
+    "unresolved_names": {
+      "v": 96,
+      "m": 78,
+      "b": 71,
+      "acceptor": 66,
+      "ballot": 51,
+      "a": 42,
+      "value": 35,
+      "q": 32,
+      "type": 8,
+      "M": 6
+    },
+    "instance_aliases": {},
+    "notes": [
+      "stutter subscript ignored in PaxosConsistency",
+      "stutter subscript ignored in PaxosSpec"
+    ]
+  },
+  "symmetry": {
+    "candidates": [
+      {
+        "constant": "Replicas",
+        "atoms": [
+          "r1",
+          "r2",
+          "r3",
+          "r4"
+        ],
+        "verdict": "unknown",
+        "reasons": [
+          "value of constant Quorums could not be interpreted (not-printed), so invariance cannot be certified",
+          "the model checks a temporal property or assumes fairness; TLC's symmetry reduction is not sound for liveness in general, so SymView will not enable SYMMETRY for this model by default"
+        ],
+        "flags": [],
+        "value_checks": {
+          "Ballots": {
+            "invariant": true,
+            "checked": 3,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "Quorums": {
+            "invariant": null,
+            "checked": 0,
+            "witness": "not-printed",
+            "reason": "value-not-interpreted"
+          },
+          "Values": {
+            "invariant": true,
+            "checked": 3,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "any": {
+            "invariant": true,
+            "checked": 3,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "none": {
+            "invariant": true,
+            "checked": 3,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "v1": {
+            "invariant": true,
+            "checked": 3,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "v2": {
+            "invariant": true,
+            "checked": 3,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "v3": {
+            "invariant": true,
+            "checked": 3,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          }
+        },
+        "unknown_operators": {
+          "<fairness-action>": 2
+        },
+        "liveness_warning": true,
+        "liveness_reasons": [
+          "PaxosSpec assumes fairness (SF)"
+        ],
+        "group_order": 24,
+        "manual_symmetry_in_config": "PaxosSymmetry"
+      },
+      {
+        "constant": "Values",
+        "atoms": [
+          "v1",
+          "v2",
+          "v3"
+        ],
+        "verdict": "unknown",
+        "reasons": [
+          "value of constant Quorums could not be interpreted (not-printed), so invariance cannot be certified",
+          "the model checks a temporal property or assumes fairness; TLC's symmetry reduction is not sound for liveness in general, so SymView will not enable SYMMETRY for this model by default"
+        ],
+        "flags": [],
+        "value_checks": {
+          "Ballots": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "Quorums": {
+            "invariant": null,
+            "checked": 0,
+            "witness": "not-printed",
+            "reason": "value-not-interpreted"
+          },
+          "Replicas": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "any": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "none": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "r1": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "r2": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "r3": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "r4": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          }
+        },
+        "unknown_operators": {
+          "<fairness-action>": 2
+        },
+        "liveness_warning": true,
+        "liveness_reasons": [
+          "PaxosSpec assumes fairness (SF)"
+        ],
+        "group_order": 6,
+        "manual_symmetry_in_config": "PaxosSymmetry"
+      }
+    ],
+    "selected": [],
+    "notes": []
+  },
+  "history": {
+    "retained": [
+      "messages",
+      "decision",
+      "maxBallot",
+      "maxVBallot",
+      "maxValue"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible",
+      "note: a temporal property is checked; the dropped variables are provably without influence, so the projection is a bisimulation, but this combination is reported for manual review"
+    ],
+    "evidence": {
+      "messages": {
+        "name": "messages",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant PaxosTypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 1,
+        "read_in_guard": 8,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 3,
+        "influences": [
+          "messages"
+        ]
+      },
+      "decision": {
+        "name": "decision",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant PaxosConsistency",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosTypeOK"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 0,
+        "read_in_init": 0,
+        "read_in_property": 5,
+        "writes": 29,
+        "influences": []
+      },
+      "maxBallot": {
+        "name": "maxBallot",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant PaxosTypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 6,
+        "read_in_guard": 6,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 10,
+        "influences": [
+          "maxBallot",
+          "maxBallot",
+          "maxBallot",
+          "maxBallot",
+          "maxBallot",
+          "maxBallot"
+        ]
+      },
+      "maxVBallot": {
+        "name": "maxVBallot",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosTypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 3,
+        "read_in_guard": 11,
+        "read_in_init": 0,
+        "read_in_property": 9,
+        "writes": 8,
+        "influences": [
+          "maxVBallot",
+          "maxVBallot",
+          "maxVBallot"
+        ]
+      },
+      "maxValue": {
+        "name": "maxValue",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosNontriviality",
+          "read by checked property/invariant PaxosTypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 3,
+        "read_in_guard": 68,
+        "read_in_init": 0,
+        "read_in_property": 9,
+        "writes": 8,
+        "influences": [
+          "maxValue",
+          "maxValue",
+          "maxValue"
+        ]
+      }
+    },
+    "liveness_warning": true,
+    "liveness_reasons": [
+      "PaxosSpec assumes fairness (SF)"
+    ],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "CONSTANTS\n    any = any\n    none = none\n    r1 = r1\n    r2 = r2\n    r3 = r3\n    r4 = r4\n    Replicas = {r1, r2, r3, r4}\n    v1 = v1\n    v2 = v2\n    v3 = v3\n    Values = {v1, v2, v3}\n    Ballots = {0, 1, 2}\n    Quorums = {{r1, r2, r3}, {r1, r2, r4}, {r1, r3, r4}, {r2, r3, r4}}\n\nSPECIFICATION PaxosSpec\nINVARIANTS PaxosTypeOK PaxosNontriviality\nPROPERTY PaxosConsistency\n",
+      "manual": "CONSTANTS\n    any = any\n    none = none\n    r1 = r1\n    r2 = r2\n    r3 = r3\n    r4 = r4\n    Replicas = {r1, r2, r3, r4}\n    v1 = v1\n    v2 = v2\n    v3 = v3\n    Values = {v1, v2, v3}\n    Ballots = {0, 1, 2}\n    Quorums = {{r1, r2, r3}, {r1, r2, r4}, {r1, r3, r4}, {r2, r3, r4}}\n\nSPECIFICATION PaxosSpec\nINVARIANTS PaxosTypeOK PaxosNontriviality\nPROPERTY PaxosConsistency\nSYMMETRY PaxosSymmetry"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": true
+    },
+    "notes": [
+      "the shipped configuration already contained SYMMETRY PaxosSymmetry; it is removed for the plain baseline and kept for the manual arm",
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 3.1,
+    "constants": {
+      "any": "any",
+      "none": "none",
+      "Replicas": "{r1, r2, r3, r4}",
+      "Values": "{v1, v2, v3}",
+      "Ballots": "{0, 1, 2}",
+      "Quorums": "",
+      "r1": "r1",
+      "r2": "r2",
+      "r3": "r3",
+      "r4": "r4",
+      "v1": "v1",
+      "v2": "v2",
+      "v3": "v3"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 3.169,
+  "notes": [
+    "the shipped configuration already contained SYMMETRY PaxosSymmetry; it is removed for the plain baseline and kept for the manual arm",
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}

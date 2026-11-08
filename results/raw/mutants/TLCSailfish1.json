@@ -1,0 +1,99 @@
+{
+  "model_id": "TLCSailfish1",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "TLCSailfish1-m1",
+      "model_id": "TLCSailfish1",
+      "operator": "drop-guard",
+      "module": "Sailfish",
+      "file": "Sailfish.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 221,
+      "original_snippet": "[][Next]_vars",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 314144,
+          "distinct": 109604,
+          "seconds": 33.471,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "TLCSailfish1-m2",
+      "model_id": "TLCSailfish1",
+      "operator": "flip-literal",
+      "module": "Sailfish",
+      "file": "Sailfish.tla",
+      "description": "flip TRUE in correctNode",
+      "line": 197,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": false,
+      "baseline_verdict": "deadlock",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "deadlock",
+          "states": 391,
+          "distinct": 220,
+          "seconds": 1.666,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "TLCSailfish1-m3",
+      "model_id": "TLCSailfish1",
+      "operator": "weaken-comparison",
+      "module": "Utils",
+      "file": "Utils.tla",
+      "description": "<= -> < in Min",
+      "line": 6,
+      "original_snippet": "<=",
+      "mutated_snippet": "<",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 1,
+          "distinct": 1,
+          "seconds": 1.556,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "TLCSailfish1-m4",
+      "model_id": "TLCSailfish1",
+      "operator": "drop-guard",
+      "module": "Sailfish",
+      "file": "Sailfish.tla",
+      "description": "replace a guard conjunct of byzantineNode with TRUE",
+      "line": 210,
+      "original_snippet": "IF Leader(r) = self\n                                                    THEN /\\ \\/ LeaderVertex(r-1) \\in delivered\n                                                            \\/ NoLeaderVoteQuorum(r, ",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 6,
+          "distinct": 4,
+          "seconds": 1.56,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

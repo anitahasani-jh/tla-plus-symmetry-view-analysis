@@ -1,0 +1,35 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 20 and seed 6096900549437224652 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\direct\TLCSailfish1.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\direct\Sailfish.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\direct\BlockDag.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\direct\Utils.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\direct\Digraph.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module Utils
+Semantic processing of module Digraph
+Semantic processing of module TLC
+Semantic processing of module BlockDag
+Semantic processing of module Sailfish
+Semantic processing of module TLCSailfish1
+Starting... (2026-11-06 12:47:43)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:47:43.
+Progress(12) at 2026-11-06 12:47:46: 13,416 states generated (13,416 s/min), 6,475 distinct states found (6,475 ds/min), 3,725 states left on queue.
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 1.2E-9
+  based on the actual fingerprints:  val = 9.2E-10
+314144 states generated, 109604 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 16.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 8 and the 95th percentile is 4).
+Finished in 42s at (2026-11-06 12:48:25)

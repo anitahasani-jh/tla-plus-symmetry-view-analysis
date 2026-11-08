@@ -1,0 +1,40 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 29 and seed 6418783844971469682 with 2 workers on 4 cores with 910MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\LabChoose\LabChoose\plain__m_LabChoose-m3\LabChoose.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module LabChoose
+Starting... (2026-11-06 13:06:13)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 13:06:13.
+Error: TLC threw an unexpected exception.
+This was probably caused by an error in the spec or model.
+See the User Output or TLC Console for clues to what happened.
+The exception was a java.lang.RuntimeException
+: Attempted to compute the value of an expression of form
+CHOOSE x \in S: P, but no element of S satisfied P.
+line 45, col 17 to line 45, col 49 of module LabChoose
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ pending = {}
+/\ owner = None
+
+Error: The error occurred when TLC was evaluating the nested
+expressions at the following positions:
+0. Line 43, column 5 to line 47, column 37 in LabChoose
+1. Line 43, column 8 to line 43, column 19 in LabChoose
+2. Line 45, column 8 to line 47, column 37 in LabChoose
+3. Line 46, column 11 to line 47, column 37 in LabChoose
+4. Line 46, column 14 to line 46, column 23 in LabChoose
+5. Line 46, column 23 to line 46, column 23 in LabChoose
+6. Line 45, column 17 to line 45, column 49 in LabChoose
+
+
+7 states generated, 7 distinct states found, 5 states left on queue.
+Finished in 00s at (2026-11-06 13:06:13)

@@ -1,0 +1,99 @@
+{
+  "model_id": "MCTwoPhase",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "MCTwoPhase-m1",
+      "model_id": "MCTwoPhase",
+      "operator": "drop-guard",
+      "module": "Alternate",
+      "file": "Alternate.tla",
+      "description": "replace a guard conjunct of Next with TRUE",
+      "line": 20,
+      "original_snippet": "XAct(v, x, x')",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 5,
+          "distinct": 4,
+          "seconds": 1.415,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCTwoPhase-m2",
+      "model_id": "MCTwoPhase",
+      "operator": "drop-guard",
+      "module": "Alternate",
+      "file": "Alternate.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 22,
+      "original_snippet": "[][Next]_<<v,x>>",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 5,
+          "distinct": 4,
+          "seconds": 1.396,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCTwoPhase-m3",
+      "model_id": "MCTwoPhase",
+      "operator": "drop-guard",
+      "module": "TwoPhase",
+      "file": "TwoPhase.tla",
+      "description": "replace a guard conjunct of ConsumerStep with TRUE",
+      "line": 37,
+      "original_snippet": "/\\ p # c",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 7,
+          "distinct": 4,
+          "seconds": 1.346,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCTwoPhase-m4",
+      "model_id": "MCTwoPhase",
+      "operator": "drop-guard",
+      "module": "Alternate",
+      "file": "Alternate.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 22,
+      "original_snippet": "Init",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 5,
+          "distinct": 4,
+          "seconds": 1.492,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

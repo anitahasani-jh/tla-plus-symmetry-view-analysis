@@ -1,0 +1,27 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 0 and seed -5651211913285424819 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TwoPhase\TwoPhase\symmetry\TwoPhase_SymView.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TwoPhase\TwoPhase\symmetry\TwoPhase.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TwoPhase\TwoPhase\symmetry\TCommit.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Semantic processing of module TCommit
+Semantic processing of module TwoPhase
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module TwoPhase_SymView
+Starting... (2026-11-06 12:50:43)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:50:44.
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 1.0E-15
+318 states generated, 80 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 11.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 4 and the 95th percentile is 3).
+Finished in 01s at (2026-11-06 12:50:44)

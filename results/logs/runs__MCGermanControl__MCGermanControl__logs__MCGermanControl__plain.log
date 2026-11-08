@@ -1,0 +1,115 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 101 and seed -7687387122328380960 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCGermanControl\MCGermanControl\plain__m_MCGermanControl-m2\MCGermanControl_SymView.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCGermanControl\MCGermanControl\plain__m_MCGermanControl-m2\MCGermanControl.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCGermanControl\MCGermanControl\plain__m_MCGermanControl-m2\GermanControl.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCGermanControl\MCGermanControl\plain__m_MCGermanControl-m2\GermanCMPWithMutex.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Semantic processing of module GermanControl
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module GermanCMPWithMutex
+Semantic processing of module MCGermanControl
+Semantic processing of module MCGermanControl_SymView
+Starting... (2026-11-06 12:41:59)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:42:00.
+Error: Action property line 157, col 17 to line 157, col 29 of module GermanCMPWithMutex is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ chan1 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ chan2 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ chan3 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ shrSet = {}
+/\ curPtr = noNode
+/\ cache = (n1 :> "I" @@ n2 :> "I")
+/\ exGntd = FALSE
+/\ invSet = {}
+/\ curCmd = "Empty"
+
+State 2: <SendReq line 50, col 5 to line 54, col 80 of module GermanControl>
+/\ chan1 = (n1 :> "ReqS" @@ n2 :> "Empty")
+/\ chan2 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ chan3 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ shrSet = {}
+/\ curPtr = noNode
+/\ cache = (n1 :> "I" @@ n2 :> "I")
+/\ exGntd = FALSE
+/\ invSet = {}
+/\ curCmd = "Empty"
+
+State 3: <SendReq line 50, col 5 to line 54, col 80 of module GermanControl>
+/\ chan1 = (n1 :> "ReqS" @@ n2 :> "ReqE")
+/\ chan2 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ chan3 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ shrSet = {}
+/\ curPtr = noNode
+/\ cache = (n1 :> "I" @@ n2 :> "I")
+/\ exGntd = FALSE
+/\ invSet = {}
+/\ curCmd = "Empty"
+
+State 4: <RecvReq line 57, col 5 to line 63, col 56 of module GermanControl>
+/\ chan1 = (n1 :> "ReqS" @@ n2 :> "Empty")
+/\ chan2 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ chan3 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ shrSet = {}
+/\ curPtr = n2
+/\ cache = (n1 :> "I" @@ n2 :> "I")
+/\ exGntd = FALSE
+/\ invSet = {}
+/\ curCmd = "ReqE"
+
+State 5: <SendGnt line 90, col 5 to line 100, col 48 of module GermanControl>
+/\ chan1 = (n1 :> "ReqS" @@ n2 :> "Empty")
+/\ chan2 = (n1 :> "Empty" @@ n2 :> "GntE")
+/\ chan3 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ shrSet = {n2}
+/\ curPtr = noNode
+/\ cache = (n1 :> "I" @@ n2 :> "I")
+/\ exGntd = TRUE
+/\ invSet = {}
+/\ curCmd = "Empty"
+
+State 6: <RecvReq line 57, col 5 to line 63, col 56 of module GermanControl>
+/\ chan1 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ chan2 = (n1 :> "Empty" @@ n2 :> "GntE")
+/\ chan3 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ shrSet = {n2}
+/\ curPtr = n1
+/\ cache = (n1 :> "I" @@ n2 :> "I")
+/\ exGntd = TRUE
+/\ invSet = {n2}
+/\ curCmd = "ReqS"
+
+State 7: <RecvGnt line 103, col 5 to line 106, col 73 of module GermanControl>
+/\ chan1 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ chan2 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ chan3 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ shrSet = {n2}
+/\ curPtr = n1
+/\ cache = (n1 :> "I" @@ n2 :> "E")
+/\ exGntd = TRUE
+/\ invSet = {n2}
+/\ curCmd = "ReqS"
+
+State 8: <SendInv line 66, col 5 to line 71, col 72 of module GermanControl>
+/\ chan1 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ chan2 = (n1 :> "Empty" @@ n2 :> "Inv")
+/\ chan3 = (n1 :> "Empty" @@ n2 :> "Empty")
+/\ shrSet = {n2}
+/\ curPtr = n1
+/\ cache = (n1 :> "I" @@ n2 :> "E")
+/\ exGntd = TRUE
+/\ invSet = {}
+/\ curCmd = "ReqS"
+
+500 states generated, 288 distinct states found, 128 states left on queue.
+The depth of the complete state graph search is 9.
+The average outdegree of the complete state graph is 2 (minimum is 0, the maximum 5 and the 95th percentile is 3).
+Finished in 00s at (2026-11-06 12:42:00)

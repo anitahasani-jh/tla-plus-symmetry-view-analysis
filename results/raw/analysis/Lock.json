@@ -1,0 +1,195 @@
+{
+  "model": {
+    "model_id": "Lock",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars",
+    "module": "Lock",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars\\Lock.cfg",
+    "family": "auxiliary-variables",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars",
+    "module_name": "Lock",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars\\Lock.cfg",
+    "modules": [
+      "Lock"
+    ],
+    "module_files": {
+      "Lock": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars\\Lock.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "Integers",
+      "TLAPS"
+    ],
+    "constants": {},
+    "variables": [
+      "pc",
+      "lock"
+    ],
+    "instances": [],
+    "opdefs": 13,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars\\Lock.tla",
+      "module": "Lock",
+      "bad_tokens": 0,
+      "unknown_nodes": 44,
+      "proof_tokens_skipped": 67,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 635,
+      "cov_covered_tokens": 635,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 44,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars\\Lock.cfg",
+      "constants": {},
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "Spec",
+      "invariants": [
+        "TypeOK",
+        "LockInv"
+      ],
+      "properties": [],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "Lock",
+    "constants": [],
+    "variables": [
+      "pc",
+      "lock"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 13,
+    "writes": 10,
+    "reads": 75,
+    "invariants": [
+      "TypeOK",
+      "LockInv"
+    ],
+    "properties": [],
+    "liveness": false,
+    "liveness_reasons": [],
+    "unresolved_names": {
+      "self": 13,
+      "i": 5,
+      "j": 4,
+      "p": 3
+    },
+    "instance_aliases": {},
+    "notes": [
+      "stutter subscript ignored in Spec"
+    ]
+  },
+  "symmetry": {
+    "candidates": [],
+    "selected": [],
+    "notes": [
+      "no constant evaluates to a set of model values, so this model has no symmetry set to propose"
+    ]
+  },
+  "history": {
+    "retained": [
+      "pc",
+      "lock"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible"
+    ],
+    "evidence": {
+      "pc": {
+        "name": "pc",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 4,
+        "read_in_guard": 6,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 5,
+        "influences": [
+          "pc",
+          "pc",
+          "pc",
+          "pc"
+        ]
+      },
+      "lock": {
+        "name": "lock",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant LockInv",
+          "read by checked property/invariant LockInv",
+          "read by checked property/invariant LockInv",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 2,
+        "read_in_init": 0,
+        "read_in_property": 4,
+        "writes": 5,
+        "influences": [
+          "lock",
+          "lock"
+        ]
+      }
+    },
+    "liveness_warning": false,
+    "liveness_reasons": [],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "SPECIFICATION Spec\nINVARIANTS TypeOK LockInv\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "ok",
+    "seconds": 1.516,
+    "constants": {},
+    "error_lines": []
+  },
+  "analysis_seconds": 1.572,
+  "notes": [
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}

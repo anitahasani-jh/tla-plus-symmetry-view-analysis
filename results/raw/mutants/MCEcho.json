@@ -1,0 +1,99 @@
+{
+  "model_id": "MCEcho",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "MCEcho-m1",
+      "model_id": "MCEcho",
+      "operator": "drop-guard",
+      "module": "Echo",
+      "file": "Echo.tla",
+      "description": "replace a guard conjunct of n1 with TRUE",
+      "line": 123,
+      "original_snippet": "IF msg.kind = \"c\"\n                                    THEN /\\ children' = [children EXCEPT ![self] = children[self] \\cup {msg.sndr}]\n                                    ELSE /\\ TRUE\n                  ",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 11,
+          "distinct": 8,
+          "seconds": 2.027,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCEcho-m2",
+      "model_id": "MCEcho",
+      "operator": "flip-literal",
+      "module": "Echo",
+      "file": "Echo.tla",
+      "description": "flip TRUE in n0",
+      "line": 106,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": false,
+      "baseline_verdict": "deadlock",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "deadlock",
+          "states": 2,
+          "distinct": 2,
+          "seconds": 1.624,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCEcho-m3",
+      "model_id": "MCEcho",
+      "operator": "weaken-comparison",
+      "module": "Echo",
+      "file": "Echo.tla",
+      "description": "< -> <= in n1",
+      "line": 112,
+      "original_snippet": "<",
+      "mutated_snippet": "<=",
+      "detected": false,
+      "baseline_verdict": "deadlock",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "deadlock",
+          "states": 33,
+          "distinct": 24,
+          "seconds": 1.627,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCEcho-m4",
+      "model_id": "MCEcho",
+      "operator": "drop-guard",
+      "module": "Echo",
+      "file": "Echo.tla",
+      "description": "replace a guard conjunct of n1 with TRUE",
+      "line": 112,
+      "original_snippet": "IF rcvd[self] < Cardinality(nbrs[self])\n                  THEN /\\ \\E msg \\in inbox[self]:\n                            LET net == receive(inbox, self, msg) IN\n                              /\\ rcvd' = [",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 7,
+          "distinct": 5,
+          "seconds": 1.768,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

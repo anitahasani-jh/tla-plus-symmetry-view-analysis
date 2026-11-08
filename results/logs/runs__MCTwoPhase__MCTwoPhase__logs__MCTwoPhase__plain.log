@@ -1,0 +1,31 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 117 and seed -8416014525521407846 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCTwoPhase\MCTwoPhase\plain__m_MCTwoPhase-m2\MCTwoPhase.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCTwoPhase\MCTwoPhase\plain__m_MCTwoPhase-m2\TwoPhase.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCTwoPhase\MCTwoPhase\plain__m_MCTwoPhase-m2\TLAPS.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCTwoPhase\MCTwoPhase\plain__m_MCTwoPhase-m2\Alternate.tla
+Semantic processing of module Naturals
+Semantic processing of module TLAPS
+Semantic processing of module Alternate
+Semantic processing of module TwoPhase
+Semantic processing of module MCTwoPhase
+Starting... (2026-11-06 12:50:36)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:50:36.
+Error: Successor state is not completely specified by the next-state action. The following variable is not assigned: x.
+
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ c = 0
+/\ p = 0
+/\ x = 0
+
+State 2: <Action line 5, col 1 to line 5, col 17 of module MCTwoPhase>
+/\ c = 0
+/\ p = 1
+/\ x = null
+
+2 states generated, 1 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 1.
+Finished in 00s at (2026-11-06 12:50:36)

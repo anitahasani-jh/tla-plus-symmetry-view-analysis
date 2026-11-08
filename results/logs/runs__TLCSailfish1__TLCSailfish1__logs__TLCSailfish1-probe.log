@@ -1,0 +1,32 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 8 and seed 6034426011833820834 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\probe\TLCSailfish1_SVProbe.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\probe\TLCSailfish1.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\probe\Sailfish.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\probe\BlockDag.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\probe\Utils.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\probe\Digraph.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module Utils
+Semantic processing of module Digraph
+Semantic processing of module TLC
+Semantic processing of module BlockDag
+Semantic processing of module Sailfish
+Semantic processing of module TLCSailfish1
+Semantic processing of module TLCSailfish1_SVProbe
+Starting... (2026-11-06 12:47:42)
+<<"#SVCONST", "n1", n1>>
+<<"#SVCONST", "n2", n2>>
+<<"#SVCONST", "n3", n3>>
+<<"#SVCONST", "N", {n1, n2, n3}>>
+<<"#SVCONST", "F", {n1}>>
+<<"#SVCONST", "R", 1..5>>
+<<"#SVCONST", "GST", 3>>

@@ -1,0 +1,22 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 111 and seed -7809716004188273620 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\FastPaxos\FastPaxos.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\FastPaxos\Paxos.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Integers
+Semantic processing of module Paxos
+Semantic processing of module FastPaxos
+Starting... (2026-11-06 12:26:12)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:26:13.
+Progress(9) at 2026-11-06 12:26:16: 86,848 states generated (86,848 s/min), 26,078 distinct states found (26,078 ds/min), 17,462 states left on queue.
+
+--- killed after 40s ---

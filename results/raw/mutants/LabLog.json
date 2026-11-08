@@ -1,0 +1,103 @@
+{
+  "model_id": "LabLog",
+  "seed": 20261106,
+  "generated": 3,
+  "mutants": [
+    {
+      "mutant_id": "LabLog-m1",
+      "model_id": "LabLog",
+      "operator": "drop-guard",
+      "module": "LabLog",
+      "file": "LabLog.tla",
+      "description": "drop a guard conjunct of Grant",
+      "line": 56,
+      "original_snippet": "/\\ owner = None",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 1138,
+          "distinct": 379,
+          "seconds": 1.505,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "ok",
+          "states": 205,
+          "distinct": 68,
+          "seconds": 1.518,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "LabLog-m2",
+      "model_id": "LabLog",
+      "operator": "weaken-comparison",
+      "module": "LabLog",
+      "file": "LabLog.tla",
+      "description": "> -> >= in TruncLog",
+      "line": 34,
+      "original_snippet": ">",
+      "mutated_snippet": ">=",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 694,
+          "distinct": 289,
+          "seconds": 1.356,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "ok",
+          "states": 130,
+          "distinct": 53,
+          "seconds": 1.419,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "LabLog-m3",
+      "model_id": "LabLog",
+      "operator": "drop-guard",
+      "module": "LabLog",
+      "file": "LabLog.tla",
+      "description": "drop a guard conjunct of Request",
+      "line": 50,
+      "original_snippet": "/\\ owner # p",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "NoPendingOwner"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 25,
+          "distinct": 25,
+          "seconds": 1.392,
+          "violated": [
+            "NoPendingOwner"
+          ]
+        },
+        "symmetry": {
+          "verdict": "violation",
+          "states": 12,
+          "distinct": 9,
+          "seconds": 1.401,
+          "violated": [
+            "NoPendingOwner"
+          ]
+        }
+      }
+    }
+  ]
+}

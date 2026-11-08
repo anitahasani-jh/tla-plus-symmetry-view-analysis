@@ -1,0 +1,554 @@
+{
+  "summary": {
+    "models": 28,
+    "errors": [],
+    "models_without_properties": [],
+    "models_with_vacuous_literal": [],
+    "models_with_unobserving_property": [
+      "AllocatorRefinement",
+      "EWD840"
+    ],
+    "models_nondeterministic": [],
+    "repeat_pairs_checked": 28,
+    "wrapper_transparency_failures": [],
+    "models_with_empty_run": [],
+    "verdict_counter": {
+      "ok": 66,
+      "violation": 2
+    }
+  },
+  "models": [
+    {
+      "model_id": "AllocatorImplementation",
+      "family": "allocation",
+      "checked_properties": 4,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "AllocatorRefinement",
+      "family": "allocation",
+      "checked_properties": 1,
+      "vacuous_literals": [],
+      "properties_without_state": [
+        "SimpleAllocator"
+      ],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "Lock",
+      "family": "auxiliary-variables",
+      "checked_properties": 2,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "Peterson",
+      "family": "auxiliary-variables",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "MCFlashWithMutex",
+      "family": "cache-coherence",
+      "checked_properties": 9,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "manual",
+        "plain",
+        "symmetry"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "manual": "ok",
+        "plain": "ok",
+        "symmetry": "ok"
+      }
+    },
+    {
+      "model_id": "MCGermanControl",
+      "family": "cache-coherence",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "manual",
+        "plain",
+        "symmetry"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "manual": "ok",
+        "plain": "ok",
+        "symmetry": "ok"
+      }
+    },
+    {
+      "model_id": "Consensus",
+      "family": "consensus",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "Paxos",
+      "family": "consensus",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "manual",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "manual": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "TLCSailfish1",
+      "family": "consensus",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "MC_spanning",
+      "family": "distributed-algorithm",
+      "checked_properties": 2,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "violation",
+        "plain": "violation"
+      }
+    },
+    {
+      "model_id": "clean",
+      "family": "distributed-algorithm",
+      "checked_properties": 4,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "Simple",
+      "family": "mutual-exclusion",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "SimpleRegular",
+      "family": "mutual-exclusion",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "MCChangRoberts",
+      "family": "ring-token",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "MCEcho",
+      "family": "ring-token",
+      "checked_properties": 2,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "Chameneos",
+      "family": "synchronisation",
+      "checked_properties": 2,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "EWD840",
+      "family": "termination-detection",
+      "checked_properties": 5,
+      "vacuous_literals": [],
+      "properties_without_state": [
+        "Inv"
+      ],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "SyncTerminationDetection",
+      "family": "termination-detection",
+      "checked_properties": 4,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "MCTwoPhase",
+      "family": "transaction-commit",
+      "checked_properties": 1,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "TwoPhase",
+      "family": "transaction-commit",
+      "checked_properties": 1,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain",
+        "symmetry"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok",
+        "symmetry": "ok"
+      }
+    },
+    {
+      "model_id": "LabLock",
+      "family": "lab",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain",
+        "symmetry"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok",
+        "symmetry": "ok"
+      }
+    },
+    {
+      "model_id": "LabLog",
+      "family": "lab",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain",
+        "symmetry"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok",
+        "symmetry": "ok"
+      }
+    },
+    {
+      "model_id": "LabLogNoType",
+      "family": "lab",
+      "checked_properties": 2,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "both",
+        "direct",
+        "plain",
+        "symmetry",
+        "view"
+      ],
+      "verdicts": {
+        "both": "ok",
+        "direct": "ok",
+        "plain": "ok",
+        "symmetry": "ok",
+        "view": "ok"
+      }
+    },
+    {
+      "model_id": "LabLeader",
+      "family": "lab",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "LabOrdered",
+      "family": "lab",
+      "checked_properties": 5,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "LabChoose",
+      "family": "lab",
+      "checked_properties": 3,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "LabLive",
+      "family": "lab",
+      "checked_properties": 5,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok"
+      }
+    },
+    {
+      "model_id": "LabAuxRead",
+      "family": "lab",
+      "checked_properties": 4,
+      "vacuous_literals": [],
+      "properties_without_state": [],
+      "nondeterministic_arms": [],
+      "empty_arms": [],
+      "wrapper_transparent": true,
+      "arms": [
+        "direct",
+        "plain",
+        "symmetry"
+      ],
+      "verdicts": {
+        "direct": "ok",
+        "plain": "ok",
+        "symmetry": "ok"
+      }
+    }
+  ]
+}

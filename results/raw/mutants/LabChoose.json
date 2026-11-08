@@ -1,0 +1,76 @@
+{
+  "model_id": "LabChoose",
+  "seed": 20261106,
+  "generated": 3,
+  "mutants": [
+    {
+      "mutant_id": "LabChoose-m1",
+      "model_id": "LabChoose",
+      "operator": "drop-guard",
+      "module": "LabChoose",
+      "file": "LabChoose.tla",
+      "description": "drop a guard conjunct of Request",
+      "line": 35,
+      "original_snippet": "/\\ p \\notin pending",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 68,
+          "distinct": 20,
+          "seconds": 1.277,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "LabChoose-m2",
+      "model_id": "LabChoose",
+      "operator": "drop-guard",
+      "module": "LabChoose",
+      "file": "LabChoose.tla",
+      "description": "drop a guard conjunct of Grant",
+      "line": 43,
+      "original_snippet": "/\\ owner = None",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 53,
+          "distinct": 20,
+          "seconds": 1.436,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "LabChoose-m3",
+      "model_id": "LabChoose",
+      "operator": "drop-guard",
+      "module": "LabChoose",
+      "file": "LabChoose.tla",
+      "description": "drop a guard conjunct of Grant",
+      "line": 44,
+      "original_snippet": "/\\ pending # {}",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "crash",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "crash",
+          "states": 7,
+          "distinct": 7,
+          "seconds": 1.645,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

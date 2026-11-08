@@ -1,0 +1,39 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 84 and seed -9130959788410645790 with 1 worker on 4 cores with 910MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\ctx_MCPaxos\MCPaxos_SVProbe.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\ctx_MCPaxos\MCPaxos.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\ctx_MCPaxos\Paxos.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\ctx_MCPaxos\Voting.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\ctx_MCPaxos\TLAPS.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\ctx_MCPaxos\Consensus.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\ctx_MCPaxos\FiniteSetTheorems.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module TLAPS
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module FiniteSetTheorems
+Semantic processing of module Consensus
+Semantic processing of module Voting
+Semantic processing of module Paxos
+Semantic processing of module MCPaxos
+Semantic processing of module MCPaxos_SVProbe
+Starting... (2026-11-06 01:43:18)
+Warning: The sets Acceptor, and Value have been defined to be a symmetry set but contain less than two elements.
+(Use the -nowarning option to disable this warning.)
+<<"#SVCONST", "a1", a1>>
+<<"#SVCONST", "a2", a2>>
+<<"#SVCONST", "a3", a3>>
+<<"#SVCONST", "v1", v1>>
+<<"#SVCONST", "v2", v2>>
+<<"#SVCONST", "Value", {v1}>>
+<<"#SVCONST", "Acceptor", {a1}>>
+<<"#SVCONST", "Quorum", {{a1}}>>
+<<"#SVCONST", "Ballot", 0..1>>
+<<"#SVCONST", "None", None>>

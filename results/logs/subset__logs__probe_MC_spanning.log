@@ -1,0 +1,34 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 56 and seed -6836882788765402337 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MC_spanning\MC_spanning.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MC_spanning\spanning.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module spanning
+Semantic processing of module MC_spanning
+Starting... (2026-11-06 12:33:22)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:33:22.
+Error: Invariant TypeOK is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ prnt = <<NoPrnt, NoPrnt, NoPrnt>>
+/\ rpt = <<FALSE, FALSE, FALSE>>
+/\ msg = {}
+
+State 2: <Next line 25, col 27 to line 28, col 62 of module spanning>
+/\ prnt = <<NoPrnt, NoPrnt, NoPrnt>>
+/\ rpt = <<FALSE, FALSE, FALSE>>
+/\ msg = {<<1, 2>>}
+
+State 3: <Next line 25, col 27 to line 28, col 62 of module spanning>
+/\ prnt = <<NoPrnt, 1, NoPrnt>>
+/\ rpt = <<FALSE, FALSE, FALSE>>
+/\ msg = {<<1, 2>>}
+
+23 states generated, 6 distinct states found, 1 states left on queue.
+The depth of the complete state graph search is 3.
+The average outdegree of the complete state graph is 2 (minimum is 2, the maximum 2 and the 95th percentile is 2).
+Finished in 00s at (2026-11-06 12:33:22)

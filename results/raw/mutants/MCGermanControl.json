@@ -1,0 +1,127 @@
+{
+  "model_id": "MCGermanControl",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "MCGermanControl-m1",
+      "model_id": "MCGermanControl",
+      "operator": "drop-guard",
+      "module": "GermanControl",
+      "file": "GermanControl.tla",
+      "description": "replace a guard conjunct of SendReq with TRUE",
+      "line": 50,
+      "original_snippet": "/\\ chan1[i] = \"Empty\"",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 8,
+          "distinct": 5,
+          "seconds": 1.497,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "error",
+          "states": 7,
+          "distinct": 3,
+          "seconds": 1.566,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCGermanControl-m2",
+      "model_id": "MCGermanControl",
+      "operator": "flip-literal",
+      "module": "GermanCMPWithMutex",
+      "file": "GermanCMPWithMutex.tla",
+      "description": "flip TRUE in ABS_RecvInvAck",
+      "line": 128,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 3865,
+          "distinct": 1461,
+          "seconds": 1.645,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "ok",
+          "states": 1946,
+          "distinct": 735,
+          "seconds": 1.602,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCGermanControl-m3",
+      "model_id": "MCGermanControl",
+      "operator": "drop-guard",
+      "module": "GermanControl",
+      "file": "GermanControl.tla",
+      "description": "replace a guard conjunct of RecvInvAck with TRUE",
+      "line": 86,
+      "original_snippet": "exGntd",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 1031,
+          "distinct": 563,
+          "seconds": 1.616,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "error",
+          "states": 605,
+          "distinct": 320,
+          "seconds": 1.594,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCGermanControl-m4",
+      "model_id": "MCGermanControl",
+      "operator": "flip-literal",
+      "module": "GermanControl",
+      "file": "GermanControl.tla",
+      "description": "flip FALSE in SendGnt",
+      "line": 93,
+      "original_snippet": "FALSE",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "deadlock",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "deadlock",
+          "states": 59,
+          "distinct": 43,
+          "seconds": 1.65,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "deadlock",
+          "states": 39,
+          "distinct": 24,
+          "seconds": 1.67,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

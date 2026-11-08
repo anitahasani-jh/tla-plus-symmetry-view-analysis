@@ -1,0 +1,66 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 40 and seed -1267003985911545905 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCEWD687a\MCEWD687a.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCEWD687a\EWD687a.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCEWD687a\Graphs.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCEWD687a\SequencesExt.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCEWD687a\Relation.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCEWD687a\FiniteSetsExt.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCEWD687a\Folds.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCEWD687a\Functions.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Bags.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module Folds
+Semantic processing of module Functions
+Semantic processing of module FiniteSetsExt
+Semantic processing of module TLC
+Semantic processing of module Bags
+Semantic processing of module SequencesExt
+Semantic processing of module Relation
+Semantic processing of module Graphs
+Semantic processing of module EWD687a
+Semantic processing of module MCEWD687a
+Starting... (2026-11-06 12:33:17)
+Warning: Declaring state or action constraints during liveness checking is dangerous: Please read section 14.3.5 on page 247 of Specifying Systems (https://lamport.azurewebsites.net/tla/book.html) and optionally the discussion at https://discuss.tlapl.us/msg00994.html for more details.
+(Use the -nowarning option to disable this warning.)
+Implied-temporal checking--satisfiability problem has 1 branches.
+Computing initial states...
+Error: Attempted to enumerate { x \in S : p(x) } when S:
+Seq({Leader})
+is not enumerable
+While working on the initial state:
+/\ msgs = (<<Leader, P1>> :> 0 @@ <<P1, P2>> :> 0 @@ <<P2, P1>> :> 0 @@ <<P2, P3>> :> 0)
+/\ acks = (<<Leader, P1>> :> 0 @@ <<P1, P2>> :> 0 @@ <<P2, P1>> :> 0 @@ <<P2, P3>> :> 0)
+/\ active = (Leader :> TRUE @@ P1 :> FALSE @@ P2 :> FALSE @@ P3 :> FALSE)
+/\ rcvdUnacked = (<<Leader, P1>> :> 0 @@ <<P1, P2>> :> 0 @@ <<P2, P1>> :> 0 @@ <<P2, P3>> :> 0)
+/\ upEdge = (P1 :> <<>> @@ P2 :> <<>> @@ P3 :> <<>>)
+/\ sentUnacked = (<<Leader, P1>> :> 0 @@ <<P1, P2>> :> 0 @@ <<P2, P1>> :> 0 @@ <<P2, P3>> :> 0)
+
+Error: The error occurred when TLC was evaluating the nested
+expressions at the following positions:
+0. Line 282, column 9 to line 287, column 58 in EWD687a
+1. Line 282, column 12 to line 282, column 48 in EWD687a
+2. Line 283, column 12 to line 283, column 37 in EWD687a
+3. Line 284, column 12 to line 284, column 37 in EWD687a
+4. Line 285, column 12 to line 285, column 44 in EWD687a
+5. Line 286, column 12 to line 286, column 44 in EWD687a
+6. Line 287, column 12 to line 287, column 58 in EWD687a
+7. Line 421, column 5 to line 427, column 54 in EWD687a
+8. Line 425, column 8 to line 427, column 54 in EWD687a
+9. Line 425, column 11 to line 425, column 35 in EWD687a
+10. Line 100, column 3 to line 104, column 46 in Graphs
+11. Line 104, column 6 to line 104, column 46 in Graphs
+12. Line 104, column 24 to line 104, column 46 in Graphs
+13. Line 63, column 3 to line 63, column 50 in Graphs
+
+
+1 states generated, 1 distinct states found, 1 states left on queue.
+Finished in 01s at (2026-11-06 12:33:17)

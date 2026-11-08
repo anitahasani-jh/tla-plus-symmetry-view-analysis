@@ -1,0 +1,38 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 81 and seed -5733097277658704162 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCChangRoberts\MCChangRoberts\plain__m_MCChangRoberts-m2\MCChangRoberts.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCChangRoberts\MCChangRoberts\plain__m_MCChangRoberts-m2\ChangRoberts.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module ChangRoberts
+Semantic processing of module MCChangRoberts
+Starting... (2026-11-06 12:49:52)
+Implied-temporal checking--satisfiability problem has 1 branches.
+Computing initial states...
+Computed 2 initial states...
+Computed 4 initial states...
+Finished computing initial states: 8 distinct states generated at 2026-11-06 12:49:52.
+Progress(10) at 2026-11-06 12:49:52: 90 states generated, 56 distinct states found, 0 states left on queue.
+Checking temporal properties for the complete state space with 56 total distinct states at (2026-11-06 12:49:52)
+Error: Temporal properties were violated.
+
+Error: The following behavior constitutes a counter-example:
+
+State 1: <Initial predicate>
+/\ state = <<"lost", "lost", "cand">>
+/\ msgs = <<{}, {}, {}>>
+/\ initiator = <<FALSE, FALSE, TRUE>>
+/\ pc = <<"n0", "n0", "n0">>
+
+State 2: <Action line 7, col 1 to line 7, col 21 of module MCChangRoberts>
+/\ state = <<"lost", "lost", "cand">>
+/\ msgs = <<{3}, {}, {}>>
+/\ initiator = <<FALSE, FALSE, TRUE>>
+/\ pc = <<"n0", "n0", "n1">>
+
+State 3: Stuttering
+Finished checking temporal properties in 00s at 2026-11-06 12:49:52
+90 states generated, 56 distinct states found, 0 states left on queue.
+Finished in 00s at (2026-11-06 12:49:52)

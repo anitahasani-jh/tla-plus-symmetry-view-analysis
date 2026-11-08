@@ -1,0 +1,76 @@
+{
+  "model_id": "LabLive",
+  "seed": 20261106,
+  "generated": 3,
+  "mutants": [
+    {
+      "mutant_id": "LabLive-m1",
+      "model_id": "LabLive",
+      "operator": "drop-guard",
+      "module": "LabLive",
+      "file": "LabLive.tla",
+      "description": "drop a guard conjunct of Spec",
+      "line": 67,
+      "original_snippet": "Init /\\ [][Next]_vars /\\ WF_vars(Next)",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "parse-error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "parse-error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.463,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "LabLive-m2",
+      "model_id": "LabLive",
+      "operator": "drop-guard",
+      "module": "LabLive",
+      "file": "LabLive.tla",
+      "description": "drop a guard conjunct of Request",
+      "line": 43,
+      "original_snippet": "/\\ p \\notin pending",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 145,
+          "distinct": 54,
+          "seconds": 1.552,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "LabLive-m3",
+      "model_id": "LabLive",
+      "operator": "drop-guard",
+      "module": "LabLive",
+      "file": "LabLive.tla",
+      "description": "drop a guard conjunct of Request",
+      "line": 42,
+      "original_snippet": "/\\ p \\notin done",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 385,
+          "distinct": 160,
+          "seconds": 1.727,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

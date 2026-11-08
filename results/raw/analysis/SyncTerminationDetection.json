@@ -1,0 +1,222 @@
+{
+  "model": {
+    "model_id": "SyncTerminationDetection",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840",
+    "module": "SyncTerminationDetection",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840\\SyncTerminationDetection.cfg",
+    "family": "termination-detection",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840",
+    "module_name": "SyncTerminationDetection",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840\\SyncTerminationDetection.cfg",
+    "modules": [
+      "SyncTerminationDetection"
+    ],
+    "module_files": {
+      "SyncTerminationDetection": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840\\SyncTerminationDetection.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "Naturals"
+    ],
+    "constants": {
+      "N": {
+        "arity": 0,
+        "declared_in": "SyncTerminationDetection",
+        "assignment_form": "=",
+        "assignment_text": "7",
+        "value_text": "7",
+        "value_kind": "int",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "active",
+      "terminationDetected"
+    ],
+    "instances": [],
+    "opdefs": 14,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840\\SyncTerminationDetection.tla",
+      "module": "SyncTerminationDetection",
+      "bad_tokens": 0,
+      "unknown_nodes": 0,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 217,
+      "cov_covered_tokens": 217,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 0,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840\\SyncTerminationDetection.cfg",
+      "constants": {
+        "N": {
+          "form": "=",
+          "value_text": "7",
+          "line": 2
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "Spec",
+      "invariants": [
+        "TypeOK",
+        "TDCorrect"
+      ],
+      "properties": [
+        "Quiescence",
+        "Liveness"
+      ],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "SyncTerminationDetection",
+    "constants": [
+      "N"
+    ],
+    "variables": [
+      "active",
+      "terminationDetected"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 14,
+    "writes": 8,
+    "reads": 65,
+    "invariants": [
+      "TypeOK",
+      "TDCorrect"
+    ],
+    "properties": [
+      "Quiescence",
+      "Liveness"
+    ],
+    "liveness": true,
+    "liveness_reasons": [
+      "Liveness contains the leads-to operator ~>",
+      "Fair assumes fairness (WF)"
+    ],
+    "unresolved_names": {
+      "i": 6,
+      "j": 5,
+      "n": 1
+    },
+    "instance_aliases": {},
+    "notes": [
+      "stutter subscript ignored in Spec"
+    ]
+  },
+  "symmetry": {
+    "candidates": [],
+    "selected": [],
+    "notes": [
+      "no constant evaluates to a set of model values, so this model has no symmetry set to propose"
+    ]
+  },
+  "history": {
+    "retained": [
+      "active",
+      "terminationDetected"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible",
+      "note: a temporal property is checked; the dropped variables are provably without influence, so the projection is a bisimulation, but this combination is reported for manual review"
+    ],
+    "evidence": {
+      "active": {
+        "name": "active",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 5,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 4,
+        "influences": [
+          "active",
+          "active"
+        ]
+      },
+      "terminationDetected": {
+        "name": "terminationDetected",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant TDCorrect",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 1,
+        "read_in_guard": 1,
+        "read_in_init": 0,
+        "read_in_property": 3,
+        "writes": 4,
+        "influences": [
+          "terminationDetected"
+        ]
+      }
+    },
+    "liveness_warning": true,
+    "liveness_reasons": [
+      "Liveness contains the leads-to operator ~>",
+      "Fair assumes fairness (WF)"
+    ],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "CONSTANTS\n    N = 7\n\nSPECIFICATION \n    Spec\n\nINVARIANTS\n    TypeOK\n    TDCorrect\n\nPROPERTIES\n    Quiescence\n    Liveness\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.905,
+    "constants": {
+      "N": "7"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 0.963,
+  "notes": [
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}

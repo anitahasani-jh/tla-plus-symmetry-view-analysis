@@ -1,0 +1,30 @@
+| model | candidates | accepted | rejected | view | dropped | liveness warning | rejection reasons |
+|---|---|---|---|---|---|---|---|
+| AllocatorImplementation | 2 | 2 | 0 | none | 0 | yes | - |
+| AllocatorRefinement | 2 | 2 | 0 | none | 0 | yes | - |
+| Lock | 0 | 0 | 0 | none | 0 | no | - |
+| Peterson | 0 | 0 | 0 | none | 0 | no | - |
+| MCFlashWithMutex | 2 | 2 | 0 | none | 0 | no | - |
+| MCGermanControl | 1 | 1 | 0 | none | 0 | no | - |
+| Consensus | 1 | 1 | 0 | none | 0 | yes | - |
+| Paxos | 2 | 0 | 2 | none | 0 | yes | liveness:2, value-not-interpreted:2 |
+| TLCSailfish1 | 2 | 0 | 2 | none | 0 | no | distinguished-element:4, non-equivariant-operator:2, other:6, trivial-group:1 |
+| MC_spanning | 0 | 0 | 0 | none | 0 | yes | - |
+| clean | 0 | 0 | 0 | none | 0 | no | - |
+| Simple | 0 | 0 | 0 | none | 0 | no | - |
+| SimpleRegular | 0 | 0 | 0 | none | 0 | no | - |
+| MCChangRoberts | 0 | 0 | 0 | none | 0 | yes | - |
+| MCEcho | 0 | 0 | 0 | none | 0 | no | - |
+| Chameneos | 0 | 0 | 0 | none | 0 | no | - |
+| EWD840 | 0 | 0 | 0 | none | 0 | yes | - |
+| SyncTerminationDetection | 0 | 0 | 0 | none | 0 | yes | - |
+| MCTwoPhase | 0 | 0 | 0 | none | 0 | no | - |
+| TwoPhase | 1 | 1 | 0 | none | 0 | no | - |
+| LabLock | 1 | 1 | 0 | none | 0 | no | - |
+| LabLog | 1 | 1 | 0 | none | 0 | no | - |
+| LabLogNoType | 1 | 1 | 0 | sound | 1 | no | - |
+| LabLeader | 1 | 0 | 1 | none | 0 | no | distinguished-element:1 |
+| LabOrdered | 0 | 0 | 0 | none | 0 | no | - |
+| LabChoose | 1 | 0 | 1 | none | 0 | no | non-equivariant-operator:1 |
+| LabLive | 1 | 1 | 0 | none | 0 | yes | - |
+| LabAuxRead | 1 | 1 | 0 | none | 0 | no | - |

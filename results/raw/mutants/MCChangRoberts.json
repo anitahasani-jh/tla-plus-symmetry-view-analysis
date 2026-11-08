@@ -1,0 +1,76 @@
+{
+  "model_id": "MCChangRoberts",
+  "seed": 20261106,
+  "generated": 3,
+  "mutants": [
+    {
+      "mutant_id": "MCChangRoberts-m2",
+      "model_id": "MCChangRoberts",
+      "operator": "flip-literal",
+      "module": "ChangRoberts",
+      "file": "ChangRoberts.tla",
+      "description": "flip TRUE in n1",
+      "line": 99,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 166,
+          "distinct": 107,
+          "seconds": 1.52,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCChangRoberts-m3",
+      "model_id": "MCChangRoberts",
+      "operator": "weaken-comparison",
+      "module": "ChangRoberts",
+      "file": "ChangRoberts.tla",
+      "description": "< -> <= in n1",
+      "line": 93,
+      "original_snippet": "<",
+      "mutated_snippet": "<=",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 407,
+          "distinct": 213,
+          "seconds": 1.535,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "MCChangRoberts-m4",
+      "model_id": "MCChangRoberts",
+      "operator": "drop-guard",
+      "module": "ChangRoberts",
+      "file": "ChangRoberts.tla",
+      "description": "replace a guard conjunct of n1 with TRUE",
+      "line": 97,
+      "original_snippet": "IF id = Id[self]\n                                            THEN /\\ state' = [state EXCEPT ![self] = \"won\"]\n                                            ELSE /\\ TRUE\n                                  ",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 90,
+          "distinct": 59,
+          "seconds": 1.457,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

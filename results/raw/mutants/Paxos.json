@@ -1,0 +1,99 @@
+{
+  "model_id": "Paxos",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "Paxos-m1",
+      "model_id": "Paxos",
+      "operator": "drop-guard",
+      "module": "Paxos",
+      "file": "Paxos.tla",
+      "description": "replace a guard conjunct of PaxosAccepted with TRUE",
+      "line": 144,
+      "original_snippet": "\\E a \\in Replicas, m \\in p2aMessages :\n        /\\ m.value \\in Values\n        /\\ maxBallot[a] <= m.ballot\n        /\\ maxBallot' = [maxBallot EXCEPT ![a] = m.ballot]\n        /\\ maxVBallot' = [maxVBallot",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 11,
+          "distinct": 8,
+          "seconds": 1.508,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Paxos-m2",
+      "model_id": "Paxos",
+      "operator": "flip-literal",
+      "module": "Paxos",
+      "file": "Paxos.tla",
+      "description": "flip FALSE in PaxosLiveness",
+      "line": 214,
+      "original_snippet": "FALSE",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 491173,
+          "distinct": 48514,
+          "seconds": 7.696,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Paxos-m3",
+      "model_id": "Paxos",
+      "operator": "weaken-comparison",
+      "module": "Paxos",
+      "file": "Paxos.tla",
+      "description": "<= -> < in PaxosAccepted",
+      "line": 146,
+      "original_snippet": "<=",
+      "mutated_snippet": "<",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 8545,
+          "distinct": 1792,
+          "seconds": 2.065,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Paxos-m4",
+      "model_id": "Paxos",
+      "operator": "drop-guard",
+      "module": "Paxos",
+      "file": "Paxos.tla",
+      "description": "replace a guard conjunct of PaxosAccepted with TRUE",
+      "line": 145,
+      "original_snippet": "/\\ m.value \\in Values",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 491173,
+          "distinct": 48514,
+          "seconds": 7.804,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

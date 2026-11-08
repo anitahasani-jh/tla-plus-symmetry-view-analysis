@@ -1,0 +1,78 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 55 and seed 5102265458884498157 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\Chameneos\Chameneos\plain__m_Chameneos-m2\Chameneos.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Chameneos
+Starting... (2026-11-06 12:50:10)
+Computing initial states...
+Computed 2 initial states...
+Computed 4 initial states...
+Computed 8 initial states...
+Computed 16 initial states...
+Computed 32 initial states...
+Computed 64 initial states...
+Finished computing initial states: 81 distinct states generated at 2026-11-06 12:50:10.
+Error: Invariant TypeOK is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ chameneoses = <<<<"blue", 0>>, <<"blue", 0>>, <<"blue", 0>>, <<"red", 0>>>>
+/\ meetingPlace = MeetingPlaceEmpty
+/\ numMeetings = 0
+
+State 2: <Next line 67, col 9 to line 67, col 79 of module Chameneos>
+/\ chameneoses = <<<<"blue", 0>>, <<"blue", 0>>, <<"blue", 0>>, <<"red", 0>>>>
+/\ meetingPlace = 1
+/\ numMeetings = 0
+
+State 3: <Next line 67, col 9 to line 67, col 79 of module Chameneos>
+/\ chameneoses = <<<<"blue", 1>>, <<"blue", 1>>, <<"blue", 0>>, <<"red", 0>>>>
+/\ meetingPlace = MeetingPlaceEmpty
+/\ numMeetings = 1
+
+State 4: <Next line 67, col 9 to line 67, col 79 of module Chameneos>
+/\ chameneoses = <<<<"blue", 1>>, <<"blue", 1>>, <<"blue", 0>>, <<"red", 0>>>>
+/\ meetingPlace = 1
+/\ numMeetings = 1
+
+State 5: <Next line 67, col 9 to line 67, col 79 of module Chameneos>
+/\ chameneoses = <<<<"blue", 2>>, <<"blue", 1>>, <<"blue", 1>>, <<"red", 0>>>>
+/\ meetingPlace = MeetingPlaceEmpty
+/\ numMeetings = 2
+
+State 6: <Next line 67, col 9 to line 67, col 79 of module Chameneos>
+/\ chameneoses = <<<<"blue", 2>>, <<"blue", 1>>, <<"blue", 1>>, <<"red", 0>>>>
+/\ meetingPlace = 1
+/\ numMeetings = 2
+
+State 7: <Next line 67, col 9 to line 67, col 79 of module Chameneos>
+/\ chameneoses = <<<<"blue", 3>>, <<"blue", 2>>, <<"blue", 1>>, <<"red", 0>>>>
+/\ meetingPlace = MeetingPlaceEmpty
+/\ numMeetings = 3
+
+State 8: <Next line 67, col 9 to line 67, col 79 of module Chameneos>
+/\ chameneoses = <<<<"blue", 3>>, <<"blue", 2>>, <<"blue", 1>>, <<"red", 0>>>>
+/\ meetingPlace = 1
+/\ numMeetings = 3
+
+State 9: <Next line 67, col 9 to line 67, col 79 of module Chameneos>
+/\ chameneoses = <<<<"blue", 4>>, <<"blue", 3>>, <<"blue", 1>>, <<"red", 0>>>>
+/\ meetingPlace = MeetingPlaceEmpty
+/\ numMeetings = 4
+
+State 10: <Next line 67, col 9 to line 67, col 79 of module Chameneos>
+/\ chameneoses = <<<<"blue", 4>>, <<"blue", 3>>, <<"blue", 1>>, <<"red", 0>>>>
+/\ meetingPlace = 1
+/\ numMeetings = 4
+
+State 11: <Next line 67, col 9 to line 67, col 79 of module Chameneos>
+/\ chameneoses = <<<<"blue", 5>>, <<"blue", 4>>, <<"blue", 1>>, <<"red", 0>>>>
+/\ meetingPlace = MeetingPlaceEmpty
+/\ numMeetings = 5
+
+69171 states generated, 39297 distinct states found, 18883 states left on queue.
+The depth of the complete state graph search is 11.
+The average outdegree of the complete state graph is 2 (minimum is 0, the maximum 4 and the 95th percentile is 4).
+Finished in 01s at (2026-11-06 12:50:11)

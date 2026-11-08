@@ -1,0 +1,294 @@
+{
+  "model": {
+    "model_id": "MC_spanning",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\spanning",
+    "module": "MC_spanning",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\spanning\\MC_spanning.cfg",
+    "family": "distributed-algorithm",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\spanning",
+    "module_name": "MC_spanning",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\spanning\\MC_spanning.cfg",
+    "modules": [
+      "MC_spanning",
+      "spanning"
+    ],
+    "module_files": {
+      "MC_spanning": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\spanning\\MC_spanning.tla",
+      "spanning": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\spanning\\spanning.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "Integers"
+    ],
+    "constants": {
+      "Proc": {
+        "arity": 0,
+        "declared_in": "spanning",
+        "assignment_form": "=",
+        "assignment_text": "{1, 2, 3}",
+        "value_text": "{1, 2, 3}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      },
+      "NoPrnt": {
+        "arity": 0,
+        "declared_in": "spanning",
+        "assignment_form": "=",
+        "assignment_text": "NoPrnt",
+        "value_text": "NoPrnt",
+        "value_kind": "atom",
+        "value_source": "tlc-probe"
+      },
+      "root": {
+        "arity": 0,
+        "declared_in": "spanning",
+        "assignment_form": "=",
+        "assignment_text": "1",
+        "value_text": "1",
+        "value_kind": "int",
+        "value_source": "tlc-probe"
+      },
+      "nbrs": {
+        "arity": 0,
+        "declared_in": "spanning",
+        "assignment_form": "<-",
+        "assignment_text": "Neighbors",
+        "value_text": "{<<1, 2>>, <<1, 3>>}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "prnt",
+      "rpt",
+      "msg"
+    ],
+    "instances": [],
+    "opdefs": 25,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\spanning\\MC_spanning.tla",
+      "module": "MC_spanning",
+      "bad_tokens": 0,
+      "unknown_nodes": 0,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 19,
+      "cov_covered_tokens": 19,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 0,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\spanning\\MC_spanning.cfg",
+      "constants": {
+        "Proc": {
+          "form": "=",
+          "value_text": "{1, 2, 3}",
+          "line": 2
+        },
+        "NoPrnt": {
+          "form": "=",
+          "value_text": "NoPrnt",
+          "line": 3
+        },
+        "root": {
+          "form": "=",
+          "value_text": "1",
+          "line": 4
+        },
+        "nbrs": {
+          "form": "<-",
+          "value_text": "Neighbors",
+          "line": 5
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "Spec",
+      "invariants": [
+        "TypeOK",
+        "SntMsg"
+      ],
+      "properties": [],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [
+        "\\*PROPERTIES Termination OneParent"
+      ],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "MC_spanning",
+    "constants": [
+      "NoPrnt",
+      "Proc",
+      "nbrs",
+      "root"
+    ],
+    "variables": [
+      "prnt",
+      "rpt",
+      "msg"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 10,
+    "writes": 33,
+    "reads": 172,
+    "invariants": [
+      "TypeOK",
+      "SntMsg"
+    ],
+    "properties": [],
+    "liveness": true,
+    "liveness_reasons": [
+      "Spec assumes fairness (WF)"
+    ],
+    "unresolved_names": {
+      "i": 44,
+      "j": 12,
+      "k": 3
+    },
+    "instance_aliases": {},
+    "notes": [
+      "stutter subscript ignored in Spec"
+    ]
+  },
+  "symmetry": {
+    "candidates": [],
+    "selected": [],
+    "notes": [
+      "no constant evaluates to a set of model values, so this model has no symmetry set to propose"
+    ]
+  },
+  "history": {
+    "retained": [
+      "prnt",
+      "rpt",
+      "msg"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible",
+      "note: a temporal property is checked; the dropped variables are provably without influence, so the projection is a bisimulation, but this combination is reported for manual review"
+    ],
+    "evidence": {
+      "prnt": {
+        "name": "prnt",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant SntMsg",
+          "read by checked property/invariant SntMsg",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 1,
+        "read_in_guard": 9,
+        "read_in_init": 0,
+        "read_in_property": 6,
+        "writes": 11,
+        "influences": [
+          "prnt"
+        ]
+      },
+      "rpt": {
+        "name": "rpt",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 1,
+        "read_in_guard": 2,
+        "read_in_init": 0,
+        "read_in_property": 2,
+        "writes": 11,
+        "influences": [
+          "rpt"
+        ]
+      },
+      "msg": {
+        "name": "msg",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant SntMsg",
+          "read by checked property/invariant SntMsg",
+          "read by checked property/invariant SntMsg",
+          "read by checked property/invariant SntMsg",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 9,
+        "read_in_init": 0,
+        "read_in_property": 6,
+        "writes": 11,
+        "influences": [
+          "msg",
+          "msg"
+        ]
+      }
+    },
+    "liveness_warning": true,
+    "liveness_reasons": [
+      "Spec assumes fairness (WF)"
+    ],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "CONSTANTS\n  Proc = {1, 2, 3}\n  NoPrnt =  NoPrnt\n  root = 1\n  nbrs <- Neighbors\nINVARIANTS TypeOK SntMsg\n\\*PROPERTIES Termination OneParent\nSPECIFICATION Spec\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.992,
+    "constants": {
+      "Proc": "{1, 2, 3}",
+      "NoPrnt": "NoPrnt",
+      "root": "1",
+      "nbrs": "{<<1, 2>>, <<1, 3>>}"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 1.044,
+  "notes": [
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}

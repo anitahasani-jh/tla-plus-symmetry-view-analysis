@@ -1,0 +1,258 @@
+{
+  "model": {
+    "model_id": "Peterson",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars",
+    "module": "Peterson",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars\\Peterson.cfg",
+    "family": "auxiliary-variables",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars",
+    "module_name": "Peterson",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars\\Peterson.cfg",
+    "modules": [
+      "Lock",
+      "Peterson"
+    ],
+    "module_files": {
+      "Peterson": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars\\Peterson.tla",
+      "Lock": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars\\Lock.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "Integers",
+      "TLAPS"
+    ],
+    "constants": {},
+    "variables": [
+      "pc",
+      "c",
+      "turn",
+      "lock"
+    ],
+    "instances": [],
+    "opdefs": 37,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars\\Peterson.tla",
+      "module": "Peterson",
+      "bad_tokens": 0,
+      "unknown_nodes": 132,
+      "proof_tokens_skipped": 9,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 1462,
+      "cov_covered_tokens": 1462,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 132,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\locks_auxiliary_vars\\Peterson.cfg",
+      "constants": {},
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "Spec",
+      "invariants": [
+        "TypeOK",
+        "Inv"
+      ],
+      "properties": [
+        "LSpec"
+      ],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "Peterson",
+    "constants": [],
+    "variables": [
+      "pc",
+      "c",
+      "turn",
+      "lock"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 20,
+    "writes": 21,
+    "reads": 188,
+    "invariants": [
+      "TypeOK",
+      "Inv"
+    ],
+    "properties": [
+      "LSpec"
+    ],
+    "liveness": false,
+    "liveness_reasons": [
+      "the configuration checks temporal PROPERTIES (LSpec) but every definition reachable from them is safety shaped ([]P and [A]_v), which TLC's symmetry reduction preserves"
+    ],
+    "unresolved_names": {
+      "self": 24,
+      "i": 17,
+      "j": 16,
+      "p": 8,
+      "label": 4
+    },
+    "instance_aliases": {
+      "L": "Lock"
+    },
+    "notes": [
+      "stutter subscript ignored in Spec"
+    ]
+  },
+  "symmetry": {
+    "candidates": [],
+    "selected": [],
+    "notes": [
+      "no constant evaluates to a set of model values, so this model has no symmetry set to propose"
+    ]
+  },
+  "history": {
+    "retained": [
+      "pc",
+      "c",
+      "turn",
+      "lock"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible"
+    ],
+    "evidence": {
+      "pc": {
+        "name": "pc",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 6,
+        "read_in_guard": 13,
+        "read_in_init": 0,
+        "read_in_property": 11,
+        "writes": 7,
+        "influences": [
+          "pc",
+          "pc",
+          "pc",
+          "pc",
+          "pc",
+          "pc"
+        ]
+      },
+      "c": {
+        "name": "c",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 3,
+        "read_in_guard": 2,
+        "read_in_init": 0,
+        "read_in_property": 3,
+        "writes": 7,
+        "influences": [
+          "c",
+          "c",
+          "c"
+        ]
+      },
+      "turn": {
+        "name": "turn",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 2,
+        "read_in_init": 0,
+        "read_in_property": 5,
+        "writes": 7,
+        "influences": [
+          "turn",
+          "turn"
+        ]
+      },
+      "lock": {
+        "name": "lock",
+        "observable": true,
+        "observable_reasons": [
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 1,
+        "read_in_init": 0,
+        "read_in_property": 0,
+        "writes": 0,
+        "influences": []
+      }
+    },
+    "liveness_warning": false,
+    "liveness_reasons": [],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "SPECIFICATION Spec\nINVARIANTS TypeOK Inv\nPROPERTY LSpec\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "ok",
+    "seconds": 1.517,
+    "constants": {},
+    "error_lines": []
+  },
+  "analysis_seconds": 1.587,
+  "notes": [
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}

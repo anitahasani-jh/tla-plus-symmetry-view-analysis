@@ -1,0 +1,149 @@
+{
+  "model_id": "LabLogNoType",
+  "seed": 20261106,
+  "generated": 3,
+  "mutants": [
+    {
+      "mutant_id": "LabLogNoType-m1",
+      "model_id": "LabLogNoType",
+      "operator": "drop-guard",
+      "module": "LabLog",
+      "file": "LabLog.tla",
+      "description": "drop a guard conjunct of Request",
+      "line": 50,
+      "original_snippet": "/\\ owner # p",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "NoPendingOwner"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 25,
+          "distinct": 25,
+          "seconds": 1.357,
+          "violated": [
+            "NoPendingOwner"
+          ]
+        },
+        "symmetry": {
+          "verdict": "violation",
+          "states": 12,
+          "distinct": 9,
+          "seconds": 1.368,
+          "violated": [
+            "NoPendingOwner"
+          ]
+        },
+        "view": {
+          "verdict": "violation",
+          "states": 25,
+          "distinct": 19,
+          "seconds": 1.327,
+          "violated": [
+            "NoPendingOwner"
+          ]
+        },
+        "both": {
+          "verdict": "violation",
+          "states": 12,
+          "distinct": 8,
+          "seconds": 1.343,
+          "violated": [
+            "NoPendingOwner"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "LabLogNoType-m2",
+      "model_id": "LabLogNoType",
+      "operator": "weaken-comparison",
+      "module": "LabLog",
+      "file": "LabLog.tla",
+      "description": "> -> >= in TruncLog",
+      "line": 34,
+      "original_snippet": ">",
+      "mutated_snippet": ">=",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 694,
+          "distinct": 289,
+          "seconds": 1.37,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "ok",
+          "states": 130,
+          "distinct": 53,
+          "seconds": 1.374,
+          "violated": []
+        },
+        "view": {
+          "verdict": "ok",
+          "states": 49,
+          "distinct": 20,
+          "seconds": 1.308,
+          "violated": []
+        },
+        "both": {
+          "verdict": "ok",
+          "states": 19,
+          "distinct": 7,
+          "seconds": 1.491,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "LabLogNoType-m3",
+      "model_id": "LabLogNoType",
+      "operator": "drop-guard",
+      "module": "LabLog",
+      "file": "LabLog.tla",
+      "description": "drop a guard conjunct of TypeOK",
+      "line": 39,
+      "original_snippet": "/\\ owner \\in Proc \\cup {None}",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 694,
+          "distinct": 289,
+          "seconds": 1.45,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "ok",
+          "states": 130,
+          "distinct": 53,
+          "seconds": 1.458,
+          "violated": []
+        },
+        "view": {
+          "verdict": "ok",
+          "states": 49,
+          "distinct": 20,
+          "seconds": 1.336,
+          "violated": []
+        },
+        "both": {
+          "verdict": "ok",
+          "states": 19,
+          "distinct": 7,
+          "seconds": 1.339,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

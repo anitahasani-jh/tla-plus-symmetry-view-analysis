@@ -1,0 +1,23 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 120 and seed 437962941261915214 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCLamportMutex\MCLamportMutex.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MCLamportMutex\LamportMutex.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module LamportMutex
+Semantic processing of module MCLamportMutex
+Starting... (2026-11-06 12:29:48)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:29:54.
+Progress(18) at 2026-11-06 12:29:57: 85,799 states generated (85,799 s/min), 30,872 distinct states found (30,872 ds/min), 7,048 states left on queue.
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 7.9E-8
+  based on the actual fingerprints:  val = 2.0E-8
+2729079 states generated, 724274 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 61.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 7 and the 95th percentile is 3).
+Finished in 35s at (2026-11-06 12:30:22)

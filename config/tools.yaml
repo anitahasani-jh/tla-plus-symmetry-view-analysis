@@ -1,0 +1,39 @@
+# Tool profiles.  The values here are the ones the reported results were produced
+# with; the alternative profile is documented so a Colab user with a modern JDK can
+# reproduce with a newer TLC.
+
+profiles:
+  local-java8:
+    description: >
+      The profile used for every number in this package.  TLC 2.16 is the last
+      release that runs on Java 8, which is what the course machines have.
+    java: ">=8"
+    tla2tools:
+      version: "1.7.1"
+      tlc: "TLC2 Version 2.16 of 31 December 2020"
+      jar: tools/tla2tools-1.7.1.jar
+      sha256: d532ba31aafe17afba1130f92410d9257454ff7393d1eb2fe032f0c07f352da5
+      url: https://github.com/tlaplus/tlaplus/releases/download/v1.7.1/tla2tools.jar
+    community_jar: null
+    community_note: >
+      tla2tools-1.7.1.jar declares `Class-Path: CommunityModules.jar`, resolved
+      relative to the jar directory.  A newer CommunityModules.jar placed next to
+      it makes TLC 2.16 abort with NoClassDefFoundError: tlc2/value/impl/KSubsetValue.
+      The pure TLA+ community modules are shipped as files in
+      benchmarks/support/community instead; see benchmarks/support/README.md.
+
+  colab-jdk17:
+    description: >
+      Alternative profile for a machine with JDK 17.  Not used for the reported
+      numbers, but setup.sh detects a modern JDK and can install this pair.
+    java: ">=11"
+    tla2tools:
+      version: "1.8.0"
+      jar: tools/tla2tools-1.8.0.jar
+      url: https://github.com/tlaplus/tlaplus/releases/download/v1.8.0/tla2tools.jar
+    community_jar: tools/CommunityModules.jar
+    community_note: >
+      With TLC 1.8.0 the matching CommunityModules.jar can be put on the
+      classpath, which enables the Java-backed community operators.
+
+recorded_results_profile: local-java8

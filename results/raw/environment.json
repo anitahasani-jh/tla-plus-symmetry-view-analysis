@@ -1,0 +1,11 @@
+{
+  "generated_utc": "2026-11-06T11:10:13Z",
+  "platform": "Windows-11-10.0.22621-SP0",
+  "machine": "AMD64",
+  "python": "3.14.6",
+  "java": "java version \"1.8.0_251\"",
+  "cpu_count": 4,
+  "tla2tools": "tla2tools-1.7.1.jar",
+  "tla2tools_sha256_note": "see benchmarks/PROVENANCE.json and NOTICE",
+  "experiment_config": "config\\experiment.yaml"
+}

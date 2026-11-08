@@ -1,0 +1,23 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 129 and seed -8942266420820312676 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MC_spanning\MC_spanning\probe\MC_spanning_SVProbe.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MC_spanning\MC_spanning\probe\MC_spanning.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MC_spanning\MC_spanning\probe\spanning.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module spanning
+Semantic processing of module MC_spanning
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module MC_spanning_SVProbe
+Starting... (2026-11-06 12:49:12)
+<<"#SVCONST", "Proc", {1, 2, 3}>>
+<<"#SVCONST", "NoPrnt", NoPrnt>>
+<<"#SVCONST", "root", 1>>
+<<"#SVCONST", "nbrs", {<<1, 2>>, <<1, 3>>}>>

@@ -1,0 +1,297 @@
+# Benchmark pool for SymView.
+#
+# This file is the *pool*, not the evaluated subset. The evaluated subset is
+# produced by experiments/select_subset.py from this pool using the
+# pre-registered criterion written below, and is frozen in config/subset.yaml
+# before any SymView run is inspected.
+#
+# Every entry is pinned to an exact commit so that the corpus is reproducible.
+# Files are fetched over HTTPS from raw.githubusercontent.com and hashed
+# (SHA-256) into benchmarks/PROVENANCE.json.
+
+selection_criterion: |
+  Pre-registered subset selection (fixed before looking at any SymView result):
+    P1 Provenance: the model comes from a public repository pinned in this file,
+       ships a .cfg next to its root module, and is redistributed under its
+       original MIT licence with attribution.
+    P2 Runnability: TLC (version pinned in config/tools.yaml) completes the
+       unreduced baseline with verdict "ok" or "violation" within the probe
+       budget (timeout_probe_s). Models that fail to parse, crash, or need
+       hand-edited configurations are excluded and listed with the reason.
+    P3 Family diversity: keep at least one model from each of these families --
+       consensus, transaction commit, mutual exclusion, termination detection,
+       cache coherence, allocation/scheduling, ring/token protocols,
+       auxiliary-variable examples, and "integer-indexed" examples (which are
+       expected to have NO usable symmetry set and therefore measure the
+       false-positive/coverage side of the method).
+    P4 Cost spread: the subset must contain at least 4 models whose baseline
+       finishes in under 5 s, at least 4 in 5..60 s, and at least 2 above 60 s
+       or hitting the evaluation timeout, so that reduction is measured on both
+       cheap and expensive models.
+    P5 Size: |subset| = subset_size models. Ties inside a family/cost bucket are
+       broken by a deterministic draw with the seed below.
+  The criterion uses only baseline (unreduced) information, which is available
+  before SymView produces any suggestion.
+
+subset_size: 20
+seed: 20261106
+timeout_probe_s: 40
+
+sources:
+  - id: tlaplus-examples
+    repo: tlaplus/Examples
+    commit: ca168055339d5cbcee95b7eefcb97c1ee59f9914
+    license: MIT
+    license_file: LICENSE.md
+    dirs:
+      - path: specifications/transaction_commit
+        family: transaction-commit
+        models: [TCommit, TwoPhase, PaxosCommit, 2PCwithBTM]
+      - path: specifications/TwoPhase
+        family: transaction-commit
+        models: [MCTwoPhase]
+      - path: specifications/Paxos
+        family: consensus
+        models: [MCPaxos, MCVoting, MCConsensus]
+      - path: specifications/PaxosHowToWinATuringAward
+        family: consensus
+        models: [MCPaxosTiny, MCPaxosSmall, MCVoting, MCConsensus]
+      - path: specifications/SimplifiedFastPaxos
+        family: consensus
+        models: [FastPaxos, Paxos]
+      - path: specifications/MultiPaxos-SMR
+        family: consensus
+        models: [MultiPaxos_MC_small, MultiPaxos_MC]
+      - path: specifications/diskpaxos
+        family: consensus
+        models: [MC_HDiskSynod]
+      - path: specifications/byzpaxos
+        family: consensus
+        models: [Consensus]
+      - path: specifications/SlushProtocol
+        family: consensus
+        models: [SlushSmall]
+      - path: specifications/dag-consensus
+        family: consensus
+        models: [TLCSailfish1]
+      - path: specifications/GermanProtocol
+        family: cache-coherence
+        models: [MCGermanData, MCGermanControl, MCGermanCMPWithMutex]
+      - path: specifications/FlashProtocol
+        family: cache-coherence
+        models: [MCFlashWithMutex]
+      - path: specifications/SpecifyingSystems/CachingMemory
+        family: cache-coherence
+        models: [MCWriteThroughCache, MCInternalMemory]
+      - path: specifications/allocator
+        family: allocation
+        models: [SchedulingAllocator, SimpleAllocator, AllocatorImplementation,
+                 AllocatorRefinement]
+      - path: specifications/locks_auxiliary_vars
+        family: auxiliary-variables
+        models: [Lock, LockHS, Peterson]
+      - path: specifications/lamport_mutex
+        family: mutual-exclusion
+        models: [MCLamportMutex]
+      - path: specifications/TeachingConcurrency
+        family: mutual-exclusion
+        models: [Simple, SimpleRegular]
+      - path: specifications/DiningPhilosophers
+        family: mutual-exclusion
+        models: [DiningPhilosophers]
+      - path: specifications/dijkstra-mutex/DijkstraMutex.toolbox/Safety-4-processors
+        family: mutual-exclusion
+        models: [MC]
+      - path: specifications/ReadersWriters
+        family: mutual-exclusion
+        models: [MC]
+      - path: specifications/barriers
+        family: synchronisation
+        models: [Barriers, Barrier]
+      - path: specifications/Chameneos
+        family: synchronisation
+        models: [Chameneos]
+      - path: specifications/CigaretteSmokers
+        family: synchronisation
+        models: [CigaretteSmokers]
+      - path: specifications/Prisoners
+        family: synchronisation
+        models: [Prisoners]
+      - path: specifications/ewd840
+        family: termination-detection
+        models: [EWD840, SyncTerminationDetection]
+      - path: specifications/ewd998
+        family: termination-detection
+        models: [EWD998Small, EWD998]
+      - path: specifications/ewd426
+        family: ring-token
+        models: [TokenRing]
+      - path: specifications/ewd687a
+        family: ring-token
+        models: [MCEWD687a]
+      - path: specifications/chang_roberts
+        family: ring-token
+        models: [MCChangRoberts]
+      - path: specifications/echo
+        family: ring-token
+        models: [MCEcho]
+      - path: specifications/spanning
+        family: distributed-algorithm
+        models: [MC_spanning]
+      - path: specifications/SpanningTree
+        family: distributed-algorithm
+        models: [SpanTreeTest4Nodes]
+      - path: specifications/YoYo
+        family: distributed-algorithm
+        models: [MCYoYoPruning]
+      - path: specifications/Majority
+        family: distributed-algorithm
+        models: [MCMajority]
+      - path: specifications/Huang
+        family: distributed-algorithm
+        models: [Huang]
+      - path: specifications/glowingRaccoon
+        family: distributed-algorithm
+        models: [clean]
+      - path: specifications/c1cs
+        family: distributed-algorithm
+        models: [c1cs]
+      - path: specifications/bcastFolklore
+        family: distributed-algorithm
+        models: [bcastFolklore]
+      - path: specifications/aba-asyn-byz
+        family: distributed-algorithm
+        models: [aba_asyn_byz]
+      - path: specifications/bosco
+        family: distributed-algorithm
+        models: [bosco]
+      - path: specifications/cf1s-folklore
+        family: distributed-algorithm
+        models: [cf1s_folklore]
+      - path: specifications/nbacc_ray97
+        family: distributed-algorithm
+        models: [nbacc_ray97]
+      - path: specifications/nbacg_guer01
+        family: distributed-algorithm
+        models: [nbacg_guer01]
+      - path: specifications/detector_chan96
+        family: distributed-algorithm
+        models: [EnvironmentController]
+      - path: specifications/tcp
+        family: protocol
+        models: [MCtcp]
+      - path: specifications/SpecifyingSystems/TLC
+        family: protocol
+        models: [MCAlternatingBit, ABCorrectness]
+      - path: specifications/SpecifyingSystems/AsynchronousInterface
+        family: protocol
+        models: [Channel, AsynchInterface]
+      - path: specifications/SpecifyingSystems/HourClock
+        family: protocol
+        models: [HourClock, HourClock2]
+      - path: specifications/SpecifyingSystems/Liveness
+        family: protocol
+        models: [LiveHourClock, MCLiveWriteThroughCache]
+      - path: specifications/SpecifyingSystems/AdvancedExamples
+        family: protocol
+        models: [MCInnerSerial, MCInnerSequential]
+      - path: specifications/SpecifyingSystems/FIFO
+        family: protocol
+        models: [MCInnerFIFO]
+      - path: specifications/SpecificationRefinement
+        family: refinement
+        models: [good, bad, abstract]
+      - path: specifications/StaleViewShrink
+        family: replication
+        models: [StaleShrink]
+      - path: specifications/FiniteMonotonic
+        family: replication
+        models: [MCReplicatedLog]
+      - path: specifications/NanoBlockchain
+        family: replication
+        models: [MCNanoSmall]
+      - path: specifications/KeyValueStore
+        family: replication
+        models: [MCKVSSafetySmall]
+      - path: specifications/CheckpointCoordination
+        family: replication
+        models: [MCCheckpointCoordination]
+      - path: specifications/Disruptor
+        family: concurrent-data-structure
+        models: [MCDisruptor_SPMC]
+      - path: specifications/MultiCarElevator
+        family: concurrent-data-structure
+        models: [ElevatorSafetySmall]
+      - path: specifications/btree
+        family: data-structure
+        models: [MCbtree]
+      - path: specifications/braf
+        family: data-structure
+        models: [BufferedRandomAccessFile]
+      - path: specifications/LoopInvariance
+        family: sequential-algorithm
+        models: [MCBinarySearch]
+      - path: specifications/LearnProofs
+        family: sequential-algorithm
+        models: [MCFindHighest]
+      - path: specifications/Stones
+        family: puzzle
+        models: [Stones]
+      - path: specifications/DieHard
+        family: puzzle
+        models: [DieHard]
+      - path: specifications/tower_of_hanoi
+        family: puzzle
+        models: [Hanoi_anim]
+      - path: specifications/N-Queens/Queens.toolbox/FourQueens
+        family: puzzle
+        models: [MC]
+      - path: specifications/SlidingPuzzles
+        family: puzzle
+        models: [SlidingPuzzles]
+      - path: specifications/GameOfLife
+        family: puzzle
+        models: [GameOfLife]
+      - path: specifications/EinsteinRiddle
+        family: puzzle
+        models: [Einstein]
+      - path: specifications/CoffeeCan
+        family: puzzle
+        models: [CoffeeCan100Beans]
+      - path: specifications/MissionariesAndCannibals
+        family: puzzle
+        models: [MissionariesAndCannibals]
+      - path: specifications/Moving_Cat_Puzzle
+        family: puzzle
+        models: [CatEvenBoxes]
+      - path: specifications/CarTalkPuzzle/CarTalkPuzzle.toolbox/Model_1
+        family: puzzle
+        models: [MC]
+      - path: specifications/LeastCircularSubstring
+        family: sequential-algorithm
+        models: [MCLeastCircularSubstringSmall]
+      - path: specifications/TransitiveClosure
+        family: sequential-algorithm
+        models: [TransitiveClosure]
+      - path: specifications/sums_even
+        family: sequential-algorithm
+        models: [MC_sums_even]
+      - path: specifications/acp
+        family: protocol
+        models: [ACP_SB_TLC]
+      - path: specifications/byihive
+        family: business-process
+        models: [VoucherTransfer]
+
+  - id: raft-tla
+    repo: ongardie/raft.tla
+    commit: 6ecbdbcf1bcde2910367cdfd67f31b0bae447ddd
+    license: CC-BY-4.0
+    license_note: "The file header states CC BY 4.0; redistributed with attribution to Diego Ongaro. Not part of the frozen evaluated subset."
+    dirs:
+      # Upstream ships raft.tla without a TLC configuration; the configuration
+      # used here (benchmarks/lab/raft/RaftMC.cfg) is authored by this project
+      # and is marked as such in PROVENANCE.json.
+      - path: .
+        family: consensus
+        models: [raft]

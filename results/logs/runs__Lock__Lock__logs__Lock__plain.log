@@ -1,0 +1,36 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 127 and seed 7259736823805417549 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\Lock\Lock\plain__m_Lock-m2\Lock.tla
+!! WARNING: The TLA+ translation in module Lock has changed since its last translation.
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\Lock\Lock\plain__m_Lock-m2\TLAPS.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module TLAPS
+Semantic processing of module Lock
+Starting... (2026-11-06 12:41:24)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:41:24.
+Error: Deadlock reached.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ pc = <<"l0", "l0">>
+/\ lock = 1
+
+State 2: <l0 line 44, col 13 to line 47, col 27 of module Lock>
+/\ pc = <<"l1", "l0">>
+/\ lock = 1
+
+State 3: <l1 line 49, col 13 to line 52, col 47 of module Lock>
+/\ pc = <<"cs", "l0">>
+/\ lock = 0
+
+State 4: <l0 line 44, col 13 to line 47, col 27 of module Lock>
+/\ pc = <<"cs", "l1">>
+/\ lock = 0
+
+11 states generated, 8 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 4.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 2 and the 95th percentile is 2).
+Finished in 00s at (2026-11-06 12:41:24)

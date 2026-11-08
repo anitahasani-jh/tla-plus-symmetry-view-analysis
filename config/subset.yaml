@@ -1,0 +1,724 @@
+generated_by: experiments/select_subset.py
+criterion: "Pre-registered subset selection (fixed before looking at any SymView result):\n\
+  \  P1 Provenance: the model comes from a public repository pinned in this file,\n\
+  \     ships a .cfg next to its root module, and is redistributed under its\n   \
+  \  original MIT licence with attribution.\n  P2 Runnability: TLC (version pinned\
+  \ in config/tools.yaml) completes the\n     unreduced baseline with verdict \"ok\"\
+  \ or \"violation\" within the probe\n     budget (timeout_probe_s). Models that\
+  \ fail to parse, crash, or need\n     hand-edited configurations are excluded and\
+  \ listed with the reason.\n  P3 Family diversity: keep at least one model from each\
+  \ of these families --\n     consensus, transaction commit, mutual exclusion, termination\
+  \ detection,\n     cache coherence, allocation/scheduling, ring/token protocols,\n\
+  \     auxiliary-variable examples, and \"integer-indexed\" examples (which are\n\
+  \     expected to have NO usable symmetry set and therefore measure the\n     false-positive/coverage\
+  \ side of the method).\n  P4 Cost spread: the subset must contain at least 4 models\
+  \ whose baseline\n     finishes in under 5 s, at least 4 in 5..60 s, and at least\
+  \ 2 above 60 s\n     or hitting the evaluation timeout, so that reduction is measured\
+  \ on both\n     cheap and expensive models.\n  P5 Size: |subset| = subset_size models.\
+  \ Ties inside a family/cost bucket are\n     broken by a deterministic draw with\
+  \ the seed below.\nThe criterion uses only baseline (unreduced) information, which\
+  \ is available\nbefore SymView produces any suggestion.\n"
+seed: 20261106
+subset_size: 20
+probe_timeout_s: 90
+workers: 2
+heap_mb: 2048
+models:
+- model_id: AllocatorImplementation
+  module: AllocatorImplementation
+  spec_dir: benchmarks/public/allocator
+  config: AllocatorImplementation.cfg
+  family: allocation
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 17701
+    states: 64414
+    seconds: 10
+    bucket: medium
+- model_id: AllocatorRefinement
+  module: AllocatorRefinement
+  spec_dir: benchmarks/public/allocator
+  config: AllocatorRefinement.cfg
+  family: allocation
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 1690
+    states: 5854
+    seconds: 2
+    bucket: cheap
+- model_id: Lock
+  module: Lock
+  spec_dir: benchmarks/public/locks_auxiliary_vars
+  config: Lock.cfg
+  family: auxiliary-variables
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 12
+    states: 21
+    seconds: 1
+    bucket: cheap
+- model_id: Peterson
+  module: Peterson
+  spec_dir: benchmarks/public/locks_auxiliary_vars
+  config: Peterson.cfg
+  family: auxiliary-variables
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 42
+    states: 77
+    seconds: 1
+    bucket: cheap
+- model_id: MCFlashWithMutex
+  module: MCFlashWithMutex
+  spec_dir: benchmarks/public/FlashProtocol
+  config: MCFlashWithMutex.cfg
+  family: cache-coherence
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 8096
+    states: 30196
+    seconds: 2
+    bucket: cheap
+- model_id: MCGermanControl
+  module: MCGermanControl
+  spec_dir: benchmarks/public/GermanProtocol
+  config: MCGermanControl.cfg
+  family: cache-coherence
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 1461
+    states: 3865
+    seconds: 1
+    bucket: cheap
+- model_id: Consensus
+  module: Consensus
+  spec_dir: benchmarks/public/byzpaxos
+  config: Consensus.cfg
+  family: consensus
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 4
+    states: 4
+    seconds: 0
+    bucket: cheap
+- model_id: Paxos
+  module: Paxos
+  spec_dir: benchmarks/public/SimplifiedFastPaxos
+  config: Paxos.cfg
+  family: consensus
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 48514
+    states: 491173
+    seconds: 7
+    bucket: medium
+- model_id: TLCSailfish1
+  module: TLCSailfish1
+  spec_dir: benchmarks/public/dag-consensus
+  config: TLCSailfish1.cfg
+  family: consensus
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 109604
+    states: 314144
+    seconds: 36
+    bucket: expensive
+- model_id: MC_spanning
+  module: MC_spanning
+  spec_dir: benchmarks/public/spanning
+  config: MC_spanning.cfg
+  family: distributed-algorithm
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: violation
+    distinct_states: 6
+    states: 23
+    seconds: 0
+    bucket: cheap
+- model_id: clean
+  module: clean
+  spec_dir: benchmarks/public/glowingRaccoon
+  config: clean.cfg
+  family: distributed-algorithm
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 63
+    states: 99
+    seconds: 0
+    bucket: cheap
+- model_id: Simple
+  module: Simple
+  spec_dir: benchmarks/public/TeachingConcurrency
+  config: Simple.cfg
+  family: mutual-exclusion
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 723
+    states: 1842
+    seconds: 5
+    bucket: medium
+- model_id: SimpleRegular
+  module: SimpleRegular
+  spec_dir: benchmarks/public/TeachingConcurrency
+  config: SimpleRegular.cfg
+  family: mutual-exclusion
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 277726
+    states: 1454776
+    seconds: 8
+    bucket: medium
+- model_id: MCChangRoberts
+  module: MCChangRoberts
+  spec_dir: benchmarks/public/chang_roberts
+  config: MCChangRoberts.cfg
+  family: ring-token
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 137
+    states: 227
+    seconds: 0
+    bucket: cheap
+- model_id: MCEcho
+  module: MCEcho
+  spec_dir: benchmarks/public/echo
+  config: MCEcho.cfg
+  family: ring-token
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 75
+    states: 116
+    seconds: 1
+    bucket: cheap
+- model_id: Chameneos
+  module: Chameneos
+  spec_dir: benchmarks/public/Chameneos
+  config: Chameneos.cfg
+  family: synchronisation
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 34534
+    states: 104697
+    seconds: 7
+    bucket: medium
+- model_id: EWD840
+  module: EWD840
+  spec_dir: benchmarks/public/ewd840
+  config: EWD840.cfg
+  family: termination-detection
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 302
+    states: 1
+    seconds: 3
+    bucket: cheap
+- model_id: SyncTerminationDetection
+  module: SyncTerminationDetection
+  spec_dir: benchmarks/public/ewd840
+  config: SyncTerminationDetection.cfg
+  family: termination-detection
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 129
+    states: 722
+    seconds: 3
+    bucket: cheap
+- model_id: MCTwoPhase
+  module: MCTwoPhase
+  spec_dir: benchmarks/public/TwoPhase
+  config: MCTwoPhase.cfg
+  family: transaction-commit
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 4
+    states: 5
+    seconds: 0
+    bucket: cheap
+- model_id: TwoPhase
+  module: TwoPhase
+  spec_dir: benchmarks/public/transaction_commit
+  config: TwoPhase.cfg
+  family: transaction-commit
+  source: tlaplus/Examples@ca168055339d
+  baseline:
+    verdict: ok
+    distinct_states: 288
+    states: 1146
+    seconds: 1
+    bucket: cheap
+excluded:
+- model_id: 2PCwithBTM
+  family: transaction-commit
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 2
+- model_id: aba_asyn_byz
+  family: distributed-algorithm
+  reason: 'baseline failed: timeout'
+  verdict: timeout
+  seconds: 40
+- model_id: Barrier
+  family: synchronisation
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 1
+- model_id: Barriers
+  family: synchronisation
+  reason: 'baseline failed: Error: Parsing or semantic analysis failed.'
+  verdict: parse-error
+  seconds: 0
+- model_id: bcastFolklore
+  family: distributed-algorithm
+  reason: 'baseline failed: timeout'
+  verdict: timeout
+  seconds: 40
+- model_id: c1cs
+  family: distributed-algorithm
+  reason: 'baseline failed: timeout'
+  verdict: timeout
+  seconds: 40
+- model_id: CigaretteSmokers
+  family: synchronisation
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 1
+- model_id: DiningPhilosophers
+  family: mutual-exclusion
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 1
+- model_id: EWD998
+  family: termination-detection
+  reason: 'baseline failed: timeout'
+  verdict: timeout
+  seconds: 40
+- model_id: FastPaxos
+  family: consensus
+  reason: 'baseline failed: timeout'
+  verdict: timeout
+  seconds: 40
+- model_id: Huang
+  family: distributed-algorithm
+  reason: 'baseline failed: Error: The constraint ALIAS specified in the configuration
+    file'
+  verdict: error
+  seconds: 0
+- model_id: LockHS
+  family: auxiliary-variables
+  reason: 'baseline failed: Error: Parsing or semantic analysis failed.'
+  verdict: parse-error
+  seconds: 0
+- model_id: MC_HDiskSynod
+  family: consensus
+  reason: 'baseline failed: timeout'
+  verdict: timeout
+  seconds: 40
+- model_id: MCEWD687a
+  family: ring-token
+  reason: 'baseline failed: Error: Attempted to enumerate { x \in S : p(x) } when
+    S:'
+  verdict: error
+  seconds: 1
+- model_id: MCGermanCMPWithMutex
+  family: cache-coherence
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 0
+- model_id: MCGermanData
+  family: cache-coherence
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 2
+- model_id: MCInternalMemory
+  family: cache-coherence
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 1
+- model_id: MCLamportMutex
+  family: mutual-exclusion
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 35
+- model_id: MCMajority
+  family: distributed-algorithm
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 2
+- model_id: MCPaxos
+  family: consensus
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 1
+- model_id: MCWriteThroughCache
+  family: cache-coherence
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 1
+- model_id: MCYoYoPruning
+  family: distributed-algorithm
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 1
+- model_id: MultiPaxos_MC
+  family: consensus
+  reason: 'baseline failed: timeout'
+  verdict: timeout
+  seconds: 40
+- model_id: PaxosCommit
+  family: transaction-commit
+  reason: 'baseline failed: timeout'
+  verdict: timeout
+  seconds: 40
+- model_id: Prisoners
+  family: synchronisation
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 2
+- model_id: SchedulingAllocator
+  family: allocation
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 3
+- model_id: SimpleAllocator
+  family: allocation
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 2
+- model_id: TCommit
+  family: transaction-commit
+  reason: not selected by the diversity/size rule
+  verdict: ok
+  seconds: 0
+- model_id: TokenRing
+  family: ring-token
+  reason: 'baseline failed: Error: The property ALIAS specified in the configuration
+    file'
+  verdict: error
+  seconds: 0
+- model_id: MCPaxosTiny
+  family: consensus
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: MCPaxosSmall
+  family: consensus
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: MultiPaxos_MC_small
+  family: consensus
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: SlushSmall
+  family: consensus
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: EWD998Small
+  family: termination-detection
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: SpanTreeTest4Nodes
+  family: distributed-algorithm
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: MCNanoSmall
+  family: replication
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: MCKVSSafetySmall
+  family: replication
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: ElevatorSafetySmall
+  family: concurrent-data-structure
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: CoffeeCan100Beans
+  family: puzzle
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: CatEvenBoxes
+  family: puzzle
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: MCLeastCircularSubstringSmall
+  family: sequential-algorithm
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: raft
+  family: consensus
+  reason: files not fetched (P1)
+  verdict: null
+  seconds: null
+- model_id: Paxos-MCVoting
+  family: consensus
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: Paxos-MCConsensus
+  family: consensus
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: PaxosHowToWinATuringAward-MCVoting
+  family: consensus
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: PaxosHowToWinATuringAward-MCConsensus
+  family: consensus
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: dijkstra-mutex--DijkstraMutex_toolbox--Safety-4-processors-MC
+  family: mutual-exclusion
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: ReadersWriters-MC
+  family: mutual-exclusion
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: bosco
+  family: distributed-algorithm
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: cf1s_folklore
+  family: distributed-algorithm
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: nbacc_ray97
+  family: distributed-algorithm
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: nbacg_guer01
+  family: distributed-algorithm
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: EnvironmentController
+  family: distributed-algorithm
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCtcp
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCAlternatingBit
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: ABCorrectness
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: Channel
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: AsynchInterface
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: HourClock
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: HourClock2
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: LiveHourClock
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCLiveWriteThroughCache
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCInnerSerial
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCInnerSequential
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCInnerFIFO
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: good
+  family: refinement
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: bad
+  family: refinement
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: abstract
+  family: refinement
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: StaleShrink
+  family: replication
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCReplicatedLog
+  family: replication
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCCheckpointCoordination
+  family: replication
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCDisruptor_SPMC
+  family: concurrent-data-structure
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCbtree
+  family: data-structure
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: BufferedRandomAccessFile
+  family: data-structure
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCBinarySearch
+  family: sequential-algorithm
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MCFindHighest
+  family: sequential-algorithm
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: Stones
+  family: puzzle
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: DieHard
+  family: puzzle
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: Hanoi_anim
+  family: puzzle
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: N-Queens--Queens_toolbox--FourQueens-MC
+  family: puzzle
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: SlidingPuzzles
+  family: puzzle
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: GameOfLife
+  family: puzzle
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: Einstein
+  family: puzzle
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MissionariesAndCannibals
+  family: puzzle
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: CarTalkPuzzle--CarTalkPuzzle_toolbox--Model_1-MC
+  family: puzzle
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: TransitiveClosure
+  family: sequential-algorithm
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: MC_sums_even
+  family: sequential-algorithm
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: ACP_SB_TLC
+  family: protocol
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+- model_id: VoucherTransfer
+  family: business-process
+  reason: not probed within the compute budget (P2)
+  verdict: null
+  seconds: null
+probe_summary:
+  candidates: 49
+  runnable: 36
+  failed: 13
+  selected: 20
+  buckets:
+    cheap: 15
+    medium: 5
+    expensive: 1

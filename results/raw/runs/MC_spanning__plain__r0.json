@@ -1,0 +1,88 @@
+{
+  "run": {
+    "label": "MC_spanning__plain",
+    "module": "MC_spanning",
+    "config": "MC_spanning_sv_plain",
+    "workdir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\_scratch_lab\\runs\\MC_spanning\\MC_spanning\\plain",
+    "command": [
+      "java",
+      "-Xmx2048m",
+      "-cp",
+      "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\tools\\tla2tools-1.7.1.jar",
+      "tlc2.TLC",
+      "-workers",
+      "2",
+      "-config",
+      "MC_spanning_sv_plain.cfg",
+      "MC_spanning.tla"
+    ],
+    "returncode": 12,
+    "verdict": "violation",
+    "wall_seconds": 1.618,
+    "tlc_seconds": 0,
+    "tlc_version": "2.16",
+    "tlc_revision": "cdddf55",
+    "seed": -8762010998053683828,
+    "workers": 2,
+    "cores": 4,
+    "heap_mb": 1820,
+    "states_generated": 23,
+    "distinct_states": 6,
+    "queue_remaining": 1,
+    "initial_states": 1,
+    "depth": 3,
+    "outdegree_avg": 2.0,
+    "fingerprint_collision": null,
+    "violated_invariants": [
+      "TypeOK"
+    ],
+    "violated_properties": [],
+    "deadlock": false,
+    "error_lines": [
+      "Error: Invariant TypeOK is violated.",
+      "Error: The behavior up to this point is:"
+    ],
+    "symmetry_lines": [],
+    "trace": [
+      "State 1: <Initial predicate>",
+      "/\\ prnt = <<NoPrnt, NoPrnt, NoPrnt>>",
+      "/\\ rpt = <<FALSE, FALSE, FALSE>>",
+      "/\\ msg = {}",
+      "",
+      "State 2: <Next line 25, col 27 to line 28, col 62 of module spanning>",
+      "/\\ prnt = <<NoPrnt, NoPrnt, NoPrnt>>",
+      "/\\ rpt = <<FALSE, FALSE, FALSE>>",
+      "/\\ msg = {<<1, 2>>}",
+      "",
+      "State 3: <Next line 25, col 27 to line 28, col 62 of module spanning>",
+      "/\\ prnt = <<NoPrnt, 1, NoPrnt>>",
+      "/\\ rpt = <<FALSE, FALSE, FALSE>>",
+      "/\\ msg = {<<1, 2>>}",
+      ""
+    ],
+    "timed_out": false,
+    "stdout_chars": 1769,
+    "log_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\_scratch_lab\\runs\\MC_spanning\\logs\\MC_spanning__plain.log"
+  },
+  "model": {
+    "model_id": "MC_spanning",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\spanning",
+    "module": "MC_spanning",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\spanning\\MC_spanning.cfg",
+    "family": "distributed-algorithm",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "arm": "plain",
+  "repeat": 0,
+  "budget": {
+    "jar": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\tools\\tla2tools-1.7.1.jar",
+    "java": "java",
+    "community_jar": null,
+    "workers": 2,
+    "heap_mb": 2048,
+    "timeout_s": 45,
+    "extra_jvm": [],
+    "extra_tlc": []
+  }
+}

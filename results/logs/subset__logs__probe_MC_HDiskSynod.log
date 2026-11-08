@@ -1,0 +1,26 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 67 and seed 2087259897365050679 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MC_HDiskSynod\MC_HDiskSynod.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MC_HDiskSynod\HDiskSynod.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MC_HDiskSynod\DiskSynod.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\MC_HDiskSynod\Synod.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Synod
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module DiskSynod
+Semantic processing of module HDiskSynod
+Semantic processing of module TLC
+Semantic processing of module MC_HDiskSynod
+Starting... (2026-11-06 12:27:40)
+Computing initial states...
+Computed 2 initial states...
+Computed 4 initial states...
+Finished computing initial states: 8 distinct states generated at 2026-11-06 12:27:41.
+Progress(9) at 2026-11-06 12:27:44: 121,120 states generated (121,120 s/min), 18,549 distinct states found (18,549 ds/min), 9,869 states left on queue.
+
+--- killed after 40s ---

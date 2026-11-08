@@ -1,0 +1,154 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 80 and seed 8247985497947850305 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\plain__m_TLCSailfish1-m2\TLCSailfish1.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\plain__m_TLCSailfish1-m2\Sailfish.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\plain__m_TLCSailfish1-m2\BlockDag.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\plain__m_TLCSailfish1-m2\Utils.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\TLCSailfish1\TLCSailfish1\plain__m_TLCSailfish1-m2\Digraph.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module Utils
+Semantic processing of module Digraph
+Semantic processing of module TLC
+Semantic processing of module BlockDag
+Semantic processing of module Sailfish
+Semantic processing of module TLCSailfish1
+Starting... (2026-11-06 12:49:10)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:49:10.
+Error: TLC threw an unexpected exception.
+This was probably caused by an error in the spec or model.
+See the User Output or TLC Console for clues to what happened.
+The exception was a java.lang.RuntimeException
+: Attempted to compute the value of an expression of form
+CHOOSE x \in S: P, but no element of S satisfied P.
+line 46, col 14 to line 46, col 35 of module BlockDag
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ log = (n2 :> <<>> @@ n3 :> <<>>)
+/\ es = {}
+/\ round = (n2 :> 0 @@ n3 :> 0)
+/\ vs = {<<>>}
+
+State 2: <Next line 27, col 1 to line 27, col 17 of module TLCSailfish1>
+/\ log = (n2 :> <<>> @@ n3 :> <<>>)
+/\ es = {<<<<n2, 1>>, <<>>>>}
+/\ round = (n2 :> 1 @@ n3 :> 0)
+/\ vs = {<<>>, <<n2, 1>>}
+
+State 3: <Next line 27, col 1 to line 27, col 17 of module TLCSailfish1>
+/\ log = (n2 :> <<>> @@ n3 :> <<>>)
+/\ es = {<<<<n2, 1>>, <<>>>>, <<<<n3, 1>>, <<>>>>}
+/\ round = (n2 :> 1 @@ n3 :> 1)
+/\ vs = {<<>>, <<n2, 1>>, <<n3, 1>>}
+
+State 4: <Next line 27, col 1 to line 27, col 17 of module TLCSailfish1>
+/\ log = (n2 :> <<>> @@ n3 :> <<>>)
+/\ es = { <<<<n2, 1>>, <<>>>>,
+  <<<<n3, 1>>, <<>>>>,
+  <<<<n3, 2>>, <<n2, 1>>>>,
+  <<<<n3, 2>>, <<n3, 1>>>> }
+/\ round = (n2 :> 1 @@ n3 :> 2)
+/\ vs = {<<>>, <<n2, 1>>, <<n3, 1>>, <<n3, 2>>}
+
+State 5: <Next line 27, col 1 to line 27, col 17 of module TLCSailfish1>
+/\ log = (n2 :> <<>> @@ n3 :> <<>>)
+/\ es = { <<<<n2, 1>>, <<>>>>,
+  <<<<n2, 2>>, <<n2, 1>>>>,
+  <<<<n2, 2>>, <<n3, 1>>>>,
+  <<<<n3, 1>>, <<>>>>,
+  <<<<n3, 2>>, <<n2, 1>>>>,
+  <<<<n3, 2>>, <<n3, 1>>>> }
+/\ round = (n2 :> 2 @@ n3 :> 2)
+/\ vs = {<<>>, <<n2, 1>>, <<n2, 2>>, <<n3, 1>>, <<n3, 2>>}
+
+State 6: <Next line 27, col 1 to line 27, col 17 of module TLCSailfish1>
+/\ log = (n2 :> <<>> @@ n3 :> <<>>)
+/\ es = { <<<<n2, 1>>, <<>>>>,
+  <<<<n2, 2>>, <<n2, 1>>>>,
+  <<<<n2, 2>>, <<n3, 1>>>>,
+  <<<<n2, 3>>, <<n2, 2>>>>,
+  <<<<n2, 3>>, <<n3, 2>>>>,
+  <<<<n3, 1>>, <<>>>>,
+  <<<<n3, 2>>, <<n2, 1>>>>,
+  <<<<n3, 2>>, <<n3, 1>>>> }
+/\ round = (n2 :> 3 @@ n3 :> 2)
+/\ vs = {<<>>, <<n2, 1>>, <<n2, 2>>, <<n2, 3>>, <<n3, 1>>, <<n3, 2>>}
+
+State 7: <Next line 27, col 1 to line 27, col 17 of module TLCSailfish1>
+/\ log = (n2 :> <<>> @@ n3 :> <<>>)
+/\ es = { <<<<n2, 1>>, <<>>>>,
+  <<<<n2, 2>>, <<n2, 1>>>>,
+  <<<<n2, 2>>, <<n3, 1>>>>,
+  <<<<n2, 3>>, <<n2, 2>>>>,
+  <<<<n2, 3>>, <<n3, 2>>>>,
+  <<<<n3, 1>>, <<>>>>,
+  <<<<n3, 2>>, <<n2, 1>>>>,
+  <<<<n3, 2>>, <<n3, 1>>>>,
+  <<<<n3, 3>>, <<n2, 2>>>>,
+  <<<<n3, 3>>, <<n3, 2>>>> }
+/\ round = (n2 :> 3 @@ n3 :> 3)
+/\ vs = {<<>>, <<n2, 1>>, <<n2, 2>>, <<n2, 3>>, <<n3, 1>>, <<n3, 2>>, <<n3, 3>>}
+
+Error: The error occurred when TLC was evaluating the nested
+expressions at the following positions:
+0. Line 27, column 1 to line 27, column 17 in TLCSailfish1
+1. Line 218, column 9 to line 219, column 50 in Sailfish
+2. Line 218, column 10 to line 218, column 45 in Sailfish
+3. Line 218, column 29 to line 218, column 45 in Sailfish
+4. Line 173, column 22 to line 200, column 60 in Sailfish
+5. Line 178, column 30 to line 200, column 60 in Sailfish
+6. Line 178, column 33 to line 200, column 60 in Sailfish
+7. Line 179, column 35 to line 200, column 60 in Sailfish
+8. Line 180, column 37 to line 200, column 60 in Sailfish
+9. Line 180, column 40 to line 180, column 84 in Sailfish
+10. Line 21, column 16 to line 21, column 49 in TLCSailfish1
+11. Line 181, column 40 to line 181, column 104 in Sailfish
+12. Line 181, column 52 to line 181, column 104 in Sailfish
+13. Line 182, column 40 to line 182, column 74 in Sailfish
+14. Line 183, column 40 to line 185, column 90 in Sailfish
+15. Line 184, column 42 to line 185, column 90 in Sailfish
+16. Line 184, column 45 to line 184, column 98 in Sailfish
+17. Line 186, column 40 to line 189, column 54 in Sailfish
+18. Line 189, column 48 to line 189, column 54 in Sailfish
+19. Line 189, column 51 to line 189, column 54 in Sailfish
+20. Line 190, column 40 to line 192, column 101 in Sailfish
+21. Line 191, column 42 to line 192, column 101 in Sailfish
+22. Line 191, column 45 to line 191, column 66 in Sailfish
+23. Line 192, column 45 to line 192, column 101 in Sailfish
+24. Line 193, column 40 to line 200, column 60 in Sailfish
+25. Line 194, column 48 to line 198, column 73 in Sailfish
+26. Line 194, column 51 to line 198, column 73 in Sailfish
+27. Line 195, column 53 to line 198, column 73 in Sailfish
+28. Line 196, column 61 to line 196, column 126 in Sailfish
+29. Line 196, column 64 to line 196, column 126 in Sailfish
+30. Line 196, column 71 to line 196, column 126 in Sailfish
+31. Line 196, column 93 to line 196, column 125 in Sailfish
+32. Line 57, column 1 to line 57, column 17 in Sailfish
+33. Line 66, column 22 to line 71, column 73 in BlockDag
+34. Line 67, column 5 to line 71, column 73 in BlockDag
+35. Line 71, column 9 to line 71, column 73 in BlockDag
+36. Line 71, column 9 to line 71, column 64 in BlockDag
+37. Line 71, column 40 to line 71, column 64 in BlockDag
+38. Line 45, column 16 to line 47, column 36 in BlockDag
+39. Line 46, column 5 to line 47, column 36 in BlockDag
+40. Line 47, column 9 to line 47, column 36 in BlockDag
+41. Line 47, column 16 to line 47, column 32 in BlockDag
+42. Line 45, column 16 to line 47, column 36 in BlockDag
+43. Line 45, column 19 to line 45, column 24 in BlockDag
+44. Line 45, column 19 to line 45, column 19 in BlockDag
+45. Line 47, column 25 to line 47, column 31 in BlockDag
+46. Line 47, column 29 to line 47, column 31 in BlockDag
+47. Line 47, column 30 to line 47, column 30 in BlockDag
+48. Line 46, column 14 to line 46, column 35 in BlockDag
+
+
+238 states generated, 136 distinct states found, 78 states left on queue.
+Finished in 01s at (2026-11-06 12:49:11)

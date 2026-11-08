@@ -1,0 +1,103 @@
+{
+  "model_id": "Peterson",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "Peterson-m1",
+      "model_id": "Peterson",
+      "operator": "drop-guard",
+      "module": "Lock",
+      "file": "Lock.tla",
+      "description": "replace a guard conjunct of l2 with TRUE",
+      "line": 59,
+      "original_snippet": "/\\ pc[self] = \"l2\"",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 77,
+          "distinct": 42,
+          "seconds": 1.551,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Peterson-m2",
+      "model_id": "Peterson",
+      "operator": "flip-literal",
+      "module": "Peterson",
+      "file": "Peterson.tla",
+      "description": "flip TRUE in a1",
+      "line": 52,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "Inv"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 6,
+          "distinct": 6,
+          "seconds": 1.465,
+          "violated": [
+            "Inv"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "Peterson-m3",
+      "model_id": "Peterson",
+      "operator": "drop-guard",
+      "module": "Peterson",
+      "file": "Peterson.tla",
+      "description": "replace a guard conjunct of a3 with TRUE",
+      "line": 61,
+      "original_snippet": "/\\ pc[self] = \"a3\"",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "parse-error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "parse-error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.391,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Peterson-m4",
+      "model_id": "Peterson",
+      "operator": "flip-literal",
+      "module": "Lock",
+      "file": "Lock.tla",
+      "description": "flip TRUE in l0",
+      "line": 45,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 2,
+          "distinct": 2,
+          "seconds": 1.602,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

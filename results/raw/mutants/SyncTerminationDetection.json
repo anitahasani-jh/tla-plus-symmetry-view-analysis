@@ -1,0 +1,99 @@
+{
+  "model_id": "SyncTerminationDetection",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "SyncTerminationDetection-m1",
+      "model_id": "SyncTerminationDetection",
+      "operator": "drop-guard",
+      "module": "SyncTerminationDetection",
+      "file": "SyncTerminationDetection.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 54,
+      "original_snippet": "[][Next]_vars",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.455,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "SyncTerminationDetection-m2",
+      "model_id": "SyncTerminationDetection",
+      "operator": "flip-literal",
+      "module": "SyncTerminationDetection",
+      "file": "SyncTerminationDetection.tla",
+      "description": "flip TRUE in Wakeup",
+      "line": 39,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 722,
+          "distinct": 129,
+          "seconds": 1.547,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "SyncTerminationDetection-m3",
+      "model_id": "SyncTerminationDetection",
+      "operator": "drop-guard",
+      "module": "SyncTerminationDetection",
+      "file": "SyncTerminationDetection.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 54,
+      "original_snippet": "Fair",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 722,
+          "distinct": 129,
+          "seconds": 1.579,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "SyncTerminationDetection-m4",
+      "model_id": "SyncTerminationDetection",
+      "operator": "flip-literal",
+      "module": "SyncTerminationDetection",
+      "file": "SyncTerminationDetection.tla",
+      "description": "flip TRUE in DetectTermination",
+      "line": 44,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 722,
+          "distinct": 129,
+          "seconds": 1.512,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

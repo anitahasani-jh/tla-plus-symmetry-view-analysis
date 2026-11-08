@@ -1,0 +1,257 @@
+{
+  "model": {
+    "model_id": "SimpleRegular",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\TeachingConcurrency",
+    "module": "SimpleRegular",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\TeachingConcurrency\\SimpleRegular.cfg",
+    "family": "mutual-exclusion",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\TeachingConcurrency",
+    "module_name": "SimpleRegular",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\TeachingConcurrency\\SimpleRegular.cfg",
+    "modules": [
+      "SimpleRegular"
+    ],
+    "module_files": {
+      "SimpleRegular": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\TeachingConcurrency\\SimpleRegular.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "Integers",
+      "TLAPS"
+    ],
+    "constants": {
+      "N": {
+        "arity": 0,
+        "declared_in": "SimpleRegular",
+        "assignment_form": "=",
+        "assignment_text": "8",
+        "value_text": "8",
+        "value_kind": "int",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "x",
+      "y",
+      "pc"
+    ],
+    "instances": [],
+    "opdefs": 14,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\TeachingConcurrency\\SimpleRegular.tla",
+      "module": "SimpleRegular",
+      "bad_tokens": 0,
+      "unknown_nodes": 71,
+      "proof_tokens_skipped": 7,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 944,
+      "cov_covered_tokens": 944,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 71,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\TeachingConcurrency\\SimpleRegular.cfg",
+      "constants": {
+        "N": {
+          "form": "=",
+          "value_text": "8",
+          "line": 1
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "Spec",
+      "invariants": [
+        "PCorrect",
+        "TypeOK",
+        "Inv"
+      ],
+      "properties": [],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "SimpleRegular",
+    "constants": [
+      "N"
+    ],
+    "variables": [
+      "x",
+      "y",
+      "pc"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 13,
+    "writes": 15,
+    "reads": 113,
+    "invariants": [
+      "PCorrect",
+      "TypeOK",
+      "Inv"
+    ],
+    "properties": [],
+    "liveness": false,
+    "liveness_reasons": [],
+    "unresolved_names": {
+      "self": 18,
+      "i": 6,
+      "v": 1
+    },
+    "instance_aliases": {},
+    "notes": [
+      "stutter subscript ignored in Spec"
+    ]
+  },
+  "symmetry": {
+    "candidates": [],
+    "selected": [],
+    "notes": [
+      "no constant evaluates to a set of model values, so this model has no symmetry set to propose"
+    ]
+  },
+  "history": {
+    "retained": [
+      "x",
+      "y",
+      "pc"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible"
+    ],
+    "evidence": {
+      "x": {
+        "name": "x",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 4,
+        "read_in_guard": 3,
+        "read_in_init": 0,
+        "read_in_property": 3,
+        "writes": 5,
+        "influences": [
+          "x",
+          "x",
+          "x",
+          "x"
+        ]
+      },
+      "y": {
+        "name": "y",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant PCorrect",
+          "read by checked property/invariant PCorrect",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 4,
+        "read_in_guard": 1,
+        "read_in_init": 0,
+        "read_in_property": 11,
+        "writes": 5,
+        "influences": [
+          "y",
+          "y",
+          "y",
+          "y"
+        ]
+      },
+      "pc": {
+        "name": "pc",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant PCorrect",
+          "read by checked property/invariant PCorrect",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 4,
+        "read_in_guard": 6,
+        "read_in_init": 0,
+        "read_in_property": 9,
+        "writes": 5,
+        "influences": [
+          "pc",
+          "pc",
+          "pc",
+          "pc"
+        ]
+      }
+    },
+    "liveness_warning": false,
+    "liveness_reasons": [],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "CONSTANT N = 8 \nSPECIFICATION Spec\nINVARIANTS PCorrect TypeOK Inv\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.959,
+    "constants": {
+      "N": "8"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 1.017,
+  "notes": [
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}

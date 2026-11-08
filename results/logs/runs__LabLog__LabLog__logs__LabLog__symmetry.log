@@ -1,0 +1,43 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 64 and seed 255466860007153410 with 2 workers on 4 cores with 910MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\LabLog\LabLog\symmetry__m_LabLog-m3\LabLog_SymView.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\LabLog\LabLog\symmetry__m_LabLog-m3\LabLog.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module LabLog
+Semantic processing of module LabLog_SymView
+Starting... (2026-11-06 13:05:41)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 13:05:41.
+Error: Invariant NoPendingOwner is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ pending = {}
+/\ owner = None
+/\ log = <<>>
+
+State 2: <Request line 49, col 5 to line 53, col 22 of module LabLog>
+/\ pending = {p1}
+/\ owner = None
+/\ log = <<<<p1, "request">>>>
+
+State 3: <Grant line 56, col 5 to line 60, col 51 of module LabLog>
+/\ pending = {}
+/\ owner = p1
+/\ log = <<<<p1, "request">>, <<p1, "grant">>>>
+
+State 4: <Request line 49, col 5 to line 53, col 22 of module LabLog>
+/\ pending = {p1}
+/\ owner = p1
+/\ log = <<<<p1, "request">>, <<p1, "grant">>, <<p1, "request">>>>
+
+12 states generated, 9 distinct states found, 2 states left on queue.
+The depth of the complete state graph search is 5.
+The average outdegree of the complete state graph is 2 (minimum is 1, the maximum 3 and the 95th percentile is 3).
+Finished in 00s at (2026-11-06 13:05:41)

@@ -1,0 +1,21 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 68 and seed -9179575702566262162 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\LockHS\LockHS.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\LockHS\Lock.tla
+
+Fatal errors while parsing TLA+ spec in file LockHS
+
+tla2sany.semantic.AbortException
+*** Abort messages: 1
+
+Unknown location
+
+Cannot find source file for module NaturalsInduction imported in module LockHS.
+
+
+Starting... (2026-11-06 12:29:44)
+Error: Parsing or semantic analysis failed.
+Finished in 00s at (2026-11-06 12:29:44)
+
+--- stderr ---
+File does not exist: C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\LockHS\NaturalsInduction.tla while looking in these directories: jar:file:/C:/Users/emiroow/Documents/Qoder/2026-11-05/7a734d68/symview/tools/tla2tools-1.7.1.jar!/tla2sany\StandardModules\

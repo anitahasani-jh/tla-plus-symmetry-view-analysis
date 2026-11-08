@@ -1,0 +1,138 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 96 and seed 1432446709967618801 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\Barriers\Barriers.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\Barriers\TLAPS.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\Barriers\FiniteSetTheorems.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\Barriers\Barrier.tla
+Semantic processing of module TLAPS
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module FiniteSetTheorems
+Semantic processing of module Barrier
+Semantic processing of module Barriers
+Semantic errors:
+
+*** Errors: 22
+
+line 339, col 8 to line 339, col 18 of module Barriers
+
+Unknown operator: `FS_Interval'.
+
+
+line 345, col 8 to line 345, col 16 of module Barriers
+
+Unknown operator: `FS_Subset'.
+
+
+line 351, col 14 to line 351, col 31 of module Barriers
+
+Unknown operator: `FS_CardinalityType'.
+
+
+line 362, col 8 to line 362, col 18 of module Barriers
+
+Unknown operator: `FS_Interval'.
+
+
+line 364, col 20 to line 364, col 28 of module Barriers
+
+Unknown operator: `FS_Subset'.
+
+
+line 385, col 21 to line 385, col 38 of module Barriers
+
+Unknown operator: `FS_CardinalityType'.
+
+
+line 395, col 10 to line 395, col 27 of module Barriers
+
+Unknown operator: `FS_CardinalityType'.
+
+
+line 402, col 16 to line 402, col 31 of module Barriers
+
+Unknown operator: `FS_RemoveElement'.
+
+
+line 404, col 16 to line 404, col 33 of module Barriers
+
+Unknown operator: `FS_CardinalityType'.
+
+
+line 439, col 10 to line 439, col 18 of module Barriers
+
+Unknown operator: `FS_Subset'.
+
+
+line 439, col 21 to line 439, col 31 of module Barriers
+
+Unknown operator: `FS_Interval'.
+
+
+line 490, col 20 to line 490, col 32 of module Barriers
+
+Unknown operator: `FS_AddElement'.
+
+
+line 652, col 20 to line 652, col 30 of module Barriers
+
+Unknown operator: `FS_Interval'.
+
+
+line 748, col 41 to line 748, col 56 of module Barriers
+
+Unknown operator: `FS_RemoveElement'.
+
+
+line 791, col 20 to line 791, col 35 of module Barriers
+
+Unknown operator: `FS_RemoveElement'.
+
+
+line 962, col 20 to line 962, col 30 of module Barriers
+
+Unknown operator: `FS_Interval'.
+
+
+line 1059, col 41 to line 1059, col 56 of module Barriers
+
+Unknown operator: `FS_RemoveElement'.
+
+
+line 1134, col 20 to line 1134, col 30 of module Barriers
+
+Unknown operator: `FS_Interval'.
+
+
+line 1158, col 41 to line 1158, col 56 of module Barriers
+
+Unknown operator: `FS_RemoveElement'.
+
+
+line 1191, col 20 to line 1191, col 30 of module Barriers
+
+Unknown operator: `FS_Interval'.
+
+
+line 1215, col 41 to line 1215, col 56 of module Barriers
+
+Unknown operator: `FS_RemoveElement'.
+
+
+line 1293, col 47 to line 1293, col 62 of module Barriers
+
+Unknown operator: `FS_RemoveElement'.
+
+
+
+Starting... (2026-11-06 12:31:46)
+Error: Parsing or semantic analysis failed.
+Finished in 00s at (2026-11-06 12:31:46)

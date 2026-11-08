@@ -1,0 +1,285 @@
+{
+  "model": {
+    "model_id": "EWD840",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840",
+    "module": "EWD840",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840\\EWD840.cfg",
+    "family": "termination-detection",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840",
+    "module_name": "EWD840",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840\\EWD840.cfg",
+    "modules": [
+      "EWD840",
+      "SyncTerminationDetection"
+    ],
+    "module_files": {
+      "EWD840": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840\\EWD840.tla",
+      "SyncTerminationDetection": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840\\SyncTerminationDetection.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "Naturals",
+      "TLAPS"
+    ],
+    "constants": {
+      "N": {
+        "arity": 0,
+        "declared_in": "EWD840",
+        "assignment_form": "=",
+        "assignment_text": "3",
+        "value_text": "3",
+        "value_kind": "int",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "active",
+      "color",
+      "tpos",
+      "tcolor",
+      "terminationDetected"
+    ],
+    "instances": [],
+    "opdefs": 46,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840\\EWD840.tla",
+      "module": "EWD840",
+      "bad_tokens": 0,
+      "unknown_nodes": 37,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 547,
+      "cov_covered_tokens": 547,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 37,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\ewd840\\EWD840.cfg",
+      "constants": {
+        "N": {
+          "form": "=",
+          "value_text": "3",
+          "line": 2
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "Spec",
+      "invariants": [
+        "TypeOK",
+        "TerminationDetection",
+        "Inv"
+      ],
+      "properties": [
+        "Liveness",
+        "TDSpec"
+      ],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": false,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "EWD840",
+    "constants": [
+      "N"
+    ],
+    "variables": [
+      "active",
+      "color",
+      "tpos",
+      "tcolor",
+      "terminationDetected"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 20,
+    "writes": 24,
+    "reads": 98,
+    "invariants": [
+      "TypeOK",
+      "TerminationDetection",
+      "Inv"
+    ],
+    "properties": [
+      "Liveness",
+      "TDSpec"
+    ],
+    "liveness": true,
+    "liveness_reasons": [
+      "Liveness contains the leads-to operator ~>",
+      "Fair assumes fairness (WF)"
+    ],
+    "unresolved_names": {
+      "i": 19,
+      "@": 2,
+      "j": 2,
+      "P0": 1
+    },
+    "instance_aliases": {
+      "TD": "SyncTerminationDetection"
+    },
+    "notes": [
+      "stutter subscript ignored in Spec"
+    ]
+  },
+  "symmetry": {
+    "candidates": [],
+    "selected": [],
+    "notes": [
+      "no constant evaluates to a set of model values, so this model has no symmetry set to propose"
+    ]
+  },
+  "history": {
+    "retained": [
+      "active",
+      "color",
+      "tpos",
+      "tcolor",
+      "terminationDetected"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible",
+      "note: a temporal property is checked; the dropped variables are provably without influence, so the projection is a bisimulation, but this combination is reported for manual review"
+    ],
+    "evidence": {
+      "active": {
+        "name": "active",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK"
+        ],
+        "read_in_rhs": 5,
+        "read_in_guard": 7,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 6,
+        "influences": [
+          "active",
+          "active",
+          "tcolor",
+          "active",
+          "active",
+          "active"
+        ]
+      },
+      "color": {
+        "name": "color",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK"
+        ],
+        "read_in_rhs": 5,
+        "read_in_guard": 4,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 6,
+        "influences": [
+          "color",
+          "tcolor",
+          "color",
+          "color",
+          "color"
+        ]
+      },
+      "tpos": {
+        "name": "tpos",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 4,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 6,
+        "influences": []
+      },
+      "tcolor": {
+        "name": "tcolor",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK"
+        ],
+        "read_in_rhs": 1,
+        "read_in_guard": 4,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 6,
+        "influences": [
+          "tcolor"
+        ]
+      },
+      "terminationDetected": {
+        "name": "terminationDetected",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant TerminationDetection"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 0,
+        "read_in_init": 0,
+        "read_in_property": 2,
+        "writes": 0,
+        "influences": []
+      }
+    },
+    "liveness_warning": true,
+    "liveness_reasons": [
+      "Liveness contains the leads-to operator ~>",
+      "Fair assumes fairness (WF)"
+    ],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "CONSTANTS\n    N = 3\n\nSPECIFICATION Spec\n\nCHECK_DEADLOCK FALSE \nINVARIANTS \n    TypeOK\n    TerminationDetection\n    Inv \n\nPROPERTIES \n    Liveness\n    TDSpec\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.977,
+    "constants": {
+      "N": "3"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 1.046,
+  "notes": [
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}

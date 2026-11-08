@@ -1,0 +1,70 @@
+{
+  "run": {
+    "label": "LabLock__symmetry",
+    "module": "LabLock_SymView",
+    "config": "LabLock_sv_symmetry",
+    "workdir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\_scratch_lab\\lab\\LabLock\\LabLock\\symmetry",
+    "command": [
+      "java",
+      "-Xmx1024m",
+      "-cp",
+      "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\tools\\tla2tools-1.7.1.jar",
+      "tlc2.TLC",
+      "-workers",
+      "2",
+      "-config",
+      "LabLock_sv_symmetry.cfg",
+      "LabLock_SymView.tla"
+    ],
+    "returncode": 0,
+    "verdict": "ok",
+    "wall_seconds": 1.344,
+    "tlc_seconds": 0,
+    "tlc_version": "2.16",
+    "tlc_revision": "cdddf55",
+    "seed": -6435903714009212083,
+    "workers": 2,
+    "cores": 4,
+    "heap_mb": 910,
+    "states_generated": 19,
+    "distinct_states": 7,
+    "queue_remaining": 0,
+    "initial_states": 1,
+    "depth": 5,
+    "outdegree_avg": 1.0,
+    "fingerprint_collision": "4.6E-18",
+    "violated_invariants": [],
+    "violated_properties": [],
+    "deadlock": false,
+    "error_lines": [],
+    "symmetry_lines": [
+      "Parsing file C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\_scratch_lab\\lab\\LabLock\\LabLock\\symmetry\\LabLock_SymView.tla",
+      "Parsing file C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\_scratch_lab\\lab\\LabLock\\LabLock\\symmetry\\LabLock.tla"
+    ],
+    "trace": [],
+    "timed_out": false,
+    "stdout_chars": 1677,
+    "log_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\_scratch_lab\\lab\\LabLock\\logs\\LabLock__symmetry.log"
+  },
+  "model": {
+    "model_id": "LabLock",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabLock",
+    "module": "LabLock",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabLock\\LabLock.cfg",
+    "family": "lab",
+    "source": "authored",
+    "notes": ""
+  },
+  "arm": "symmetry",
+  "repeat": 0,
+  "budget": {
+    "jar": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\tools\\tla2tools-1.7.1.jar",
+    "java": "java",
+    "community_jar": null,
+    "workers": 2,
+    "heap_mb": 1024,
+    "timeout_s": 120,
+    "extra_jvm": [],
+    "extra_tlc": []
+  }
+}

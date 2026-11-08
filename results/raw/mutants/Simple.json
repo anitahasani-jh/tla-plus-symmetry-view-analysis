@@ -1,0 +1,103 @@
+{
+  "model_id": "Simple",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "Simple-m1",
+      "model_id": "Simple",
+      "operator": "drop-guard",
+      "module": "Simple",
+      "file": "Simple.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 67,
+      "original_snippet": "Init",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.519,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Simple-m2",
+      "model_id": "Simple",
+      "operator": "drop-guard",
+      "module": "Simple",
+      "file": "Simple.tla",
+      "description": "replace a guard conjunct of b with TRUE",
+      "line": 53,
+      "original_snippet": "/\\ pc[self] = \"b\"",
+      "mutated_snippet": "TRUE",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "Inv"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 6,
+          "distinct": 6,
+          "seconds": 1.473,
+          "violated": [
+            "Inv"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "Simple-m3",
+      "model_id": "Simple",
+      "operator": "drop-guard",
+      "module": "Simple",
+      "file": "Simple.tla",
+      "description": "replace a guard conjunct of a with TRUE",
+      "line": 48,
+      "original_snippet": "/\\ pc[self] = \"a\"",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 14167,
+          "distinct": 1974,
+          "seconds": 1.772,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Simple-m4",
+      "model_id": "Simple",
+      "operator": "drop-guard",
+      "module": "Simple",
+      "file": "Simple.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 67,
+      "original_snippet": "[][Next]_vars",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.531,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

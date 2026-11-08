@@ -1,0 +1,127 @@
+{
+  "model_id": "TwoPhase",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "TwoPhase-m1",
+      "model_id": "TwoPhase",
+      "operator": "drop-guard",
+      "module": "TwoPhase",
+      "file": "TwoPhase.tla",
+      "description": "replace a guard conjunct of TPSpec with TRUE",
+      "line": 144,
+      "original_snippet": "TPInit",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.529,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.474,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "TwoPhase-m2",
+      "model_id": "TwoPhase",
+      "operator": "drop-guard",
+      "module": "TCommit",
+      "file": "TCommit.tla",
+      "description": "replace a guard conjunct of Decide with TRUE",
+      "line": 34,
+      "original_snippet": "\\/ /\\ rmState[rm] = \"prepared\"",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "parse-error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "parse-error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.484,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "parse-error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.453,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "TwoPhase-m3",
+      "model_id": "TwoPhase",
+      "operator": "drop-guard",
+      "module": "TwoPhase",
+      "file": "TwoPhase.tla",
+      "description": "replace a guard conjunct of RMRcvAbortMsg with TRUE",
+      "line": 134,
+      "original_snippet": "/\\ [type |-> \"Abort\"] \\in msgs",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 2547,
+          "distinct": 459,
+          "seconds": 1.441,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "ok",
+          "states": 681,
+          "distinct": 122,
+          "seconds": 1.553,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "TwoPhase-m4",
+      "model_id": "TwoPhase",
+      "operator": "drop-guard",
+      "module": "TwoPhase",
+      "file": "TwoPhase.tla",
+      "description": "replace a guard conjunct of TMRcvPrepared with TRUE",
+      "line": 80,
+      "original_snippet": "[type |-> \"Prepared\", rm |-> rm] \\in msgs",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 4153,
+          "distinct": 853,
+          "seconds": 1.55,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "ok",
+          "states": 1034,
+          "distinct": 211,
+          "seconds": 1.458,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

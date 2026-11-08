@@ -1,0 +1,82 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 124 and seed -1751958870724975986 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\SimpleRegular\SimpleRegular\plain__m_SimpleRegular-m1\SimpleRegular.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\SimpleRegular\SimpleRegular\plain__m_SimpleRegular-m1\TLAPS.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module TLAPS
+Semantic processing of module SimpleRegular
+Starting... (2026-11-06 12:49:43)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:49:44.
+Error: Successor state is not completely specified by action b of the next-state relation. The following variables are not assigned: pc, x, y.
+
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ x = ( 0 :> {0} @@
+  1 :> {0} @@
+  2 :> {0} @@
+  3 :> {0} @@
+  4 :> {0} @@
+  5 :> {0} @@
+  6 :> {0} @@
+  7 :> {0} )
+/\ y = (0 :> 0 @@ 1 :> 0 @@ 2 :> 0 @@ 3 :> 0 @@ 4 :> 0 @@ 5 :> 0 @@ 6 :> 0 @@ 7 :> 0)
+/\ pc = ( 0 :> "a1" @@
+  1 :> "a1" @@
+  2 :> "a1" @@
+  3 :> "a1" @@
+  4 :> "a1" @@
+  5 :> "a1" @@
+  6 :> "a1" @@
+  7 :> "a1" )
+
+State 2: <a1 line 83, col 13 to line 86, col 21 of module SimpleRegular>
+/\ x = ( 0 :> {0, 1} @@
+  1 :> {0} @@
+  2 :> {0} @@
+  3 :> {0} @@
+  4 :> {0} @@
+  5 :> {0} @@
+  6 :> {0} @@
+  7 :> {0} )
+/\ y = (0 :> 0 @@ 1 :> 0 @@ 2 :> 0 @@ 3 :> 0 @@ 4 :> 0 @@ 5 :> 0 @@ 6 :> 0 @@ 7 :> 0)
+/\ pc = ( 0 :> "a2" @@
+  1 :> "a1" @@
+  2 :> "a1" @@
+  3 :> "a1" @@
+  4 :> "a1" @@
+  5 :> "a1" @@
+  6 :> "a1" @@
+  7 :> "a1" )
+
+State 3: <a2 line 88, col 13 to line 91, col 21 of module SimpleRegular>
+/\ x = ( 0 :> {1} @@
+  1 :> {0} @@
+  2 :> {0} @@
+  3 :> {0} @@
+  4 :> {0} @@
+  5 :> {0} @@
+  6 :> {0} @@
+  7 :> {0} )
+/\ y = (0 :> 0 @@ 1 :> 0 @@ 2 :> 0 @@ 3 :> 0 @@ 4 :> 0 @@ 5 :> 0 @@ 6 :> 0 @@ 7 :> 0)
+/\ pc = ( 0 :> "b" @@
+  1 :> "a1" @@
+  2 :> "a1" @@
+  3 :> "a1" @@
+  4 :> "a1" @@
+  5 :> "a1" @@
+  6 :> "a1" @@
+  7 :> "a1" )
+
+State 4: <b line 93, col 12 to line 93, col 28 of module SimpleRegular>
+/\ x = null
+/\ y = null
+/\ pc = null
+
+74 states generated, 60 distinct states found, 50 states left on queue.
+The depth of the complete state graph search is 4.
+The average outdegree of the complete state graph is 7 (minimum is 4, the maximum 8 and the 95th percentile is 8).
+Finished in 01s at (2026-11-06 12:49:44)

@@ -1,0 +1,103 @@
+{
+  "model_id": "SimpleRegular",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "SimpleRegular-m1",
+      "model_id": "SimpleRegular",
+      "operator": "drop-guard",
+      "module": "SimpleRegular",
+      "file": "SimpleRegular.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 108,
+      "original_snippet": "Init",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.62,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "SimpleRegular-m2",
+      "model_id": "SimpleRegular",
+      "operator": "drop-guard",
+      "module": "SimpleRegular",
+      "file": "SimpleRegular.tla",
+      "description": "replace a guard conjunct of b with TRUE",
+      "line": 94,
+      "original_snippet": "\\E v \\in x[(self-1) % N]:\n                y' = [y EXCEPT ![self] = v]\n           /\\ pc' = [pc EXCEPT ![self] = \"Done\"]\n           /\\ x' = x",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 66,
+          "distinct": 56,
+          "seconds": 1.596,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "SimpleRegular-m3",
+      "model_id": "SimpleRegular",
+      "operator": "drop-guard",
+      "module": "SimpleRegular",
+      "file": "SimpleRegular.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 108,
+      "original_snippet": "[][Next]_vars",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.576,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "SimpleRegular-m4",
+      "model_id": "SimpleRegular",
+      "operator": "drop-guard",
+      "module": "SimpleRegular",
+      "file": "SimpleRegular.tla",
+      "description": "replace a guard conjunct of b with TRUE",
+      "line": 93,
+      "original_snippet": "/\\ pc[self] = \"b\"",
+      "mutated_snippet": "TRUE",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "Inv"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 5,
+          "distinct": 5,
+          "seconds": 1.53,
+          "violated": [
+            "Inv"
+          ]
+        }
+      }
+    }
+  ]
+}

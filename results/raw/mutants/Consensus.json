@@ -1,0 +1,99 @@
+{
+  "model_id": "Consensus",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "Consensus-m1",
+      "model_id": "Consensus",
+      "operator": "drop-guard",
+      "module": "Consensus",
+      "file": "Consensus.tla",
+      "description": "replace a guard conjunct of LiveSpec with TRUE",
+      "line": 172,
+      "original_snippet": "WF_vars(Next)",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 4,
+          "distinct": 4,
+          "seconds": 1.458,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Consensus-m2",
+      "model_id": "Consensus",
+      "operator": "drop-guard",
+      "module": "Consensus",
+      "file": "Consensus.tla",
+      "description": "replace a guard conjunct of Next with TRUE",
+      "line": 88,
+      "original_snippet": "/\\ chosen = {}",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 13,
+          "distinct": 4,
+          "seconds": 1.484,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Consensus-m3",
+      "model_id": "Consensus",
+      "operator": "drop-guard",
+      "module": "Consensus",
+      "file": "Consensus.tla",
+      "description": "replace a guard conjunct of Next with TRUE",
+      "line": 89,
+      "original_snippet": "\\E v \\in Value:\n             chosen' = {v}",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 2,
+          "distinct": 1,
+          "seconds": 1.592,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Consensus-m4",
+      "model_id": "Consensus",
+      "operator": "drop-guard",
+      "module": "Consensus",
+      "file": "Consensus.tla",
+      "description": "replace a guard conjunct of LiveSpec with TRUE",
+      "line": 172,
+      "original_snippet": "Spec",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.54,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "model_id": "EWD840",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "EWD840-m1",
+      "model_id": "EWD840",
+      "operator": "drop-guard",
+      "module": "SyncTerminationDetection",
+      "file": "SyncTerminationDetection.tla",
+      "description": "replace a guard conjunct of Wakeup with TRUE",
+      "line": 38,
+      "original_snippet": "active[i]",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 1,
+          "distinct": 302,
+          "seconds": 1.888,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "EWD840-m2",
+      "model_id": "EWD840",
+      "operator": "flip-literal",
+      "module": "SyncTerminationDetection",
+      "file": "SyncTerminationDetection.tla",
+      "description": "flip FALSE in Terminate",
+      "line": 33,
+      "original_snippet": "FALSE",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 253,
+          "distinct": 197,
+          "seconds": 1.465,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "EWD840-m3",
+      "model_id": "EWD840",
+      "operator": "weaken-comparison",
+      "module": "EWD840",
+      "file": "EWD840.tla",
+      "description": "> -> >= in SendMsg",
+      "line": 80,
+      "original_snippet": ">",
+      "mutated_snippet": ">=",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 1,
+          "distinct": 302,
+          "seconds": 1.643,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "EWD840-m4",
+      "model_id": "EWD840",
+      "operator": "drop-guard",
+      "module": "EWD840",
+      "file": "EWD840.tla",
+      "description": "replace a guard conjunct of CheckInductiveSpec with TRUE",
+      "line": 165,
+      "original_snippet": "TypeOK",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 1,
+          "distinct": 302,
+          "seconds": 1.647,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

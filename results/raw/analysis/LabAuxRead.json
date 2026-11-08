@@ -1,0 +1,274 @@
+{
+  "model": {
+    "model_id": "LabAuxRead",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabAuxRead",
+    "module": "LabAuxRead",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabAuxRead\\LabAuxRead.cfg",
+    "family": "lab",
+    "source": "authored",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabAuxRead",
+    "module_name": "LabAuxRead",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabAuxRead\\LabAuxRead.cfg",
+    "modules": [
+      "LabAuxRead"
+    ],
+    "module_files": {
+      "LabAuxRead": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabAuxRead\\LabAuxRead.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "TLC"
+    ],
+    "constants": {
+      "Proc": {
+        "arity": 0,
+        "declared_in": "LabAuxRead",
+        "assignment_form": "=",
+        "assignment_text": "{p1, p2, p3}",
+        "value_text": "{p1, p2, p3}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      },
+      "None": {
+        "arity": 0,
+        "declared_in": "LabAuxRead",
+        "assignment_form": "=",
+        "assignment_text": "None",
+        "value_text": "None",
+        "value_kind": "atom",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "owner",
+      "pending",
+      "seen"
+    ],
+    "instances": [],
+    "opdefs": 13,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabAuxRead\\LabAuxRead.tla",
+      "module": "LabAuxRead",
+      "bad_tokens": 0,
+      "unknown_nodes": 0,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 260,
+      "cov_covered_tokens": 260,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 0,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabAuxRead\\LabAuxRead.cfg",
+      "constants": {
+        "Proc": {
+          "form": "=",
+          "value_text": "{p1, p2, p3}",
+          "line": 2
+        },
+        "None": {
+          "form": "=",
+          "value_text": "None",
+          "line": 3
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": "Init",
+      "next": "Next",
+      "specification": null,
+      "invariants": [
+        "TypeOK",
+        "MutualExclusion",
+        "PendingSeen",
+        "OwnerSeen"
+      ],
+      "properties": [],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "LabAuxRead",
+    "constants": [
+      "None",
+      "Proc"
+    ],
+    "variables": [
+      "owner",
+      "pending",
+      "seen"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 11,
+    "writes": 18,
+    "reads": 73,
+    "invariants": [
+      "TypeOK",
+      "MutualExclusion",
+      "PendingSeen",
+      "OwnerSeen"
+    ],
+    "properties": [],
+    "liveness": false,
+    "liveness_reasons": [],
+    "unresolved_names": {
+      "p": 18,
+      "q": 3
+    },
+    "instance_aliases": {},
+    "notes": []
+  },
+  "symmetry": {
+    "candidates": [
+      {
+        "constant": "Proc",
+        "atoms": [
+          "p1",
+          "p2",
+          "p3"
+        ],
+        "verdict": "sound",
+        "reasons": [
+          "Proc = {p1, p2, p3} is used only through permutation-equivariant operators and no other constant distinguishes its elements"
+        ],
+        "flags": [],
+        "value_checks": {
+          "None": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          }
+        },
+        "unknown_operators": {},
+        "liveness_warning": false,
+        "liveness_reasons": [],
+        "group_order": 6,
+        "manual_symmetry_in_config": null
+      }
+    ],
+    "selected": [
+      "Proc"
+    ],
+    "notes": []
+  },
+  "history": {
+    "retained": [
+      "owner",
+      "pending",
+      "seen"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible"
+    ],
+    "evidence": {
+      "owner": {
+        "name": "owner",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant OwnerSeen",
+          "read by checked property/invariant OwnerSeen",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 7,
+        "read_in_init": 0,
+        "read_in_property": 3,
+        "writes": 6,
+        "influences": []
+      },
+      "pending": {
+        "name": "pending",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant PendingSeen",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 3,
+        "read_in_guard": 4,
+        "read_in_init": 0,
+        "read_in_property": 2,
+        "writes": 6,
+        "influences": [
+          "pending",
+          "pending",
+          "pending"
+        ]
+      },
+      "seen": {
+        "name": "seen",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant OwnerSeen",
+          "read by checked property/invariant PendingSeen",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 3,
+        "read_in_init": 0,
+        "read_in_property": 3,
+        "writes": 6,
+        "influences": [
+          "seen",
+          "seen"
+        ]
+      }
+    },
+    "liveness_warning": false,
+    "liveness_reasons": [],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "LabAuxRead_SymView",
+    "wrapper_text": "----------------------------------------------------------------------- MODULE LabAuxRead_SymView -----\n(***************************************************************************)\n(* GENERATED BY SymView 1.0.0 -- DO NOT EDIT.                            *)\n(*                                                                         *)\n(* This wrapper only exists so that a TLC configuration can refer to a      *)\n(* symmetry operator and a view operator.  The original specification is   *)\n(* extended, never modified, so every arm of the experiment checks exactly *)\n(* the same model.                                                         *)\n(***************************************************************************)\nEXTENDS LabAuxRead, TLC\n\n(* Symmetry set proposed by SymView: the constants whose values are sets of model values,\n   used only through permutation-equivariant operators, and not distinguished by any\n   other constant.  TLC requires a set of permutations, hence the Permutations calls. *)\nSymViewPerms == Permutations(Proc)\n\n=============================================================================\n",
+    "configs": {
+      "plain": "CONSTANTS\n  Proc = {p1, p2, p3}\n  None = None\nINIT Init\nNEXT Next\nINVARIANT TypeOK\nINVARIANT MutualExclusion\nINVARIANT PendingSeen\nINVARIANT OwnerSeen\n",
+      "symmetry": "CONSTANTS\n  Proc = {p1, p2, p3}\n  None = None\nINIT Init\nNEXT Next\nINVARIANT TypeOK\nINVARIANT MutualExclusion\nINVARIANT PendingSeen\nINVARIANT OwnerSeen\nSYMMETRY SymViewPerms\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": true,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.845,
+    "constants": {
+      "Proc": "{p1, p2, p3}",
+      "None": "None"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 0.889,
+  "notes": [
+    "no view abstraction was certified for this model"
+  ]
+}

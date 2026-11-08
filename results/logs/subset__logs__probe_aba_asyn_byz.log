@@ -1,0 +1,18 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 122 and seed 2109683133025648901 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\subset\aba_asyn_byz\aba_asyn_byz.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module aba_asyn_byz
+Starting... (2026-11-06 12:34:56)
+Implied-temporal checking--satisfiability problem has 3 branches.
+Computing initial states...
+Computed 2 initial states...
+Computed 4 initial states...
+Computed 8 initial states...
+Finished computing initial states: 16 distinct states generated at 2026-11-06 12:34:57.
+Checking 3 branches of temporal properties for the current state space with 47779 total distinct states at (2026-11-06 12:35:00)
+Finished checking temporal properties in 00s at 2026-11-06 12:35:01
+Progress(7) at 2026-11-06 12:35:01: 171,999 states generated (171,999 s/min), 22,212 distinct states found (22,212 ds/min), 10,712 states left on queue.
+
+--- killed after 40s ---

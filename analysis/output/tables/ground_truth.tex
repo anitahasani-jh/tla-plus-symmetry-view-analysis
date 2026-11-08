@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Ground truth of the hand-written lab models.}
+\label{tab:truth}
+\small
+\begin{tabular}{lllll}
+\toprule
+lab model & expected candidate & expected verdict & expected droppable & liveness warning \\
+\midrule
+LabLock & Proc & sound & - & no \\
+LabLog & Proc & sound & - & no \\
+LabLogNoType & Proc & sound & log & no \\
+LabLeader & Proc & unsound & - & no \\
+LabOrdered & - & none & - & no \\
+LabChoose & Proc & unsound & - & no \\
+LabLive & Proc & sound & - & yes \\
+LabAuxRead & Proc & sound & - & no \\
+\bottomrule
+\end{tabular}
+\end{table}

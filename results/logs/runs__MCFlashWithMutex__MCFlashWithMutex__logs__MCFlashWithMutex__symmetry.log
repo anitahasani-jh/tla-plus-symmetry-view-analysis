@@ -1,0 +1,97 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 21 and seed -3714788086826961293 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCFlashWithMutex\MCFlashWithMutex\symmetry__m_MCFlashWithMutex-m2\MCFlashWithMutex_SymView.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCFlashWithMutex\MCFlashWithMutex\symmetry__m_MCFlashWithMutex-m2\MCFlashWithMutex.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCFlashWithMutex\MCFlashWithMutex\symmetry__m_MCFlashWithMutex-m2\FlashWithMutex.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module FlashWithMutex
+Semantic processing of module TLC
+Semantic processing of module MCFlashWithMutex
+Semantic processing of module MCFlashWithMutex_SymView
+Starting... (2026-11-06 12:41:47)
+Computing initial states...
+Computed 2 initial states...
+Finished computing initial states: 4 states generated, with 1 of them distinct at 2026-11-06 12:41:48.
+Error: Invariant Lemma_1 is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ PrevData = d1
+/\ WbMsg = [Proc |-> Undefined, Cmd |-> "WB_None", Data |-> Undefined]
+/\ ShWbMsg = [Proc |-> Undefined, Cmd |-> "SHWB_None", Data |-> Undefined]
+/\ UniMsg = ( n1 :> [Proc |-> Undefined, Cmd |-> "UNI_None", Data |-> Undefined] @@
+  n2 :> [Proc |-> Undefined, Cmd |-> "UNI_None", Data |-> Undefined] )
+/\ NakcMsg = [Cmd |-> "NAKC_None"]
+/\ PendReqCmd = Undefined
+/\ Dir = [ Pending |-> FALSE,
+  Local |-> FALSE,
+  Dirty |-> FALSE,
+  HeadVld |-> FALSE,
+  HeadPtr |-> Undefined,
+  ShrVld |-> FALSE,
+  ShrSet |-> {},
+  InvSet |-> {} ]
+/\ InvMsg = (n1 :> [Cmd |-> "INV_None"] @@ n2 :> [Cmd |-> "INV_None"])
+/\ FwdSrc = Undefined
+/\ Collecting = FALSE
+/\ CurrData = d1
+/\ RpMsg = (n1 :> [Cmd |-> "RP_None"] @@ n2 :> [Cmd |-> "RP_None"])
+/\ MemData = d1
+/\ PendReqSrc = Undefined
+/\ Proc = ( n1 :>
+      [ ProcCmd |-> "NODE_None",
+        InvMarked |-> FALSE,
+        CacheState |-> "CACHE_I",
+        CacheData |-> Undefined ] @@
+  n2 :>
+      [ ProcCmd |-> "NODE_None",
+        InvMarked |-> FALSE,
+        CacheState |-> "CACHE_I",
+        CacheData |-> Undefined ] )
+/\ FwdCmd = "UNI_None"
+/\ Home = n1
+
+State 2: <PI_Local_GetX_PutX line 222, col 5 to line 230, col 40 of module FlashWithMutex>
+/\ PrevData = d1
+/\ WbMsg = [Proc |-> Undefined, Cmd |-> "WB_None", Data |-> Undefined]
+/\ ShWbMsg = [Proc |-> Undefined, Cmd |-> "SHWB_None", Data |-> Undefined]
+/\ UniMsg = ( n1 :> [Proc |-> Undefined, Cmd |-> "UNI_None", Data |-> Undefined] @@
+  n2 :> [Proc |-> Undefined, Cmd |-> "UNI_None", Data |-> Undefined] )
+/\ NakcMsg = [Cmd |-> "NAKC_None"]
+/\ PendReqCmd = Undefined
+/\ Dir = [ Pending |-> FALSE,
+  Local |-> TRUE,
+  Dirty |-> FALSE,
+  HeadVld |-> FALSE,
+  HeadPtr |-> Undefined,
+  ShrVld |-> FALSE,
+  ShrSet |-> {},
+  InvSet |-> {} ]
+/\ InvMsg = (n1 :> [Cmd |-> "INV_None"] @@ n2 :> [Cmd |-> "INV_None"])
+/\ FwdSrc = Undefined
+/\ Collecting = FALSE
+/\ CurrData = d1
+/\ RpMsg = (n1 :> [Cmd |-> "RP_None"] @@ n2 :> [Cmd |-> "RP_None"])
+/\ MemData = d1
+/\ PendReqSrc = Undefined
+/\ Proc = ( n1 :>
+      [ ProcCmd |-> "NODE_None",
+        InvMarked |-> FALSE,
+        CacheState |-> "CACHE_E",
+        CacheData |-> d1 ] @@
+  n2 :>
+      [ ProcCmd |-> "NODE_None",
+        InvMarked |-> FALSE,
+        CacheState |-> "CACHE_I",
+        CacheData |-> Undefined ] )
+/\ FwdCmd = "UNI_None"
+/\ Home = n1
+
+11 states generated, 8 distinct states found, 4 states left on queue.
+The depth of the complete state graph search is 3.
+Finished in 01s at (2026-11-06 12:41:48)

@@ -1,0 +1,103 @@
+{
+  "model_id": "LabLock",
+  "seed": 20261106,
+  "generated": 3,
+  "mutants": [
+    {
+      "mutant_id": "LabLock-m1",
+      "model_id": "LabLock",
+      "operator": "drop-guard",
+      "module": "LabLock",
+      "file": "LabLock.tla",
+      "description": "drop a guard conjunct of Request",
+      "line": 30,
+      "original_snippet": "/\\ p \\notin pending",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 73,
+          "distinct": 20,
+          "seconds": 1.319,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "ok",
+          "states": 28,
+          "distinct": 7,
+          "seconds": 1.34,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "LabLock-m2",
+      "model_id": "LabLock",
+      "operator": "drop-guard",
+      "module": "LabLock",
+      "file": "LabLock.tla",
+      "description": "drop a guard conjunct of Request",
+      "line": 31,
+      "original_snippet": "/\\ owner # p",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "NoPendingOwner"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 22,
+          "distinct": 17,
+          "seconds": 1.304,
+          "violated": [
+            "NoPendingOwner"
+          ]
+        },
+        "symmetry": {
+          "verdict": "violation",
+          "states": 12,
+          "distinct": 8,
+          "seconds": 1.309,
+          "violated": [
+            "NoPendingOwner"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "LabLock-m3",
+      "model_id": "LabLock",
+      "operator": "drop-guard",
+      "module": "LabLock",
+      "file": "LabLock.tla",
+      "description": "drop a guard conjunct of Release",
+      "line": 44,
+      "original_snippet": "/\\ owner = p",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 97,
+          "distinct": 20,
+          "seconds": 1.36,
+          "violated": []
+        },
+        "symmetry": {
+          "verdict": "ok",
+          "states": 37,
+          "distinct": 7,
+          "seconds": 1.348,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

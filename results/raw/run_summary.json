@@ -1,0 +1,39 @@
+{
+  "models": [
+    {
+      "model_id": "AllocatorImplementation",
+      "family": "allocation",
+      "symmetry": [],
+      "view_dropped": [],
+      "analysis_seconds": 1.218,
+      "liveness": true,
+      "arms_applicable": [
+        "plain"
+      ],
+      "wall_seconds": 24.3
+    },
+    {
+      "model_id": "AllocatorRefinement",
+      "family": "allocation",
+      "symmetry": [],
+      "view_dropped": [],
+      "analysis_seconds": 1.014,
+      "liveness": true,
+      "arms_applicable": [
+        "plain"
+      ],
+      "wall_seconds": 7.4
+    }
+  ],
+  "repeats": 1,
+  "budget": {
+    "jar": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\tools\\tla2tools-1.7.1.jar",
+    "java": "java",
+    "community_jar": null,
+    "workers": 2,
+    "heap_mb": 2048,
+    "timeout_s": 90,
+    "extra_jvm": [],
+    "extra_tlc": []
+  }
+}

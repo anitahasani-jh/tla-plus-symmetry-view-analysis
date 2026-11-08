@@ -1,0 +1,115 @@
+{
+  "model_id": "MC_spanning",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "MC_spanning-m1",
+      "model_id": "MC_spanning",
+      "operator": "drop-guard",
+      "module": "spanning",
+      "file": "spanning.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 31,
+      "original_snippet": "prnt[i] = NoPrnt",
+      "mutated_snippet": "TRUE",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "TypeOK"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 23,
+          "distinct": 6,
+          "seconds": 1.427,
+          "violated": [
+            "TypeOK"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "MC_spanning-m2",
+      "model_id": "MC_spanning",
+      "operator": "flip-literal",
+      "module": "spanning",
+      "file": "spanning.tla",
+      "description": "flip TRUE in Parent",
+      "line": 22,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "TypeOK"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 23,
+          "distinct": 6,
+          "seconds": 1.344,
+          "violated": [
+            "TypeOK"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "MC_spanning-m3",
+      "model_id": "MC_spanning",
+      "operator": "drop-guard",
+      "module": "spanning",
+      "file": "spanning.tla",
+      "description": "replace a guard conjunct of Parent with TRUE",
+      "line": 21,
+      "original_snippet": "~rpt[i]",
+      "mutated_snippet": "TRUE",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "TypeOK"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 23,
+          "distinct": 6,
+          "seconds": 1.319,
+          "violated": [
+            "TypeOK"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "MC_spanning-m4",
+      "model_id": "MC_spanning",
+      "operator": "drop-guard",
+      "module": "spanning",
+      "file": "spanning.tla",
+      "description": "replace a guard conjunct of Termination with TRUE",
+      "line": 40,
+      "original_snippet": "prnt[i] # NoPrnt",
+      "mutated_snippet": "TRUE",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "TypeOK"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 23,
+          "distinct": 6,
+          "seconds": 1.341,
+          "violated": [
+            "TypeOK"
+          ]
+        }
+      }
+    }
+  ]
+}

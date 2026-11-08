@@ -1,0 +1,103 @@
+{
+  "model_id": "Chameneos",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "Chameneos-m1",
+      "model_id": "Chameneos",
+      "operator": "drop-guard",
+      "module": "Chameneos",
+      "file": "Chameneos.tla",
+      "description": "replace a guard conjunct of Meet with TRUE",
+      "line": 61,
+      "original_snippet": "[chameneoses EXCEPT ![cid] = <<newColor, @[2] + 1>>,\n                                               ![meetingPlace] = <<newColor, @[2] + 1>>]",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 538,
+          "distinct": 406,
+          "seconds": 1.401,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Chameneos-m2",
+      "model_id": "Chameneos",
+      "operator": "flip-literal",
+      "module": "Chameneos",
+      "file": "Chameneos.tla",
+      "description": "flip TRUE in Sum",
+      "line": 10,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 24208,
+          "distinct": 15673,
+          "seconds": 1.753,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Chameneos-m3",
+      "model_id": "Chameneos",
+      "operator": "weaken-comparison",
+      "module": "Chameneos",
+      "file": "Chameneos.tla",
+      "description": "< -> <= in Meet",
+      "line": 48,
+      "original_snippet": "<",
+      "mutated_snippet": "<=",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "TypeOK"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 69111,
+          "distinct": 39292,
+          "seconds": 2.254,
+          "violated": [
+            "TypeOK"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "Chameneos-m4",
+      "model_id": "Chameneos",
+      "operator": "drop-guard",
+      "module": "Chameneos",
+      "file": "Chameneos.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 69,
+      "original_snippet": "[][Next]_vars",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.427,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 80 and seed -1894243856281049569 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\SyncTerminationDetection\SyncTerminationDetection\plain\SyncTerminationDetection.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module SyncTerminationDetection
+Starting... (2026-11-06 12:50:25)
+Implied-temporal checking--satisfiability problem has 2 branches.
+Computing initial states...
+Computed 2 initial states...
+Computed 4 initial states...
+Computed 8 initial states...
+Computed 16 initial states...
+Computed 32 initial states...
+Computed 64 initial states...
+Computed 128 initial states...
+Finished computing initial states: 129 distinct states generated at 2026-11-06 12:50:25.
+Progress(1) at 2026-11-06 12:50:25: 3,722 states generated, 129 distinct states found, 0 states left on queue.
+Checking 2 branches of temporal properties for the complete state space with 258 total distinct states at (2026-11-06 12:50:25)
+Finished checking temporal properties in 00s at 2026-11-06 12:50:25
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 2.5E-14
+3722 states generated, 129 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 1.
+The average outdegree of the complete state graph is 0 (minimum is 0, the maximum 0 and the 95th percentile is 0).
+Finished in 00s at (2026-11-06 12:50:25)

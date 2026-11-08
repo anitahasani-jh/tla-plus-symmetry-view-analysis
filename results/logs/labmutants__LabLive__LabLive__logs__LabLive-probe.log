@@ -1,0 +1,18 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 62 and seed -5699313062134255237 with 2 workers on 4 cores with 910MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\labmutants\LabLive\LabLive\probe\LabLive_SVProbe.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\labmutants\LabLive\LabLive\probe\LabLive.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module LabLive
+Semantic processing of module LabLive_SVProbe
+Starting... (2026-11-06 13:06:14)
+Implied-temporal checking--satisfiability problem has 4 branches.
+<<"#SVCONST", "Proc", {p1, p2, p3}>>
+<<"#SVCONST", "None", None>>

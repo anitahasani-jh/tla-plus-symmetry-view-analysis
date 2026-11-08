@@ -1,0 +1,10 @@
+{
+  "repo": "https://github.com/emiroow/symview-tla-symmetry-view",
+  "repo_name": "emiroow/symview-tla-symmetry-view",
+  "branch": "main",
+  "tag": "v1.0.0",
+  "commit": "b95cf235b5adb136e0e68154fb24c260d1888859",
+  "commit_subject": "Liveness guard, span-based mutations, audited docs",
+  "date": "2026-11-06",
+  "note": "commit reported here is the content commit tagged v1.0.0; later commits only record bookkeeping such as this file."
+}

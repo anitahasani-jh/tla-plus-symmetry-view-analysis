@@ -1,0 +1,103 @@
+{
+  "model_id": "Lock",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "Lock-m1",
+      "model_id": "Lock",
+      "operator": "drop-guard",
+      "module": "Lock",
+      "file": "Lock.tla",
+      "description": "replace a guard conjunct of Spec with TRUE",
+      "line": 67,
+      "original_snippet": "Init",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.608,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Lock-m2",
+      "model_id": "Lock",
+      "operator": "flip-literal",
+      "module": "Lock",
+      "file": "Lock.tla",
+      "description": "flip TRUE in cs",
+      "line": 55,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": false,
+      "baseline_verdict": "deadlock",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "deadlock",
+          "states": 11,
+          "distinct": 8,
+          "seconds": 1.801,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "Lock-m3",
+      "model_id": "Lock",
+      "operator": "drop-guard",
+      "module": "Lock",
+      "file": "Lock.tla",
+      "description": "replace a guard conjunct of l2 with TRUE",
+      "line": 59,
+      "original_snippet": "/\\ pc[self] = \"l2\"",
+      "mutated_snippet": "TRUE",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "LockInv"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 23,
+          "distinct": 11,
+          "seconds": 1.424,
+          "violated": [
+            "LockInv"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "Lock-m4",
+      "model_id": "Lock",
+      "operator": "flip-literal",
+      "module": "Lock",
+      "file": "Lock.tla",
+      "description": "flip TRUE in l0",
+      "line": 45,
+      "original_snippet": "TRUE",
+      "mutated_snippet": "FALSE",
+      "detected": false,
+      "baseline_verdict": "deadlock",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "deadlock",
+          "states": 1,
+          "distinct": 1,
+          "seconds": 1.438,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

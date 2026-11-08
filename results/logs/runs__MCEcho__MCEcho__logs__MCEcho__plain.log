@@ -1,0 +1,61 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 73 and seed -6521072531033500852 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCEcho\MCEcho\plain__m_MCEcho-m2\MCEcho.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCEcho\MCEcho\plain__m_MCEcho-m2\Echo.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\MCEcho\MCEcho\plain__m_MCEcho-m2\Relation.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module Relation
+Semantic processing of module TLC
+Semantic processing of module Echo
+Semantic processing of module MCEcho
+Starting... (2026-11-06 12:50:00)
+Computing initial states...
+( <<"a", "a">> :> FALSE @@
+  <<"a", "b">> :> TRUE @@
+  <<"a", "c">> :> TRUE @@
+  <<"b", "a">> :> TRUE @@
+  <<"b", "b">> :> FALSE @@
+  <<"b", "c">> :> TRUE @@
+  <<"c", "a">> :> TRUE @@
+  <<"c", "b">> :> TRUE @@
+  <<"c", "c">> :> FALSE )
+Finished computing initial states: 1 distinct state generated at 2026-11-06 12:50:01.
+Error: Deadlock reached.
+( <<"a", "a">> :> FALSE @@
+  <<"a", "b">> :> TRUE @@
+  <<"a", "c">> :> TRUE @@
+  <<"b", "a">> :> TRUE @@
+  <<"b", "b">> :> FALSE @@
+  <<"b", "c">> :> TRUE @@
+  <<"c", "a">> :> TRUE @@
+  <<"c", "b">> :> TRUE @@
+  <<"c", "c">> :> FALSE )
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ pc = [a |-> "n0", b |-> "n0", c |-> "n0"]
+/\ parent = [a |-> NoNode, b |-> NoNode, c |-> NoNode]
+/\ rcvd = [a |-> 0, b |-> 0, c |-> 0]
+/\ nbrs = [a |-> {"b", "c"}, b |-> {"a", "c"}, c |-> {"a", "b"}]
+/\ children = [a |-> {}, b |-> {}, c |-> {}]
+/\ inbox = [a |-> {}, b |-> {}, c |-> {}]
+
+State 2: <n0 line 103, col 13 to line 109, col 59 of module Echo>
+/\ pc = [a |-> "n1", b |-> "n0", c |-> "n0"]
+/\ parent = [a |-> NoNode, b |-> NoNode, c |-> NoNode]
+/\ rcvd = [a |-> 0, b |-> 0, c |-> 0]
+/\ nbrs = [a |-> {"b", "c"}, b |-> {"a", "c"}, c |-> {"a", "b"}]
+/\ children = [a |-> {}, b |-> {}, c |-> {}]
+/\ inbox = [ a |-> {},
+  b |-> {[kind |-> "m", sndr |-> "a"]},
+  c |-> {[kind |-> "m", sndr |-> "a"]} ]
+
+2 states generated, 2 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 2.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 1 and the 95th percentile is 1).
+Finished in 01s at (2026-11-06 12:50:01)

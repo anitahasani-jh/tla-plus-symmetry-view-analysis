@@ -1,0 +1,47 @@
+# Experimental protocol.  Everything the harness needs is here: no parameter is
+# hard-coded in the Python source, and every run records this file's hash.
+
+budget:
+  # Identical for every arm, every mutant and every repeat.
+  timeout_s: 90
+  workers: 2
+  heap_mb: 2048
+  # Timing is noisy on shared machines (the guide is explicit about this), so the
+  # reported time is the median over repeats.  Use `--repeats 3` for the full
+  # study; the quick profile uses 1.
+  repeats: 1
+  # The constant probe only has to reach the ASSUME evaluation, which happens
+  # before the initial states are computed, so it gets its own small budget.
+  probe_timeout_s: 60
+
+arms:
+  # direct : untouched original module, configuration without SYMMETRY/VIEW
+  # plain  : generated wrapper, same configuration (control for wrapper overhead)
+  # symmetry / view / both : the reductions
+  # manual : the author's own configuration when it ships SYMMETRY/VIEW
+  # `manual` runs the author's own SYMMETRY/VIEW configuration when the model
+  # ships one; it is the human baseline the guide asks for.
+  run: [direct, plain, symmetry, view, both, manual]
+  compare: [plain, symmetry, view, both]
+
+mutants:
+  per_model: 4        # the guide asks for 3-5 mutants per model
+  seed: 20261106
+  # A mutant counts only if the unreduced baseline detects it; the reduced arms
+  # are then replayed on exactly those mutants.
+  filter_with_baseline: true
+  arms: [plain, symmetry, view, both]
+
+statistics:
+  # Applied to the repeated timing runs.
+  median: true
+  bootstrap_ci: 0.95
+  bootstrap_resamples: 2000
+  # Vargha-Delaney effect size and Wilcoxon tests are reported when an arm has
+  # at least this many paired observations.
+  min_pairs_for_test: 8
+
+analysis:
+  # Number of cluster-bootstrap resamples for the aggregate reduction estimate.
+  seed: 20261106
+  cactus_timeout_s: 90

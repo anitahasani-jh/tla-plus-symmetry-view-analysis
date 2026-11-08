@@ -1,0 +1,235 @@
+{
+  "model": {
+    "model_id": "LabOrdered",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabOrdered",
+    "module": "LabOrdered",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabOrdered\\LabOrdered.cfg",
+    "family": "lab",
+    "source": "authored",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabOrdered",
+    "module_name": "LabOrdered",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabOrdered\\LabOrdered.cfg",
+    "modules": [
+      "LabOrdered"
+    ],
+    "module_files": {
+      "LabOrdered": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabOrdered\\LabOrdered.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "Integers"
+    ],
+    "constants": {
+      "N": {
+        "arity": 0,
+        "declared_in": "LabOrdered",
+        "assignment_form": "=",
+        "assignment_text": "3",
+        "value_text": "3",
+        "value_kind": "int",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "turn",
+      "done",
+      "msg"
+    ],
+    "instances": [],
+    "opdefs": 11,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabOrdered\\LabOrdered.tla",
+      "module": "LabOrdered",
+      "bad_tokens": 0,
+      "unknown_nodes": 0,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 236,
+      "cov_covered_tokens": 236,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 0,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\lab\\LabOrdered\\LabOrdered.cfg",
+      "constants": {
+        "N": {
+          "form": "=",
+          "value_text": "3",
+          "line": 2
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": "Init",
+      "next": "Next",
+      "specification": null,
+      "invariants": [
+        "TypeOK",
+        "TokenInRange",
+        "MsgInRange",
+        "DoneIsPrefix",
+        "SumOnFullRing"
+      ],
+      "properties": [],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "LabOrdered",
+    "constants": [
+      "N"
+    ],
+    "variables": [
+      "turn",
+      "done",
+      "msg"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 9,
+    "writes": 9,
+    "reads": 55,
+    "invariants": [
+      "TypeOK",
+      "TokenInRange",
+      "MsgInRange",
+      "DoneIsPrefix",
+      "SumOnFullRing"
+    ],
+    "properties": [],
+    "liveness": false,
+    "liveness_reasons": [],
+    "unresolved_names": {
+      "p": 11,
+      "q": 4
+    },
+    "instance_aliases": {},
+    "notes": []
+  },
+  "symmetry": {
+    "candidates": [],
+    "selected": [],
+    "notes": [
+      "no constant evaluates to a set of model values, so this model has no symmetry set to propose"
+    ]
+  },
+  "history": {
+    "retained": [
+      "turn",
+      "done",
+      "msg"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible"
+    ],
+    "evidence": {
+      "turn": {
+        "name": "turn",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TokenInRange",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 2,
+        "read_in_init": 0,
+        "read_in_property": 2,
+        "writes": 3,
+        "influences": []
+      },
+      "done": {
+        "name": "done",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant DoneIsPrefix",
+          "read by checked property/invariant DoneIsPrefix",
+          "read by checked property/invariant DoneIsPrefix",
+          "read by checked property/invariant DoneIsPrefix",
+          "read by checked property/invariant DoneIsPrefix",
+          "read by checked property/invariant DoneIsPrefix",
+          "read by checked property/invariant SumOnFullRing",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 1,
+        "read_in_guard": 2,
+        "read_in_init": 0,
+        "read_in_property": 8,
+        "writes": 3,
+        "influences": [
+          "done"
+        ]
+      },
+      "msg": {
+        "name": "msg",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant MsgInRange",
+          "read by checked property/invariant SumOnFullRing",
+          "read by checked property/invariant TypeOK"
+        ],
+        "read_in_rhs": 1,
+        "read_in_guard": 0,
+        "read_in_init": 0,
+        "read_in_property": 3,
+        "writes": 3,
+        "influences": [
+          "msg"
+        ]
+      }
+    },
+    "liveness_warning": false,
+    "liveness_reasons": [],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "CONSTANTS\n  N = 3\nINIT Init\nNEXT Next\nINVARIANT TypeOK\nINVARIANT TokenInRange\nINVARIANT MsgInRange\nINVARIANT DoneIsPrefix\nINVARIANT SumOnFullRing\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.911,
+    "constants": {
+      "N": "3"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 0.954,
+  "notes": [
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}

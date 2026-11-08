@@ -1,0 +1,107 @@
+{
+  "model_id": "AllocatorImplementation",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "AllocatorImplementation-m1",
+      "model_id": "AllocatorImplementation",
+      "operator": "drop-guard",
+      "module": "SchedulingAllocator",
+      "file": "SchedulingAllocator.tla",
+      "description": "replace a guard conjunct of AllocatorInvariant with TRUE",
+      "line": 147,
+      "original_snippet": "\\A i \\in DOMAIN sched : \\A j \\in 1..i-1 : \n        alloc[sched[i]] \\cap unsat[sched[j]] = {}\n  /\\ \\** the allocator can satisfy the requests of any scheduled client\n     \\** assuming that the clients ",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 64414,
+          "distinct": 17701,
+          "seconds": 8.218,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "AllocatorImplementation-m2",
+      "model_id": "AllocatorImplementation",
+      "operator": "drop-guard",
+      "module": "SchedulingAllocator",
+      "file": "SchedulingAllocator.tla",
+      "description": "replace a guard conjunct of Allocator with TRUE",
+      "line": 124,
+      "original_snippet": "[][Next]_vars",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 64414,
+          "distinct": 17701,
+          "seconds": 8.08,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "AllocatorImplementation-m3",
+      "model_id": "AllocatorImplementation",
+      "operator": "drop-guard",
+      "module": "AllocatorImplementation",
+      "file": "AllocatorImplementation.tla",
+      "description": "replace a guard conjunct of Liveness with TRUE",
+      "line": 141,
+      "original_snippet": "\\A c \\in Clients : WF_vars(\\E S \\in SUBSET Resources : Allocate(c, S))\n  /\\ WF_vars(Schedule)\n  /\\ \\A m \\in Messages : \n       /\\ WF_vars(RReq(m))\n       /\\ WF_vars(RAlloc(m))\n       /\\ WF_vars(RRet(m",
+      "mutated_snippet": "TRUE",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "<temporal property>"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 54095,
+          "distinct": 16090,
+          "seconds": 4.774,
+          "violated": [
+            "<temporal property>"
+          ]
+        }
+      }
+    },
+    {
+      "mutant_id": "AllocatorImplementation-m4",
+      "model_id": "AllocatorImplementation",
+      "operator": "drop-guard",
+      "module": "AllocatorImplementation",
+      "file": "AllocatorImplementation.tla",
+      "description": "replace a guard conjunct of AllocsInTransit with TRUE",
+      "line": 157,
+      "original_snippet": "m.clt = c",
+      "mutated_snippet": "TRUE",
+      "detected": true,
+      "baseline_verdict": "violation",
+      "violated": [
+        "Invariant"
+      ],
+      "arms": {
+        "plain": {
+          "verdict": "violation",
+          "states": 294,
+          "distinct": 163,
+          "seconds": 1.772,
+          "violated": [
+            "Invariant"
+          ]
+        }
+      }
+    }
+  ]
+}

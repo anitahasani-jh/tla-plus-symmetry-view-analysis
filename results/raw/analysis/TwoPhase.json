@@ -1,0 +1,264 @@
+{
+  "model": {
+    "model_id": "TwoPhase",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\transaction_commit",
+    "module": "TwoPhase",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\transaction_commit\\TwoPhase.cfg",
+    "family": "transaction-commit",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\transaction_commit",
+    "module_name": "TwoPhase",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\transaction_commit\\TwoPhase.cfg",
+    "modules": [
+      "TCommit",
+      "TwoPhase"
+    ],
+    "module_files": {
+      "TwoPhase": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\transaction_commit\\TwoPhase.tla",
+      "TCommit": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\transaction_commit\\TCommit.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [],
+    "constants": {
+      "RM": {
+        "arity": 0,
+        "declared_in": "TwoPhase",
+        "assignment_form": "=",
+        "assignment_text": "{r1, r2, r3}",
+        "value_text": "{r1, r2, r3}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "rmState",
+      "tmState",
+      "tmPrepared",
+      "msgs"
+    ],
+    "instances": [],
+    "opdefs": 31,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\transaction_commit\\TwoPhase.tla",
+      "module": "TwoPhase",
+      "bad_tokens": 0,
+      "unknown_nodes": 0,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 428,
+      "cov_covered_tokens": 428,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 0,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\transaction_commit\\TwoPhase.cfg",
+      "constants": {
+        "RM": {
+          "form": "=",
+          "value_text": "{r1, r2, r3}",
+          "line": 1
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "TPSpec",
+      "invariants": [
+        "TPTypeOK"
+      ],
+      "properties": [],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "TwoPhase",
+    "constants": [
+      "RM"
+    ],
+    "variables": [
+      "rmState",
+      "tmState",
+      "tmPrepared",
+      "msgs"
+    ],
+    "init": "TPInit",
+    "next": "TPNext",
+    "reachable_definitions": 12,
+    "writes": 32,
+    "reads": 58,
+    "invariants": [
+      "TPTypeOK"
+    ],
+    "properties": [],
+    "liveness": false,
+    "liveness_reasons": [],
+    "unresolved_names": {
+      "rm": 14
+    },
+    "instance_aliases": {
+      "TC": "TCommit"
+    },
+    "notes": [
+      "stutter subscript ignored in TPSpec"
+    ]
+  },
+  "symmetry": {
+    "candidates": [
+      {
+        "constant": "RM",
+        "atoms": [
+          "r1",
+          "r2",
+          "r3"
+        ],
+        "verdict": "sound",
+        "reasons": [
+          "RM = {r1, r2, r3} is used only through permutation-equivariant operators and no other constant distinguishes its elements"
+        ],
+        "flags": [],
+        "value_checks": {},
+        "unknown_operators": {},
+        "liveness_warning": false,
+        "liveness_reasons": [],
+        "group_order": 6,
+        "manual_symmetry_in_config": null
+      }
+    ],
+    "selected": [
+      "RM"
+    ],
+    "notes": []
+  },
+  "history": {
+    "retained": [
+      "rmState",
+      "tmState",
+      "tmPrepared",
+      "msgs"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible"
+    ],
+    "evidence": {
+      "rmState": {
+        "name": "rmState",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TPTypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 4,
+        "read_in_guard": 2,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 8,
+        "influences": [
+          "rmState",
+          "rmState",
+          "rmState",
+          "rmState"
+        ]
+      },
+      "tmState": {
+        "name": "tmState",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TPTypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 3,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 8,
+        "influences": []
+      },
+      "tmPrepared": {
+        "name": "tmPrepared",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TPTypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 1,
+        "read_in_guard": 1,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 8,
+        "influences": [
+          "tmPrepared"
+        ]
+      },
+      "msgs": {
+        "name": "msgs",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TPTypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 3,
+        "read_in_guard": 3,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 8,
+        "influences": [
+          "msgs",
+          "msgs",
+          "msgs"
+        ]
+      }
+    },
+    "liveness_warning": false,
+    "liveness_reasons": [],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "TwoPhase_SymView",
+    "wrapper_text": "----------------------------------------------------------------------- MODULE TwoPhase_SymView -----\n(***************************************************************************)\n(* GENERATED BY SymView 1.0.0 -- DO NOT EDIT.                            *)\n(*                                                                         *)\n(* This wrapper only exists so that a TLC configuration can refer to a      *)\n(* symmetry operator and a view operator.  The original specification is   *)\n(* extended, never modified, so every arm of the experiment checks exactly *)\n(* the same model.                                                         *)\n(***************************************************************************)\nEXTENDS TwoPhase, TLC\n\n(* Symmetry set proposed by SymView: the constants whose values are sets of model values,\n   used only through permutation-equivariant operators, and not distinguished by any\n   other constant.  TLC requires a set of permutations, hence the Permutations calls. *)\nSymViewPerms == Permutations(RM)\n\n=============================================================================\n",
+    "configs": {
+      "plain": "CONSTANT RM = {r1, r2, r3}\nINVARIANT TPTypeOK\nSPECIFICATION TPSpec\n",
+      "symmetry": "CONSTANT RM = {r1, r2, r3}\nINVARIANT TPTypeOK\nSPECIFICATION TPSpec\nSYMMETRY SymViewPerms\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": true,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 1.018,
+    "constants": {
+      "RM": "{r1, r2, r3}"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 1.084,
+  "notes": [
+    "no view abstraction was certified for this model"
+  ]
+}

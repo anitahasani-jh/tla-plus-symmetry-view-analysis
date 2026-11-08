@@ -1,0 +1,300 @@
+{
+  "model": {
+    "model_id": "clean",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\glowingRaccoon",
+    "module": "clean",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\glowingRaccoon\\clean.cfg",
+    "family": "distributed-algorithm",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\glowingRaccoon",
+    "module_name": "clean",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\glowingRaccoon\\clean.cfg",
+    "modules": [
+      "clean"
+    ],
+    "module_files": {
+      "clean": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\glowingRaccoon\\clean.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "Naturals"
+    ],
+    "constants": {
+      "DNA": {
+        "arity": 0,
+        "declared_in": "clean",
+        "assignment_form": "=",
+        "assignment_text": "5",
+        "value_text": "5",
+        "value_kind": "int",
+        "value_source": "tlc-probe"
+      },
+      "PRIMER": {
+        "arity": 0,
+        "declared_in": "clean",
+        "assignment_form": "=",
+        "assignment_text": "5",
+        "value_text": "5",
+        "value_kind": "int",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "tee",
+      "primer",
+      "dna",
+      "template",
+      "hybrid"
+    ],
+    "instances": [],
+    "opdefs": 15,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\glowingRaccoon\\clean.tla",
+      "module": "clean",
+      "bad_tokens": 0,
+      "unknown_nodes": 0,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 312,
+      "cov_covered_tokens": 312,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 0,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\glowingRaccoon\\clean.cfg",
+      "constants": {
+        "DNA": {
+          "form": "=",
+          "value_text": "5",
+          "line": 2
+        },
+        "PRIMER": {
+          "form": "=",
+          "value_text": "5",
+          "line": 3
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "Spec",
+      "invariants": [
+        "TypeOK",
+        "primerPositive",
+        "preservationInvariant"
+      ],
+      "properties": [
+        "preservationProperty"
+      ],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "clean",
+    "constants": [
+      "DNA",
+      "PRIMER"
+    ],
+    "variables": [
+      "tee",
+      "primer",
+      "dna",
+      "template",
+      "hybrid"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 14,
+    "writes": 32,
+    "reads": 60,
+    "invariants": [
+      "TypeOK",
+      "primerPositive",
+      "preservationInvariant"
+    ],
+    "properties": [
+      "preservationProperty"
+    ],
+    "liveness": false,
+    "liveness_reasons": [
+      "the configuration checks temporal PROPERTIES (preservationProperty) but every definition reachable from them is safety shaped ([]P and [A]_v), which TLC's symmetry reduction preserves"
+    ],
+    "unresolved_names": {
+      "k": 3,
+      "i": 2,
+      "j": 2
+    },
+    "instance_aliases": {},
+    "notes": [
+      "stutter subscript ignored in Spec",
+      "stutter subscript ignored in preservationProperty"
+    ]
+  },
+  "symmetry": {
+    "candidates": [],
+    "selected": [],
+    "notes": [
+      "no constant evaluates to a set of model values, so this model has no symmetry set to propose"
+    ]
+  },
+  "history": {
+    "retained": [
+      "tee",
+      "primer",
+      "dna",
+      "template",
+      "hybrid"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible"
+    ],
+    "evidence": {
+      "tee": {
+        "name": "tee",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 5,
+        "read_in_init": 0,
+        "read_in_property": 1,
+        "writes": 5,
+        "influences": []
+      },
+      "primer": {
+        "name": "primer",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant preservationInvariant",
+          "read by checked property/invariant primerPositive",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 3,
+        "read_in_guard": 3,
+        "read_in_init": 0,
+        "read_in_property": 3,
+        "writes": 7,
+        "influences": [
+          "primer",
+          "primer",
+          "primer"
+        ]
+      },
+      "dna": {
+        "name": "dna",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant preservationInvariant",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 2,
+        "read_in_guard": 1,
+        "read_in_init": 0,
+        "read_in_property": 2,
+        "writes": 6,
+        "influences": [
+          "dna",
+          "template"
+        ]
+      },
+      "template": {
+        "name": "template",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant preservationInvariant",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 3,
+        "read_in_guard": 3,
+        "read_in_init": 0,
+        "read_in_property": 2,
+        "writes": 7,
+        "influences": [
+          "template",
+          "template",
+          "template"
+        ]
+      },
+      "hybrid": {
+        "name": "hybrid",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant preservationInvariant",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 5,
+        "read_in_guard": 1,
+        "read_in_init": 0,
+        "read_in_property": 2,
+        "writes": 7,
+        "influences": [
+          "hybrid",
+          "hybrid",
+          "dna",
+          "primer",
+          "template"
+        ]
+      }
+    },
+    "liveness_warning": false,
+    "liveness_reasons": [],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "CONSTANTS\n  DNA = 5\n  PRIMER = 5\nINVARIANTS TypeOK primerPositive preservationInvariant\nPROPERTY preservationProperty\nSPECIFICATION Spec\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.94,
+    "constants": {
+      "DNA": "5",
+      "PRIMER": "5"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 0.996,
+  "notes": [
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}

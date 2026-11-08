@@ -1,0 +1,39 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 65 and seed -769600549646565112 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\EWD840\EWD840\plain__m_EWD840-m2\EWD840.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\EWD840\EWD840\plain__m_EWD840-m2\TLAPS.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\EWD840\EWD840\plain__m_EWD840-m2\SyncTerminationDetection.tla
+Semantic processing of module Naturals
+Semantic processing of module TLAPS
+Semantic processing of module SyncTerminationDetection
+Semantic processing of module EWD840
+Starting... (2026-11-06 12:50:20)
+Implied-temporal checking--satisfiability problem has 2 branches.
+Computing initial states...
+Computed 2 initial states...
+Computed 4 initial states...
+Computed 8 initial states...
+Computed 16 initial states...
+Computed 32 initial states...
+Computed 64 initial states...
+Computed 128 initial states...
+Finished computing initial states: 192 distinct states generated at 2026-11-06 12:50:21.
+Error: Action property line 54, col 17 to line 54, col 29 of module SyncTerminationDetection is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ active = (0 :> FALSE @@ 1 :> FALSE @@ 2 :> TRUE)
+/\ color = (0 :> "white" @@ 1 :> "white" @@ 2 :> "white")
+/\ tpos = 0
+/\ tcolor = "black"
+
+State 2: <SendMsg line 77, col 3 to line 81, col 31 of module EWD840>
+/\ active = (0 :> TRUE @@ 1 :> FALSE @@ 2 :> TRUE)
+/\ color = (0 :> "white" @@ 1 :> "white" @@ 2 :> "white")
+/\ tpos = 0
+/\ tcolor = "black"
+
+249 states generated, 197 distinct states found, 171 states left on queue.
+The depth of the complete state graph search is 2.
+The average outdegree of the complete state graph is 0 (minimum is 0, the maximum 1 and the 95th percentile is 1).
+Finished in 00s at (2026-11-06 12:50:21)

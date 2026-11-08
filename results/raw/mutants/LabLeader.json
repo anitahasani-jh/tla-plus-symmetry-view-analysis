@@ -1,0 +1,76 @@
+{
+  "model_id": "LabLeader",
+  "seed": 20261106,
+  "generated": 3,
+  "mutants": [
+    {
+      "mutant_id": "LabLeader-m1",
+      "model_id": "LabLeader",
+      "operator": "drop-guard",
+      "module": "LabLeader",
+      "file": "LabLeader.tla",
+      "description": "drop a guard conjunct of Grant",
+      "line": 41,
+      "original_snippet": "/\\ owner = None",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 55,
+          "distinct": 20,
+          "seconds": 1.49,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "LabLeader-m2",
+      "model_id": "LabLeader",
+      "operator": "drop-guard",
+      "module": "LabLeader",
+      "file": "LabLeader.tla",
+      "description": "drop a guard conjunct of Release",
+      "line": 48,
+      "original_snippet": "/\\ owner = p",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 93,
+          "distinct": 20,
+          "seconds": 1.341,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "LabLeader-m3",
+      "model_id": "LabLeader",
+      "operator": "drop-guard",
+      "module": "LabLeader",
+      "file": "LabLeader.tla",
+      "description": "drop a guard conjunct of Request",
+      "line": 34,
+      "original_snippet": "/\\ p \\notin pending",
+      "mutated_snippet": "\\* conjunct commented out",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 69,
+          "distinct": 20,
+          "seconds": 1.295,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+Running breadth-first search Model-Checking with fp 27 and seed -5106414896195015158 with 2 workers on 4 cores with 1820MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_251 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\Paxos\Paxos\probe\Paxos_SVProbe.tla
+Parsing file C:\Users\emiroow\Documents\Qoder\2026-11-05\7a734d68\_scratch_lab\runs\Paxos\Paxos\probe\Paxos.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\FiniteSets.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Integers.tla
+Parsing file C:\Users\emiroow\AppData\Local\Temp\Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Integers
+Semantic processing of module Paxos
+Semantic processing of module Paxos_SVProbe
+Semantic errors:
+
+*** Errors: 7
+
+line 10, col 47 to line 10, col 48 of module Paxos_SVProbe
+
+Unknown operator: `r1'.
+
+
+line 11, col 47 to line 11, col 48 of module Paxos_SVProbe
+
+Unknown operator: `r2'.
+
+
+line 12, col 47 to line 12, col 48 of module Paxos_SVProbe
+
+Unknown operator: `r3'.
+
+
+line 13, col 47 to line 13, col 48 of module Paxos_SVProbe
+
+Unknown operator: `r4'.
+
+
+line 14, col 48 to line 14, col 49 of module Paxos_SVProbe
+
+Unknown operator: `v1'.
+
+
+line 15, col 48 to line 15, col 49 of module Paxos_SVProbe
+
+Unknown operator: `v2'.
+
+
+line 16, col 48 to line 16, col 49 of module Paxos_SVProbe
+
+Unknown operator: `v3'.
+
+
+
+Starting... (2026-11-06 12:47:17)
+Error: Parsing or semantic analysis failed.
+Finished in 00s at (2026-11-06 12:47:17)

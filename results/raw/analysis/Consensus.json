@@ -1,0 +1,225 @@
+{
+  "model": {
+    "model_id": "Consensus",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\byzpaxos",
+    "module": "Consensus",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\byzpaxos\\Consensus.cfg",
+    "family": "consensus",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\byzpaxos",
+    "module_name": "Consensus",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\byzpaxos\\Consensus.cfg",
+    "modules": [
+      "Consensus",
+      "FiniteSetTheorems"
+    ],
+    "module_files": {
+      "Consensus": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\byzpaxos\\Consensus.tla",
+      "FiniteSetTheorems": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\support\\FiniteSetTheorems.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "Naturals",
+      "FiniteSets",
+      "TLAPS",
+      "Integers",
+      "Sequences",
+      "TLC"
+    ],
+    "constants": {
+      "Value": {
+        "arity": 0,
+        "declared_in": "Consensus",
+        "assignment_form": "=",
+        "assignment_text": "{v1, v2, v3}",
+        "value_text": "{v1, v2, v3}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "chosen"
+    ],
+    "instances": [],
+    "opdefs": 16,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\byzpaxos\\Consensus.tla",
+      "module": "Consensus",
+      "bad_tokens": 0,
+      "unknown_nodes": 5,
+      "proof_tokens_skipped": 73,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 401,
+      "cov_covered_tokens": 401,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 5,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\byzpaxos\\Consensus.cfg",
+      "constants": {
+        "Value": {
+          "form": "=",
+          "value_text": "{v1, v2, v3}",
+          "line": 1
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "LiveSpec",
+      "invariants": [
+        "TypeOK",
+        "Inv"
+      ],
+      "properties": [
+        "Success"
+      ],
+      "symmetry": null,
+      "view": null,
+      "constraints": [],
+      "action_constraints": [],
+      "check_deadlock": false,
+      "postcondition": null,
+      "comments": [],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "Consensus",
+    "constants": [
+      "Value"
+    ],
+    "variables": [
+      "chosen"
+    ],
+    "init": "Spec",
+    "next": "Next",
+    "reachable_definitions": 8,
+    "writes": 2,
+    "reads": 19,
+    "invariants": [
+      "TypeOK",
+      "Inv"
+    ],
+    "properties": [
+      "Success"
+    ],
+    "liveness": true,
+    "liveness_reasons": [
+      "Success contains the eventuality operator <>",
+      "LiveSpec assumes fairness (WF)"
+    ],
+    "unresolved_names": {
+      "v": 1
+    },
+    "instance_aliases": {},
+    "notes": [
+      "stutter subscript ignored in Spec"
+    ]
+  },
+  "symmetry": {
+    "candidates": [
+      {
+        "constant": "Value",
+        "atoms": [
+          "v1",
+          "v2",
+          "v3"
+        ],
+        "verdict": "sound",
+        "reasons": [
+          "the model checks a temporal property or assumes fairness; TLC's symmetry reduction is not sound for liveness in general, so SymView will not enable SYMMETRY for this model by default",
+          "Value = {v1, v2, v3} is used only through permutation-equivariant operators and no other constant distinguishes its elements"
+        ],
+        "flags": [],
+        "value_checks": {},
+        "unknown_operators": {},
+        "liveness_warning": true,
+        "liveness_reasons": [
+          "Success contains the eventuality operator <>",
+          "LiveSpec assumes fairness (WF)"
+        ],
+        "group_order": 6,
+        "manual_symmetry_in_config": null
+      }
+    ],
+    "selected": [],
+    "notes": []
+  },
+  "history": {
+    "retained": [
+      "chosen"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible",
+      "note: a temporal property is checked; the dropped variables are provably without influence, so the projection is a bisimulation, but this combination is reported for manual review"
+    ],
+    "evidence": {
+      "chosen": {
+        "name": "chosen",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Inv",
+          "read by checked property/invariant Success",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK"
+        ],
+        "read_in_rhs": 0,
+        "read_in_guard": 3,
+        "read_in_init": 0,
+        "read_in_property": 4,
+        "writes": 2,
+        "influences": []
+      }
+    },
+    "liveness_warning": true,
+    "liveness_reasons": [
+      "Success contains the eventuality operator <>",
+      "LiveSpec assumes fairness (WF)"
+    ],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "CONSTANT Value = {v1, v2, v3}\nINVARIANTS TypeOK Inv\nPROPERTY Success\nSPECIFICATION LiveSpec\nCHECK_DEADLOCK FALSE\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.942,
+    "constants": {
+      "Value": "{v1, v2, v3}"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 0.999,
+  "notes": [
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}

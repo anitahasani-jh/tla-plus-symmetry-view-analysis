@@ -1,0 +1,3130 @@
+{
+  "summary": {
+    "configurations": 217,
+    "with_model": 210,
+    "with_symmetry": 16,
+    "with_view": 6,
+    "with_properties": 83,
+    "with_invariants_only": 122,
+    "disabled_reduction_lines": 7,
+    "disabled_with_warning": 3,
+    "symmetry_examples": [
+      {
+        "file": "benchmarks/public/braf/BufferedRandomAccessFile.cfg",
+        "operator": "Symmetry"
+      },
+      {
+        "file": "benchmarks/public/CheckpointCoordination/MCCheckpointCoordination.cfg",
+        "operator": "NodeSymmetry"
+      },
+      {
+        "file": "benchmarks/public/CheckpointCoordination/MCCheckpointCoordinationFailure.cfg",
+        "operator": "NodeSymmetry"
+      },
+      {
+        "file": "benchmarks/public/FlashProtocol/MCFlashWithMutex.cfg",
+        "operator": "Symmetry"
+      },
+      {
+        "file": "benchmarks/public/GermanProtocol/MCGermanCMPWithMutex.cfg",
+        "operator": "Symmetry"
+      },
+      {
+        "file": "benchmarks/public/GermanProtocol/MCGermanControl.cfg",
+        "operator": "Symmetry"
+      },
+      {
+        "file": "benchmarks/public/GermanProtocol/MCGermanData.cfg",
+        "operator": "Symmetry"
+      },
+      {
+        "file": "benchmarks/public/KeyValueStore/MCKVsnap.cfg",
+        "operator": "TxIdSymmetric"
+      },
+      {
+        "file": "benchmarks/public/KeyValueStore/MCKVSSafetyLarge.cfg",
+        "operator": "TxIdSymmetric"
+      },
+      {
+        "file": "benchmarks/public/KeyValueStore/MCKVSSafetyMedium.cfg",
+        "operator": "TxIdSymmetric"
+      },
+      {
+        "file": "benchmarks/public/MultiPaxos-SMR/MultiPaxos_MC.cfg",
+        "operator": "SymmetricPerms"
+      },
+      {
+        "file": "benchmarks/public/MultiPaxos-SMR/MultiPaxos_MC_small.cfg",
+        "operator": "SymmetricPerms"
+      },
+      {
+        "file": "benchmarks/public/Paxos/MCPaxos.cfg",
+        "operator": "MCSymmetry"
+      },
+      {
+        "file": "benchmarks/public/Paxos/MCVoting.cfg",
+        "operator": "MCSymmetry"
+      },
+      {
+        "file": "benchmarks/public/SimplifiedFastPaxos/FastPaxos.cfg",
+        "operator": "PaxosSymmetry"
+      },
+      {
+        "file": "benchmarks/public/SimplifiedFastPaxos/Paxos.cfg",
+        "operator": "PaxosSymmetry"
+      }
+    ],
+    "view_examples": [
+      {
+        "file": "benchmarks/public/ewd998/EWD998ChanID.cfg",
+        "operator": "View"
+      },
+      {
+        "file": "benchmarks/public/ewd998/EWD998ChanTrace.cfg",
+        "operator": "TraceView"
+      },
+      {
+        "file": "benchmarks/public/FiniteMonotonic/MCDistributedReplicatedLog.cfg",
+        "operator": "DropCommonPrefix"
+      },
+      {
+        "file": "benchmarks/public/NanoBlockchain/MCNanoLarge.cfg",
+        "operator": "View"
+      },
+      {
+        "file": "benchmarks/public/NanoBlockchain/MCNanoMedium.cfg",
+        "operator": "View"
+      },
+      {
+        "file": "benchmarks/public/NanoBlockchain/MCNanoSmall.cfg",
+        "operator": "View"
+      }
+    ],
+    "disabled": [
+      {
+        "file": "benchmarks/public/acp/ACP_NB_TLC.cfg",
+        "line": "\\*SYMMETRY",
+        "warns": false
+      },
+      {
+        "file": "benchmarks/public/acp/ACP_SB_TLC.cfg",
+        "line": "\\*SYMMETRY",
+        "warns": false
+      },
+      {
+        "file": "benchmarks/public/allocator/SchedulingAllocator.cfg",
+        "line": "\\* SYMMETRY Symmetry",
+        "warns": true
+      },
+      {
+        "file": "benchmarks/public/allocator/SimpleAllocator.cfg",
+        "line": "\\** SYMMETRY Symmetry",
+        "warns": true
+      },
+      {
+        "file": "benchmarks/public/FiniteMonotonic/MCDistributedReplicatedLog.cfg",
+        "line": "\\* in general, the VIEW approach (e.g. DropCommonPrefix) can prevent",
+        "warns": false
+      },
+      {
+        "file": "benchmarks/public/SpecifyingSystems--TLC/MCAlternatingBit.cfg",
+        "line": "\\* SYMMETRY DataPerm",
+        "warns": false
+      },
+      {
+        "file": "benchmarks/public/tcp/MCtcp.cfg",
+        "line": "\\* SYMMETRY",
+        "warns": true
+      }
+    ]
+  },
+  "configurations": [
+    {
+      "file": "benchmarks/public/aba-asyn-byz/aba_asyn_byz.cfg",
+      "model": "aba_asyn_byz",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Unforg_Ltl",
+        "Corr_Ltl",
+        "Agreement_Ltl"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/acp/ACP_NB_TLC.cfg",
+      "model": "ACP_NB_TLC",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "AC1",
+        "AC2",
+        "AC3_1",
+        "AC4_alt",
+        "AC3_2",
+        "AC5"
+      ],
+      "invariants": [],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/acp/ACP_NB_WRONG_TLC.cfg",
+      "model": "ACP_NB_WRONG_TLC",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "AC1"
+      ],
+      "invariants": [],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/acp/ACP_SB_TLC.cfg",
+      "model": "ACP_SB_TLC",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/acp/APACP_SB.cfg",
+      "model": "APACP_SB",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/allocator/AllocatorImplementation.cfg",
+      "model": "AllocatorImplementation",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "SchedAllocator"
+      ],
+      "invariants": [
+        "TypeInvariant",
+        "ResourceMutex",
+        "Invariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/allocator/AllocatorRefinement.cfg",
+      "model": "AllocatorRefinement",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "SimpleAllocator"
+      ],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/allocator/SchedulingAllocator.cfg",
+      "model": "SchedulingAllocator",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "ClientsWillReturn",
+        "InfOftenSatisfied",
+        "ClientsWillObtain"
+      ],
+      "invariants": [
+        "TypeInvariant",
+        "ResourceMutex",
+        "AllocatorInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/allocator/SimpleAllocator.cfg",
+      "model": "SimpleAllocator",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "ClientsWillReturn",
+        "ClientsWillObtain",
+        "InfOftenSatisfied"
+      ],
+      "invariants": [
+        "TypeInvariant",
+        "ResourceMutex"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/barriers/APBarrier.cfg",
+      "model": "APBarrier",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/barriers/Barrier.cfg",
+      "model": "Barrier",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "BarrierProperty"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/barriers/Barriers.cfg",
+      "model": "Barriers",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "BSpec"
+      ],
+      "invariants": [
+        "TypeOK",
+        "LockInv",
+        "Inv",
+        "FlushInv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/bcastFolklore/APbcastFolklore.cfg",
+      "model": "APbcastFolklore",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/bcastFolklore/bcastFolklore.cfg",
+      "model": "bcastFolklore",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "UnforgLtl",
+        "CorrLtl",
+        "RelayLtl",
+        "ReliableChan"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/bosco/APbosco.cfg",
+      "model": "APbosco",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Lemma3_0",
+        "Lemma3_1",
+        "Lemma4_0",
+        "Lemma4_1"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/bosco/bosco.cfg",
+      "model": "bosco",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Lemma3_0",
+        "Lemma3_1",
+        "Lemma4_0",
+        "Lemma4_1"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/braf/BufferedRandomAccessFile.cfg",
+      "model": "BufferedRandomAccessFile",
+      "has_init": true,
+      "symmetry": "Symmetry",
+      "view": null,
+      "properties": [
+        "Inv2CanAlwaysBeRestored",
+        "Safety",
+        "FlushBufferCorrect",
+        "SeekCorrect",
+        "SeekEstablishesInv2",
+        "Write1Correct",
+        "Read1Correct",
+        "WriteAtMostCorrect",
+        "ReadCorrect"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Inv1",
+        "Inv3",
+        "Inv4",
+        "Inv5"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/btree/kvstore.cfg",
+      "model": "kvstore",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/btree/MCbtree.cfg",
+      "model": "MCbtree",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOk",
+        "InnersMustHaveLast",
+        "LeavesCantHaveLast",
+        "KeyOrderPreserved",
+        "KeysInLeavesAreUnique",
+        "FreeNodesRemain"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/byihive/VoucherCancel.cfg",
+      "model": "VoucherCancel",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "VTPTypeOK",
+        "VTPConsistent"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/byihive/VoucherIssue.cfg",
+      "model": "VoucherIssue",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "VSpec"
+      ],
+      "invariants": [
+        "VTPTypeOK",
+        "VTPConsistent"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/byihive/VoucherLifeCycle.cfg",
+      "model": "VoucherLifeCycle",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "VTypeOK",
+        "VConsistent"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/byihive/VoucherRedeem.cfg",
+      "model": "VoucherRedeem",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "VTPTypeOK",
+        "VTPConsistent"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/byihive/VoucherTransfer.cfg",
+      "model": "VoucherTransfer",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "VTPTypeOK",
+        "VTPConsistent"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/byzpaxos/BPConProof.cfg",
+      "model": "BPConProof",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "Inv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/byzpaxos/Consensus.cfg",
+      "model": "Consensus",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Success"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Inv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/byzpaxos/PConProof.cfg",
+      "model": "PConProof",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "PAccInv",
+        "P1bInv",
+        "P1cInv",
+        "P2aInv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/byzpaxos/VoteProof.cfg",
+      "model": "VoteProof",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Refines"
+      ],
+      "invariants": [
+        "TypeOK",
+        "VInv1",
+        "VInv2",
+        "VInv3",
+        "VInv4"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/c1cs/APc1cs.cfg",
+      "model": "APc1cs",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Validity",
+        "Agreement",
+        "WeakAgreement"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/c1cs/c1cs.cfg",
+      "model": "c1cs",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Termination"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Validity",
+        "Agreement",
+        "WeakAgreement",
+        "IndStrengthens"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/CarTalkPuzzle--CarTalkPuzzle_toolbox--Model_1/MC.cfg",
+      "model": "MC",
+      "has_init": false,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/cf1s-folklore/cf1s_folklore.cfg",
+      "model": "cf1s_folklore",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "OneStep0_Ltl",
+        "OneStep1_Ltl"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/Chameneos/Chameneos.cfg",
+      "model": "Chameneos",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "SumMet"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/chang_roberts/APChangRoberts.cfg",
+      "model": "APChangRoberts",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Correctness"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/chang_roberts/MCChangRoberts.cfg",
+      "model": "MCChangRoberts",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveness"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Correctness"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/CheckpointCoordination/MCCheckpointCoordination.cfg",
+      "model": "MCCheckpointCoordination",
+      "has_init": true,
+      "symmetry": "NodeSymmetry",
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "SafetyInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/CheckpointCoordination/MCCheckpointCoordinationFailure.cfg",
+      "model": "MCCheckpointCoordinationFailure",
+      "has_init": true,
+      "symmetry": "NodeSymmetry",
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "SafetyInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/CigaretteSmokers/APCigaretteSmokers.cfg",
+      "model": "APCigaretteSmokers",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "AtMostOne"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/CigaretteSmokers/CigaretteSmokers.cfg",
+      "model": "CigaretteSmokers",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "AtMostOne"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/CoffeeCan/APCoffeeCan.cfg",
+      "model": "APCoffeeCan",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/CoffeeCan/CoffeeCan1000Beans.cfg",
+      "model": "CoffeeCan1000Beans",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "EventuallyTerminates",
+        "MonotonicDecrease",
+        "LoopInvariant",
+        "TerminationHypothesis"
+      ],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/CoffeeCan/CoffeeCan100Beans.cfg",
+      "model": "CoffeeCan100Beans",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "EventuallyTerminates",
+        "MonotonicDecrease",
+        "LoopInvariant",
+        "TerminationHypothesis"
+      ],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/CoffeeCan/CoffeeCan3000Beans.cfg",
+      "model": "CoffeeCan3000Beans",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "EventuallyTerminates",
+        "MonotonicDecrease",
+        "LoopInvariant",
+        "TerminationHypothesis"
+      ],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/dag-consensus/BlockDagTest.cfg",
+      "model": "BlockDagTest",
+      "has_init": false,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/dag-consensus/TLCSailfish1.cfg",
+      "model": "TLCSailfish1",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Agreement",
+        "Liveness"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/dag-consensus/TLCSailfish2.cfg",
+      "model": "TLCSailfish2",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Agreement",
+        "Liveness"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/detector_chan96/EnvironmentController.cfg",
+      "model": "EnvironmentController",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "StrongCompleteness",
+        "EventuallyStrongAccuracy"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/DieHard/APDieHarder.cfg",
+      "model": "APDieHarder",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/DieHard/DieHard.cfg",
+      "model": "DieHard",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "NotSolved"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/DieHard/MCDieHarder.cfg",
+      "model": "MCDieHarder",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "NotSolved"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/DieHard/MCDieHardest.cfg",
+      "model": "MCDieHardest",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "NotSolved"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/dijkstra-mutex--DijkstraMutex_toolbox--Safety-4-processors/MC.cfg",
+      "model": "MC",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "inv_1293897508027437000"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/DiningPhilosophers/APDiningPhilosophersPCal.cfg",
+      "model": "APDiningPhilosophersPCal",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "ExclusiveAccess"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/DiningPhilosophers/DiningPhilosophers.cfg",
+      "model": "DiningPhilosophers",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "NoLivelock",
+        "NoStarvation"
+      ],
+      "invariants": [
+        "TypeOK",
+        "NoDeadlock"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/DiningPhilosophers/DiningPhilosophers_anim.cfg",
+      "model": "DiningPhilosophers_anim",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/DiningPhilosophers/DiningPhilosophers_stats.cfg",
+      "model": "DiningPhilosophers_stats",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/DiningPhilosophers/DiningPhilosophersPCal.cfg",
+      "model": "DiningPhilosophersPCal",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "NobodyStarves"
+      ],
+      "invariants": [
+        "TypeOK",
+        "ExclusiveAccess"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/diskpaxos/MC_HDiskSynod.cfg",
+      "model": "MC_HDiskSynod",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "HInv1",
+        "HInv2",
+        "HInv3",
+        "HInv4",
+        "HInv6"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/Disruptor/APDisruptor_MPMC.cfg",
+      "model": "APDisruptor_MPMC",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "NoDataRaces"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/Disruptor/APDisruptor_SPMC.cfg",
+      "model": "APDisruptor_SPMC",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "NoDataRaces"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/Disruptor/MCDisruptor_MPMC.cfg",
+      "model": "MCDisruptor_MPMC",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOk",
+        "NoDataRaces"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/Disruptor/MCDisruptor_MPMC_liveliness.cfg",
+      "model": "MCDisruptor_MPMC_liveliness",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveliness"
+      ],
+      "invariants": [
+        "TypeOk",
+        "NoDataRaces"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/Disruptor/MCDisruptor_SPMC.cfg",
+      "model": "MCDisruptor_SPMC",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveliness"
+      ],
+      "invariants": [
+        "TypeOk",
+        "NoDataRaces"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/echo/MCEcho.cfg",
+      "model": "MCEcho",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "AncestorProperties"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/EinsteinRiddle/Einstein.cfg",
+      "model": "Einstein",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "FindSolution"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/ewd426/APTokenRing.cfg",
+      "model": "APTokenRing",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/ewd426/SimTokenRing.cfg",
+      "model": "SimTokenRing",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd426/TokenRing.cfg",
+      "model": "TokenRing",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Stab"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd687a/EWD687a_anim.cfg",
+      "model": "EWD687a_anim",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "DT2"
+      ],
+      "invariants": [
+        "TypeOK",
+        "DT1Inv",
+        "InterestingBehavior"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd687a/MCEWD687a.cfg",
+      "model": "MCEWD687a",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "DT2"
+      ],
+      "invariants": [
+        "TypeOK",
+        "CountersConsistent",
+        "TreeWithRoot",
+        "DT1Inv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd840/APEWD840.cfg",
+      "model": "APEWD840",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "TerminationDetection"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd840/APSyncTerminationDetection.cfg",
+      "model": "APSyncTerminationDetection",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "TDCorrect"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/ewd840/EWD840.cfg",
+      "model": "EWD840",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveness",
+        "TDSpec"
+      ],
+      "invariants": [
+        "TypeOK",
+        "TerminationDetection",
+        "Inv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd840/EWD840_anim.cfg",
+      "model": "EWD840_anim",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "AnimInv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd840/EWD840_json.cfg",
+      "model": "EWD840_json",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "JsonInv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd840/SyncTerminationDetection.cfg",
+      "model": "SyncTerminationDetection",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Quiescence",
+        "Liveness"
+      ],
+      "invariants": [
+        "TypeOK",
+        "TDCorrect"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/ewd998/AsyncTerminationDetection.cfg",
+      "model": "AsyncTerminationDetection",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Quiescence",
+        "Live"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Safe"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/ewd998/EWD998.cfg",
+      "model": "EWD998",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveness",
+        "TDSpec"
+      ],
+      "invariants": [
+        "TerminationDetection",
+        "Inv",
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd998/EWD998Chan.cfg",
+      "model": "EWD998Chan",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "EWD998Spec"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd998/EWD998ChanID.cfg",
+      "model": "EWD998ChanID",
+      "has_init": true,
+      "symmetry": null,
+      "view": "View",
+      "properties": [
+        "EWD998ChanSpec",
+        "EWD998Live"
+      ],
+      "invariants": [
+        "EWD998Safe",
+        "Max3TokenRounds"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd998/EWD998ChanID_export.cfg",
+      "model": "EWD998ChanID_export",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "PostInv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd998/EWD998ChanID_shiviz.cfg",
+      "model": "EWD998ChanID_shiviz",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "Inv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd998/EWD998ChanTrace.cfg",
+      "model": "EWD998ChanTrace",
+      "has_init": true,
+      "symmetry": null,
+      "view": "TraceView",
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/ewd998/EWD998PCal.cfg",
+      "model": "EWD998PCal",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "EWD998Spec"
+      ],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/ewd998/EWD998Small.cfg",
+      "model": "EWD998Small",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TerminationDetection",
+        "Inv",
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd998/SmokeEWD998.cfg",
+      "model": "SmokeEWD998",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "TDSpec"
+      ],
+      "invariants": [
+        "Inv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/ewd998/SmokeEWD998_SC.cfg",
+      "model": "SmokeEWD998_SC",
+      "has_init": false,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/FiniteMonotonic/APCRDT.cfg",
+      "model": "APCRDT",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Safety"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/FiniteMonotonic/APReplicatedLog.cfg",
+      "model": "APReplicatedLog",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "Safety"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/FiniteMonotonic/MCCRDT.cfg",
+      "model": "MCCRDT",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Convergence"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Safety"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/FiniteMonotonic/MCDistributedReplicatedLog.cfg",
+      "model": "MCDistributedReplicatedLog",
+      "has_init": true,
+      "symmetry": null,
+      "view": "DropCommonPrefix",
+      "properties": [
+        "AllExtending",
+        "InSync"
+      ],
+      "invariants": [
+        "TypeOK",
+        "BoundedLag"
+      ],
+      "check_deadlock": true
+    },
+    {
+      "file": "benchmarks/public/FiniteMonotonic/MCReplicatedLog.cfg",
+      "model": "MCReplicatedLog",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Convergence"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Safety"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/FlashProtocol/APFlashWithMutex.cfg",
+      "model": "APFlashWithMutex",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "CacheStateProp",
+        "CacheDataProp",
+        "MemDataProp",
+        "Lemma_1",
+        "Lemma_2",
+        "Lemma_3",
+        "Lemma_4",
+        "Lemma_5"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/FlashProtocol/MCFlashWithMutex.cfg",
+      "model": "MCFlashWithMutex",
+      "has_init": true,
+      "symmetry": "Symmetry",
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "CacheStateProp",
+        "CacheDataProp",
+        "MemDataProp",
+        "Lemma_1",
+        "Lemma_2",
+        "Lemma_3",
+        "Lemma_4",
+        "Lemma_5"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/FlashProtocol/MCFlashWithMutexLive.cfg",
+      "model": "MCFlashWithMutexLive",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "ReqProgress",
+        "DirProgress",
+        "UniProgress",
+        "InvProgress",
+        "RpProgress",
+        "WbProgress",
+        "ShWbProgress",
+        "NakcProgress"
+      ],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/GameOfLife/GameOfLife.cfg",
+      "model": "GameOfLife",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/GermanProtocol/APGermanCMPWithMutex.cfg",
+      "model": "APGermanCMPWithMutex",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Coherence",
+        "Lemma_1"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/GermanProtocol/APGermanControl.cfg",
+      "model": "APGermanControl",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Coherence"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/GermanProtocol/APGermanData.cfg",
+      "model": "APGermanData",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Coherence",
+        "DataProp",
+        "TransactionConsistency",
+        "DirectoryAccurate",
+        "ExclusiveIsolation",
+        "WritebackCarriesLatest"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/GermanProtocol/MCGermanCMPWithMutex.cfg",
+      "model": "MCGermanCMPWithMutex",
+      "has_init": true,
+      "symmetry": "Symmetry",
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Coherence",
+        "Lemma_1"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/GermanProtocol/MCGermanControl.cfg",
+      "model": "MCGermanControl",
+      "has_init": true,
+      "symmetry": "Symmetry",
+      "view": null,
+      "properties": [
+        "Refinement"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Coherence"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/GermanProtocol/MCGermanData.cfg",
+      "model": "MCGermanData",
+      "has_init": true,
+      "symmetry": "Symmetry",
+      "view": null,
+      "properties": [
+        "Refinement"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Coherence",
+        "DataProp",
+        "TransactionConsistency",
+        "DirectoryAccurate",
+        "ExclusiveIsolation",
+        "WritebackCarriesLatest"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/glowingRaccoon/APclean.cfg",
+      "model": "APclean",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "primerPositive",
+        "preservationInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/glowingRaccoon/APstages.cfg",
+      "model": "APstages",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/glowingRaccoon/clean.cfg",
+      "model": "clean",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "preservationProperty"
+      ],
+      "invariants": [
+        "TypeOK",
+        "primerPositive",
+        "preservationInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/glowingRaccoon/product.cfg",
+      "model": "product",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "stagesSpec",
+        "primerDepleted"
+      ],
+      "invariants": [
+        "TypeOK",
+        "thirdCycleProduct"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/glowingRaccoon/stages.cfg",
+      "model": "stages",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "cleanSpec",
+        "primerDepleted"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/Huang/Huang.cfg",
+      "model": "Huang",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Safe",
+        "Live"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/KeyValueStore/MCKVsnap.cfg",
+      "model": "MCKVsnap",
+      "has_init": true,
+      "symmetry": "TxIdSymmetric",
+      "view": null,
+      "properties": [
+        "Termination"
+      ],
+      "invariants": [
+        "TypeOK",
+        "SnapshotIsolation"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/KeyValueStore/MCKVSSafetyLarge.cfg",
+      "model": "MCKVSSafetyLarge",
+      "has_init": true,
+      "symmetry": "TxIdSymmetric",
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "TxLifecycle"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/KeyValueStore/MCKVSSafetyMedium.cfg",
+      "model": "MCKVSSafetyMedium",
+      "has_init": true,
+      "symmetry": "TxIdSymmetric",
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "TxLifecycle"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/KeyValueStore/MCKVSSafetySmall.cfg",
+      "model": "MCKVSSafetySmall",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "TxLifecycle"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/lamport_mutex/APLamportMutex.cfg",
+      "model": "APLamportMutex",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "Mutex"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/lamport_mutex/MCLamportMutex.cfg",
+      "model": "MCLamportMutex",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "BoundedNetwork",
+        "Mutex"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/LearnProofs/MCFindHighest.cfg",
+      "model": "MCFindHighest",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "InductiveInvariant",
+        "DoneIndexValue",
+        "Correctness"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/LeastCircularSubstring/MCLeastCircularSubstringMedium.cfg",
+      "model": "MCLeastCircularSubstringMedium",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "Correctness"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/LeastCircularSubstring/MCLeastCircularSubstringSmall.cfg",
+      "model": "MCLeastCircularSubstringSmall",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "Correctness"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/locks_auxiliary_vars/Lock.cfg",
+      "model": "Lock",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "LockInv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/locks_auxiliary_vars/LockHS.cfg",
+      "model": "LockHS",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Spec",
+        "PSpec"
+      ],
+      "invariants": [
+        "TypeOKHS",
+        "InvHS",
+        "LockInv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/locks_auxiliary_vars/Peterson.cfg",
+      "model": "Peterson",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "LSpec"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Inv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/LoopInvariance/MCBinarySearch.cfg",
+      "model": "MCBinarySearch",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Termination"
+      ],
+      "invariants": [
+        "resultCorrect",
+        "TypeOK",
+        "Inv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/LoopInvariance/MCQuicksort.cfg",
+      "model": "MCQuicksort",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Termination"
+      ],
+      "invariants": [
+        "PCorrect",
+        "TypeOK",
+        "Inv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/Majority/MCMajority.cfg",
+      "model": "MCMajority",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Correct",
+        "Inv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/MissionariesAndCannibals/APMissionariesAndCannibals.cfg",
+      "model": "APMissionariesAndCannibals",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Solution"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/MissionariesAndCannibals/MissionariesAndCannibals.cfg",
+      "model": "MissionariesAndCannibals",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Solution"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/Moving_Cat_Puzzle/APCat.cfg",
+      "model": "APCat",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/Moving_Cat_Puzzle/CatEvenBoxes.cfg",
+      "model": "CatEvenBoxes",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Victory"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/Moving_Cat_Puzzle/CatOddBoxes.cfg",
+      "model": "CatOddBoxes",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Victory"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/MultiCarElevator/ElevatorLivenessLarge.cfg",
+      "model": "ElevatorLivenessLarge",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "TemporalInvariant"
+      ],
+      "invariants": [
+        "TypeInvariant",
+        "SafetyInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/MultiCarElevator/ElevatorLivenessMedium.cfg",
+      "model": "ElevatorLivenessMedium",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "TemporalInvariant"
+      ],
+      "invariants": [
+        "TypeInvariant",
+        "SafetyInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/MultiCarElevator/ElevatorSafetyLarge.cfg",
+      "model": "ElevatorSafetyLarge",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "SafetyInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/MultiCarElevator/ElevatorSafetyMedium.cfg",
+      "model": "ElevatorSafetyMedium",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "SafetyInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/MultiCarElevator/ElevatorSafetySmall.cfg",
+      "model": "ElevatorSafetySmall",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "SafetyInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/MultiPaxos-SMR/MultiPaxos_MC.cfg",
+      "model": "MultiPaxos_MC",
+      "has_init": true,
+      "symmetry": "SymmetricPerms",
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Linearizability"
+      ],
+      "check_deadlock": true
+    },
+    {
+      "file": "benchmarks/public/MultiPaxos-SMR/MultiPaxos_MC_small.cfg",
+      "model": "MultiPaxos_MC_small",
+      "has_init": true,
+      "symmetry": "SymmetricPerms",
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Linearizability"
+      ],
+      "check_deadlock": true
+    },
+    {
+      "file": "benchmarks/public/N-Queens--Queens_toolbox--FourQueens/MC.cfg",
+      "model": "MC",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "inv_129269484700018000",
+        "inv_129269484701019000",
+        "NoSolutions"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/NanoBlockchain/MCNanoLarge.cfg",
+      "model": "MCNanoLarge",
+      "has_init": true,
+      "symmetry": null,
+      "view": "View",
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "SafetyInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/NanoBlockchain/MCNanoMedium.cfg",
+      "model": "MCNanoMedium",
+      "has_init": true,
+      "symmetry": null,
+      "view": "View",
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "SafetyInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/NanoBlockchain/MCNanoSmall.cfg",
+      "model": "MCNanoSmall",
+      "has_init": true,
+      "symmetry": null,
+      "view": "View",
+      "properties": [],
+      "invariants": [
+        "TypeInvariant",
+        "SafetyInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/nbacc_ray97/nbacc_ray97.cfg",
+      "model": "nbacc_ray97",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/nbacg_guer01/APnbacg_guer01.cfg",
+      "model": "APnbacg_guer01",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/nbacg_guer01/nbacg_guer01.cfg",
+      "model": "nbacg_guer01",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "AgrrLtl",
+        "AbortValidityLtl",
+        "CommitValidityLtl",
+        "TerminationLtl"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/Paxos/MCConsensus.cfg",
+      "model": "MCConsensus",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "Inv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/Paxos/MCPaxos.cfg",
+      "model": "MCPaxos",
+      "has_init": true,
+      "symmetry": "MCSymmetry",
+      "view": null,
+      "properties": [
+        "VotingSpecBar"
+      ],
+      "invariants": [
+        "Inv1",
+        "Inv2",
+        "Inv3",
+        "Inv4"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/Paxos/MCVoting.cfg",
+      "model": "MCVoting",
+      "has_init": true,
+      "symmetry": "MCSymmetry",
+      "view": null,
+      "properties": [
+        "ConsensusSpecBar"
+      ],
+      "invariants": [
+        "Inv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/PaxosHowToWinATuringAward/MCConsensus.cfg",
+      "model": "MCConsensus",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "Inv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/PaxosHowToWinATuringAward/MCPaxosSmall.cfg",
+      "model": "MCPaxosSmall",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "prop_1560336937635612000"
+      ],
+      "invariants": [
+        "Inv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/PaxosHowToWinATuringAward/MCPaxosTiny.cfg",
+      "model": "MCPaxosTiny",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "prop_1560336937635612000"
+      ],
+      "invariants": [
+        "Inv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/PaxosHowToWinATuringAward/MCVoting.cfg",
+      "model": "MCVoting",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "prop_156180051387248000"
+      ],
+      "invariants": [
+        "Inv"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/Prisoners/Prisoners.cfg",
+      "model": "Prisoners",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Safety",
+        "Liveness"
+      ],
+      "invariants": [
+        "TypeOK",
+        "CountInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/ReadersWriters/APReadersWriters.cfg",
+      "model": "APReadersWriters",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "Safety"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/ReadersWriters/MC.cfg",
+      "model": "MC",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveness"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Safety"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SimplifiedFastPaxos/FastPaxos.cfg",
+      "model": "FastPaxos",
+      "has_init": true,
+      "symmetry": "PaxosSymmetry",
+      "view": null,
+      "properties": [
+        "PaxosConsistency"
+      ],
+      "invariants": [
+        "FastTypeOK",
+        "FastNontriviality"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SimplifiedFastPaxos/Paxos.cfg",
+      "model": "Paxos",
+      "has_init": true,
+      "symmetry": "PaxosSymmetry",
+      "view": null,
+      "properties": [
+        "PaxosConsistency"
+      ],
+      "invariants": [
+        "PaxosTypeOK",
+        "PaxosNontriviality"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SlidingPuzzles/SlidingPuzzles.cfg",
+      "model": "SlidingPuzzles",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "KlotskiGoal"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SlidingPuzzles/SlidingPuzzles_anim.cfg",
+      "model": "SlidingPuzzles_anim",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "KlotskiGoal"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SlushProtocol/SlushLarge.cfg",
+      "model": "SlushLarge",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SlushProtocol/SlushMedium.cfg",
+      "model": "SlushMedium",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SlushProtocol/SlushSmall.cfg",
+      "model": "SlushSmall",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/spanning/APspanning.cfg",
+      "model": "APspanning",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/spanning/MC_spanning.cfg",
+      "model": "MC_spanning",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "SntMsg"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpanningTree/APSpanTree.cfg",
+      "model": "APSpanTree",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/SpanningTree/SpanTree.cfg",
+      "model": "SpanTree",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveness",
+        "Safety"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/SpanningTree/SpanTreeRandom.cfg",
+      "model": "SpanTreeRandom",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveness",
+        "Safety"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/SpanningTree/SpanTreeTest4Nodes.cfg",
+      "model": "SpanTreeTest4Nodes",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveness",
+        "Safety"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/SpanningTree/SpanTreeTest5Nodes.cfg",
+      "model": "SpanTreeTest5Nodes",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveness",
+        "Safety"
+      ],
+      "invariants": [
+        "TypeOK"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/SpecificationRefinement/abstract.cfg",
+      "model": "abstract",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/SpecificationRefinement/bad.cfg",
+      "model": "bad",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Refinement"
+      ],
+      "invariants": [],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/SpecificationRefinement/good.cfg",
+      "model": "good",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Refinement",
+        "RefinesBad"
+      ],
+      "invariants": [],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--AdvancedExamples/MCInnerSequential.cfg",
+      "model": "MCInnerSequential",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "AlwaysResponds"
+      ],
+      "invariants": [
+        "DataInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--AdvancedExamples/MCInnerSerial.cfg",
+      "model": "MCInnerSerial",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "AlwaysResponds"
+      ],
+      "invariants": [
+        "DataInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--AsynchronousInterface/APAsynchInterface.cfg",
+      "model": "APAsynchInterface",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--AsynchronousInterface/APChannel.cfg",
+      "model": "APChannel",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--AsynchronousInterface/AsynchInterface.cfg",
+      "model": "AsynchInterface",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--AsynchronousInterface/Channel.cfg",
+      "model": "Channel",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--AsynchronousInterface/PrintValues.cfg",
+      "model": "PrintValues",
+      "has_init": false,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--CachingMemory/MCInternalMemory.cfg",
+      "model": "MCInternalMemory",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--CachingMemory/MCWriteThroughCache.cfg",
+      "model": "MCWriteThroughCache",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "LM_Inner_ISpec"
+      ],
+      "invariants": [
+        "TypeInvariant",
+        "Coherence",
+        "LM_Inner_TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--FIFO/APChannel.cfg",
+      "model": "APChannel",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--FIFO/APInnerFIFO.cfg",
+      "model": "APInnerFIFO",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "ChannelTypeInvariants"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--FIFO/APInnerFIFOInstanced.cfg",
+      "model": "APInnerFIFOInstanced",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "ChannelTypeInvariants"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--FIFO/APMCInnerFIFO.cfg",
+      "model": "APMCInnerFIFO",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "ChannelTypeInvariants"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--FIFO/MCInnerFIFO.cfg",
+      "model": "MCInnerFIFO",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInvariant"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--HourClock/APHourClock.cfg",
+      "model": "APHourClock",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "HCini"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--HourClock/APHourClock2.cfg",
+      "model": "APHourClock2",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "HCini"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--HourClock/HourClock.cfg",
+      "model": "HourClock",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "HCini"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--HourClock/HourClock2.cfg",
+      "model": "HourClock2",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "HC2"
+      ],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--Liveness/APHourClock.cfg",
+      "model": "APHourClock",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "HCini"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--Liveness/APLiveHourClock.cfg",
+      "model": "APLiveHourClock",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "HCini"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--Liveness/LiveHourClock.cfg",
+      "model": "LiveHourClock",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "AlwaysTick",
+        "AllTimes",
+        "TypeInvariance"
+      ],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--Liveness/MCLiveInternalMemory.cfg",
+      "model": "MCLiveInternalMemory",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "LivenessProperty",
+        "Liveness"
+      ],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--Liveness/MCLiveWriteThroughCache.cfg",
+      "model": "MCLiveWriteThroughCache",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "LM_Inner_LISpec",
+        "LM_Inner_Liveness"
+      ],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--TLC/ABCorrectness.cfg",
+      "model": "ABCorrectness",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeInv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/SpecifyingSystems--TLC/MCAlternatingBit.cfg",
+      "model": "MCAlternatingBit",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "ABCSpec",
+        "SentLeadsToRcvd"
+      ],
+      "invariants": [
+        "ABTypeInv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/StaleViewShrink/StaleShrink.cfg",
+      "model": "StaleShrink",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Safety",
+        "Progress"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/StaleViewShrink/StaleShrinkV3Cascade.cfg",
+      "model": "StaleShrinkV3Cascade",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Safety",
+        "Progress"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/StaleViewShrink/StaleShrinkV6TooShort.cfg",
+      "model": "StaleShrinkV6TooShort",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Safety",
+        "Progress"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/StaleViewShrink/StaleShrinkV6Wait2x.cfg",
+      "model": "StaleShrinkV6Wait2x",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Safety",
+        "Progress"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/Stones/Stones.cfg",
+      "model": "Stones",
+      "has_init": false,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/sums_even/MC_sums_even.cfg",
+      "model": "MC_sums_even",
+      "has_init": false,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/tcp/APtcp.cfg",
+      "model": "APtcp",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "Inv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/tcp/IndInv_apa.cfg",
+      "model": "IndInv_apa",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "IndInv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/tcp/IndInv_apa_init.cfg",
+      "model": "IndInv_apa_init",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "IndInv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/tcp/MCtcp.cfg",
+      "model": "MCtcp",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Prop"
+      ],
+      "invariants": [
+        "TypeOK",
+        "Inv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/TeachingConcurrency/Simple.cfg",
+      "model": "Simple",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "PCorrect",
+        "TypeOK",
+        "Inv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/TeachingConcurrency/SimpleRegular.cfg",
+      "model": "SimpleRegular",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "PCorrect",
+        "TypeOK",
+        "Inv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/tower_of_hanoi/Hanoi_anim.cfg",
+      "model": "Hanoi_anim",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "NotSolved"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/transaction_commit/2PCwithBTM.cfg",
+      "model": "2PCwithBTM",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TypeOK",
+        "Consistency"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/transaction_commit/APTCommit.cfg",
+      "model": "APTCommit",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TCTypeOK",
+        "TCConsistent"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/transaction_commit/PaxosCommit.cfg",
+      "model": "PaxosCommit",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "PCTypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/transaction_commit/TCommit.cfg",
+      "model": "TCommit",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TCTypeOK",
+        "TCConsistent"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/transaction_commit/TwoPhase.cfg",
+      "model": "TwoPhase",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "TPTypeOK"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/TransitiveClosure/TransitiveClosure.cfg",
+      "model": "TransitiveClosure",
+      "has_init": false,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/TwoPhase/MCTwoPhase.cfg",
+      "model": "MCTwoPhase",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [],
+      "invariants": [
+        "Inv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/YoYo/MCYoYoNoPruning.cfg",
+      "model": "MCYoYoNoPruning",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "NoNewSource",
+        "Liveness"
+      ],
+      "invariants": [
+        "TypeOK",
+        "NeighborInv"
+      ],
+      "check_deadlock": null
+    },
+    {
+      "file": "benchmarks/public/YoYo/MCYoYoPruning.cfg",
+      "model": "MCYoYoPruning",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveness"
+      ],
+      "invariants": [
+        "TypeOK",
+        "NeighborInv",
+        "FinishIffTerminated"
+      ],
+      "check_deadlock": false
+    },
+    {
+      "file": "benchmarks/public/YoYo/YoYoAllGraphs.cfg",
+      "model": "YoYoAllGraphs",
+      "has_init": true,
+      "symmetry": null,
+      "view": null,
+      "properties": [
+        "Liveness"
+      ],
+      "invariants": [
+        "TypeOK",
+        "NeighborInv",
+        "FinishIffTerminated"
+      ],
+      "check_deadlock": false
+    }
+  ]
+}

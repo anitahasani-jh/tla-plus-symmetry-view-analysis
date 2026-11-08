@@ -1,0 +1,99 @@
+{
+  "model_id": "AllocatorRefinement",
+  "seed": 20261106,
+  "generated": 4,
+  "mutants": [
+    {
+      "mutant_id": "AllocatorRefinement-m1",
+      "model_id": "AllocatorRefinement",
+      "operator": "drop-guard",
+      "module": "SchedulingAllocator",
+      "file": "SchedulingAllocator.tla",
+      "description": "replace a guard conjunct of Request with TRUE",
+      "line": 70,
+      "original_snippet": "alloc[c] = {}",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 409,
+          "distinct": 309,
+          "seconds": 1.678,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "AllocatorRefinement-m2",
+      "model_id": "AllocatorRefinement",
+      "operator": "drop-guard",
+      "module": "SchedulingAllocator",
+      "file": "SchedulingAllocator.tla",
+      "description": "replace a guard conjunct of AllocatorInvariant with TRUE",
+      "line": 148,
+      "original_snippet": "alloc[sched[i]] \\cap unsat[sched[j]] = {}",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "ok",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "ok",
+          "states": 5854,
+          "distinct": 1690,
+          "seconds": 2.357,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "AllocatorRefinement-m3",
+      "model_id": "AllocatorRefinement",
+      "operator": "drop-guard",
+      "module": "SchedulingAllocator",
+      "file": "SchedulingAllocator.tla",
+      "description": "replace a guard conjunct of Request with TRUE",
+      "line": 70,
+      "original_snippet": "/\\ unsat[c] = {}",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": 14,
+          "distinct": 12,
+          "seconds": 1.429,
+          "violated": []
+        }
+      }
+    },
+    {
+      "mutant_id": "AllocatorRefinement-m4",
+      "model_id": "AllocatorRefinement",
+      "operator": "drop-guard",
+      "module": "SchedulingAllocator",
+      "file": "SchedulingAllocator.tla",
+      "description": "replace a guard conjunct of Allocator with TRUE",
+      "line": 124,
+      "original_snippet": "Init",
+      "mutated_snippet": "TRUE",
+      "detected": false,
+      "baseline_verdict": "error",
+      "violated": [],
+      "arms": {
+        "plain": {
+          "verdict": "error",
+          "states": null,
+          "distinct": null,
+          "seconds": 0.673,
+          "violated": []
+        }
+      }
+    }
+  ]
+}

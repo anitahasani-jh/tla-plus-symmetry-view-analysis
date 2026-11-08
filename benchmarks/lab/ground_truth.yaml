@@ -1,0 +1,133 @@
+# Ground truth for the hand-written lab models. Authored together with the
+# models so that the soundness measurements (RQ3) have a reference answer.
+#
+# Every number below was measured with TLC2 Version 2.16 (tla2tools-1.7.1.jar)
+# using 2 workers, 3 processes / N = 3, on 2026-11-06.  "distinct states" is the
+# `N distinct states found` figure that TLC reports at the end of a run; the
+# matching `states generated` figures are recorded in benchmarks/lab/README.md.
+#
+# expected_distinct_states_symmetry is null for the models that deliberately
+# ship no reduced configuration (LabLeader, LabOrdered, LabChoose, LabAuxRead).
+models:
+  LabLock:
+    dir: benchmarks/lab/LabLock
+    root_module: LabLock
+    config: LabLock.cfg
+    constants: {Proc: [p1, p2, p3], None: None}
+    expected_symmetry:
+      candidate: Proc            # the constant the tool should propose, or null
+      verdict: sound             # one of: sound | unsound | none
+      reason: symmetric-uses-only
+    expected_history: []         # variables that may be dropped from the view
+    expected_liveness_warning: false
+    expected_distinct_states_unreduced: 20
+    expected_distinct_states_symmetry: 7
+
+  LabLog:
+    dir: benchmarks/lab/LabLog
+    root_module: LabLog
+    config: LabLog.cfg
+    constants: {Proc: [p1, p2, p3], None: None}
+    expected_symmetry:
+      candidate: Proc
+      verdict: sound
+      reason: symmetric-uses-only
+    expected_history: []         # `log` is append-only and influences nothing,
+                                 # BUT the checked INVARIANT TypeOK reads it
+                                 # (`log \in Seq(LogEntry)`).  TLC evaluates
+                                 # invariants on generated states and does not
+                                 # expand view-merged states, so a violation that
+                                 # lives only in a merged-away log lineage would be
+                                 # missed.  SymView therefore retains any variable a
+                                 # checked property reads.  LabLogNoType below is the
+                                 # same model without the type invariant, where `log`
+                                 # genuinely becomes droppable.
+    expected_liveness_warning: false
+    expected_distinct_states_unreduced: 289
+    expected_distinct_states_symmetry: 7   # SYMMETRY Proc + VIEW <<owner,pending>>
+
+  LabLogNoType:
+    dir: benchmarks/lab/LabLog
+    root_module: LabLog
+    config: LabLog_notype.cfg
+    constants: {Proc: [p1, p2, p3], None: None}
+    expected_symmetry:
+      candidate: Proc
+      verdict: sound
+      reason: symmetric-uses-only
+    expected_history: [log]      # with only the behavioural invariants checked,
+                                 # nothing observes `log`, so the view may drop it
+    expected_liveness_warning: false
+    expected_distinct_states_unreduced: 289
+    expected_distinct_states_symmetry: 7
+
+  LabLeader:
+    dir: benchmarks/lab/LabLeader
+    root_module: LabLeader
+    config: LabLeader.cfg
+    constants: {Proc: [p1, p2, p3], None: None, Leader: p1}
+    expected_symmetry:
+      candidate: Proc            # the tool may still propose Proc ...
+      verdict: unsound           # ... but must reject it
+      reason: config-distinguishes-element   # Leader = p1 singles out a member of Proc
+    expected_history: []
+    expected_liveness_warning: false
+    expected_distinct_states_unreduced: 20
+    expected_distinct_states_symmetry: null
+
+  LabOrdered:
+    dir: benchmarks/lab/LabOrdered
+    root_module: LabOrdered
+    config: LabOrdered.cfg
+    constants: {N: 3}            # no model values at all: processes are 1..N
+    expected_symmetry:
+      candidate: null
+      verdict: none
+      reason: ordered-identifiers          # ids used with <, +, %, \div
+    expected_history: []
+    expected_liveness_warning: false
+    expected_distinct_states_unreduced: 8
+    expected_distinct_states_symmetry: null
+
+  LabChoose:
+    dir: benchmarks/lab/LabChoose
+    root_module: LabChoose
+    config: LabChoose.cfg
+    constants: {Proc: [p1, p2, p3], None: None}
+    expected_symmetry:
+      candidate: Proc            # the tool may still propose Proc ...
+      verdict: unsound           # ... but must reject/flag it
+      reason: choose-over-symmetric-set     # CHOOSE q \in Proc is not equivariant
+    expected_history: []
+    expected_liveness_warning: false
+    expected_distinct_states_unreduced: 20
+    expected_distinct_states_symmetry: null
+
+  LabLive:
+    dir: benchmarks/lab/LabLive
+    root_module: LabLive
+    config: LabLive.cfg
+    constants: {Proc: [p1, p2, p3], None: None}
+    expected_symmetry:
+      candidate: Proc
+      verdict: sound
+      reason: symmetric-uses-only
+    expected_history: []
+    expected_liveness_warning: true        # cfg has PROPERTY Termination /
+                                           # OwnerLeadsToFinish and Spec has WF_vars
+    expected_distinct_states_unreduced: 54
+    expected_distinct_states_symmetry: 16
+
+  LabAuxRead:
+    dir: benchmarks/lab/LabAuxRead
+    root_module: LabAuxRead
+    config: LabAuxRead.cfg
+    constants: {Proc: [p1, p2, p3], None: None}
+    expected_symmetry:
+      candidate: Proc
+      verdict: sound
+      reason: symmetric-uses-only
+    expected_history: []         # `seen` is read by two guards and two invariants
+    expected_liveness_warning: false
+    expected_distinct_states_unreduced: 54
+    expected_distinct_states_symmetry: null

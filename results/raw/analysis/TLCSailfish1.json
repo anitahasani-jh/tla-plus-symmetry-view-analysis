@@ -1,0 +1,775 @@
+{
+  "model": {
+    "model_id": "TLCSailfish1",
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\dag-consensus",
+    "module": "TLCSailfish1",
+    "config": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\dag-consensus\\TLCSailfish1.cfg",
+    "family": "consensus",
+    "source": "tlaplus/Examples@ca168055339d",
+    "notes": ""
+  },
+  "context": {
+    "spec_dir": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\dag-consensus",
+    "module_name": "TLCSailfish1",
+    "cfg_path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\dag-consensus\\TLCSailfish1.cfg",
+    "modules": [
+      "BlockDag",
+      "Digraph",
+      "Sailfish",
+      "TLCSailfish1",
+      "Utils"
+    ],
+    "module_files": {
+      "TLCSailfish1": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\dag-consensus\\TLCSailfish1.tla",
+      "Sailfish": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\dag-consensus\\Sailfish.tla",
+      "BlockDag": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\dag-consensus\\BlockDag.tla",
+      "Utils": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\dag-consensus\\Utils.tla",
+      "Digraph": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\dag-consensus\\Digraph.tla"
+    },
+    "unresolved_modules": [],
+    "builtin_modules": [
+      "Integers",
+      "FiniteSets",
+      "Sequences",
+      "TLC"
+    ],
+    "constants": {
+      "n1": {
+        "arity": 0,
+        "declared_in": "TLCSailfish1",
+        "assignment_form": "=",
+        "assignment_text": "n1",
+        "value_text": "n1",
+        "value_kind": "atom",
+        "value_source": "tlc-probe"
+      },
+      "n2": {
+        "arity": 0,
+        "declared_in": "TLCSailfish1",
+        "assignment_form": "=",
+        "assignment_text": "n2",
+        "value_text": "n2",
+        "value_kind": "atom",
+        "value_source": "tlc-probe"
+      },
+      "n3": {
+        "arity": 0,
+        "declared_in": "TLCSailfish1",
+        "assignment_form": "=",
+        "assignment_text": "n3",
+        "value_text": "n3",
+        "value_kind": "atom",
+        "value_source": "tlc-probe"
+      },
+      "N": {
+        "arity": 0,
+        "declared_in": "Sailfish",
+        "assignment_form": "",
+        "assignment_text": "",
+        "value_text": "{n1, n2, n3}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      },
+      "F": {
+        "arity": 0,
+        "declared_in": "Sailfish",
+        "assignment_form": "",
+        "assignment_text": "",
+        "value_text": "{n1}",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      },
+      "R": {
+        "arity": 0,
+        "declared_in": "Sailfish",
+        "assignment_form": "",
+        "assignment_text": "",
+        "value_text": "1..5",
+        "value_kind": "set",
+        "value_source": "tlc-probe"
+      },
+      "IsQuorum": {
+        "arity": 1,
+        "declared_in": "Sailfish",
+        "assignment_form": "",
+        "assignment_text": "",
+        "value_text": "",
+        "value_kind": null,
+        "value_source": ""
+      },
+      "IsBlocking": {
+        "arity": 1,
+        "declared_in": "Sailfish",
+        "assignment_form": "",
+        "assignment_text": "",
+        "value_text": "",
+        "value_kind": null,
+        "value_source": ""
+      },
+      "Leader": {
+        "arity": 1,
+        "declared_in": "Sailfish",
+        "assignment_form": "",
+        "assignment_text": "",
+        "value_text": "",
+        "value_kind": null,
+        "value_source": ""
+      },
+      "GST": {
+        "arity": 0,
+        "declared_in": "Sailfish",
+        "assignment_form": "",
+        "assignment_text": "",
+        "value_text": "3",
+        "value_kind": "int",
+        "value_source": "tlc-probe"
+      }
+    },
+    "variables": [
+      "vs",
+      "es",
+      "round",
+      "log"
+    ],
+    "instances": [
+      "Sailfish",
+      "BlockDag"
+    ],
+    "opdefs": 75,
+    "notes": [],
+    "parse_stats": {
+      "file": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\dag-consensus\\TLCSailfish1.tla",
+      "module": "TLCSailfish1",
+      "bad_tokens": 0,
+      "unknown_nodes": 0,
+      "proof_tokens_skipped": 0,
+      "parser_notes": 0,
+      "note_samples": [],
+      "trailing_tokens_ignored": 0,
+      "preamble_tokens_ignored": 0,
+      "cov_total_tokens": 301,
+      "cov_covered_tokens": 301,
+      "cov_uncovered_tokens": [],
+      "cov_unknown_tokens": 0,
+      "cov_coverage": 1.0
+    },
+    "cfg": {
+      "path": "C:\\Users\\emiroow\\Documents\\Qoder\\2026-11-05\\7a734d68\\symview\\benchmarks\\public\\dag-consensus\\TLCSailfish1.cfg",
+      "constants": {
+        "n1": {
+          "form": "=",
+          "value_text": "n1",
+          "line": 4
+        },
+        "n2": {
+          "form": "=",
+          "value_text": "n2",
+          "line": 5
+        },
+        "n3": {
+          "form": "=",
+          "value_text": "n3",
+          "line": 6
+        }
+      },
+      "aliases": {},
+      "variables": [],
+      "init": null,
+      "next": null,
+      "specification": "TerminatingSpec",
+      "invariants": [
+        "TypeOK",
+        "Agreement",
+        "Liveness"
+      ],
+      "properties": [],
+      "symmetry": null,
+      "view": null,
+      "constraints": [
+        "StateConstraint"
+      ],
+      "action_constraints": [],
+      "check_deadlock": null,
+      "postcondition": null,
+      "comments": [
+        "\\* INVARIANT Falsy3"
+      ],
+      "unknown_keywords": [],
+      "unknown_tokens": []
+    }
+  },
+  "program": {
+    "module": "TLCSailfish1",
+    "constants": [
+      "F",
+      "GST",
+      "IsBlocking",
+      "IsQuorum",
+      "Leader",
+      "N",
+      "R",
+      "n1",
+      "n2",
+      "n3"
+    ],
+    "variables": [
+      "vs",
+      "es",
+      "round",
+      "log"
+    ],
+    "init": "Init",
+    "next": "Next",
+    "reachable_definitions": 36,
+    "writes": 56,
+    "reads": 909,
+    "invariants": [
+      "TypeOK",
+      "Agreement",
+      "Liveness"
+    ],
+    "properties": [],
+    "liveness": false,
+    "liveness_reasons": [],
+    "unresolved_names": {
+      "r": 76,
+      "v": 45,
+      "self": 40,
+      "deliveredVertices": 22,
+      "e": 21,
+      "n": 20,
+      "S": 16,
+      "pv": 16,
+      "l2": 10,
+      "delivered": 10
+    },
+    "instance_aliases": {},
+    "notes": [
+      "stutter subscript ignored in TerminatingSpec"
+    ]
+  },
+  "symmetry": {
+    "candidates": [
+      {
+        "constant": "F",
+        "atoms": [
+          "n1"
+        ],
+        "verdict": "unsound",
+        "reasons": [
+          "F has 1 element(s); its permutation group is trivial so symmetry reduction cannot remove any state",
+          "checked property Agreement mentions n1, an individual element of F; the property is not symmetric",
+          "checked property Agreement mentions n1, an individual element of F; the property is not symmetric",
+          "values drawn from F reach a non-equivariant operator: -, <, CHOOSE, \\leq (10 occurrence(s)); permuting the set would change the transition relation"
+        ],
+        "flags": [
+          {
+            "operator": "-",
+            "reason": "arithmetic on an atom",
+            "definition": "Linearize",
+            "line": 24,
+            "tainted_operands": [
+              "r"
+            ]
+          },
+          {
+            "operator": "<",
+            "reason": "order on identities is not preserved by pi",
+            "definition": "Linearize",
+            "line": 57,
+            "tainted_operands": [
+              "l2"
+            ]
+          },
+          {
+            "operator": "\\leq",
+            "reason": "order on identities is not preserved",
+            "definition": "Linearize",
+            "line": 5,
+            "tainted_operands": [
+              "x",
+              "y"
+            ]
+          },
+          {
+            "operator": "CHOOSE",
+            "reason": "TLC's CHOOSE returns a fixed but arbitrary element; pi(CHOOSE x: P) need not equal CHOOSE x: pi(P), so the transition relation is not equivariant",
+            "definition": "Linearize",
+            "line": 5,
+            "tainted_operands": []
+          },
+          {
+            "operator": "CHOOSE",
+            "reason": "TLC's CHOOSE returns a fixed but arbitrary element; pi(CHOOSE x: P) need not equal CHOOSE x: pi(P), so the transition relation is not equivariant",
+            "definition": "Linearize",
+            "line": 54,
+            "tainted_operands": []
+          },
+          {
+            "operator": "<",
+            "reason": "order on identities is not preserved by pi",
+            "definition": "Linearize",
+            "line": 57,
+            "tainted_operands": [
+              "l2",
+              "r"
+            ]
+          },
+          {
+            "operator": "CHOOSE",
+            "reason": "TLC's CHOOSE returns a fixed but arbitrary element; pi(CHOOSE x: P) need not equal CHOOSE x: pi(P), so the transition relation is not equivariant",
+            "definition": "Linearize",
+            "line": 54,
+            "tainted_operands": []
+          },
+          {
+            "operator": "CHOOSE",
+            "reason": "TLC's CHOOSE returns a fixed but arbitrary element; pi(CHOOSE x: P) need not equal CHOOSE x: pi(P), so the transition relation is not equivariant",
+            "definition": "Linearize",
+            "line": 46,
+            "tainted_operands": []
+          },
+          {
+            "operator": "-",
+            "reason": "arithmetic on an atom",
+            "definition": "TypeOK",
+            "line": 231,
+            "tainted_operands": [
+              "v"
+            ]
+          },
+          {
+            "operator": "-",
+            "reason": "arithmetic on an atom",
+            "definition": "TypeOK",
+            "line": 231,
+            "tainted_operands": [
+              "v"
+            ]
+          }
+        ],
+        "value_checks": {
+          "GST": {
+            "invariant": true,
+            "checked": 0,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "N": {
+            "invariant": true,
+            "checked": 0,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "R": {
+            "invariant": true,
+            "checked": 0,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "n1": {
+            "invariant": true,
+            "checked": 0,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "n2": {
+            "invariant": true,
+            "checked": 0,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "n3": {
+            "invariant": true,
+            "checked": 0,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          }
+        },
+        "unknown_operators": {
+          "<recursive:Descendants>": 2,
+          "<recursive:OrderSet>": 2,
+          "<computed-head>": 2,
+          "<recursive:Linearize>": 1
+        },
+        "liveness_warning": false,
+        "liveness_reasons": [],
+        "group_order": 1,
+        "manual_symmetry_in_config": null
+      },
+      {
+        "constant": "N",
+        "atoms": [
+          "n1",
+          "n2",
+          "n3"
+        ],
+        "verdict": "unsound",
+        "reasons": [
+          "constant F = {n1} is not invariant under permutations of N (swap(n1,n2)): an element of the set is distinguished",
+          "constant n1 = n1 is not invariant under permutations of N (swap(n1,n2)): an element of the set is distinguished",
+          "constant n2 = n2 is not invariant under permutations of N (swap(n1,n2)): an element of the set is distinguished",
+          "constant n3 = n3 is not invariant under permutations of N (swap(n2,n3)): an element of the set is distinguished",
+          "checked property Agreement mentions n1, an individual element of N; the property is not symmetric",
+          "checked property Agreement mentions n2, an individual element of N; the property is not symmetric",
+          "checked property Agreement mentions n1, an individual element of N; the property is not symmetric",
+          "checked property Agreement mentions n2, an individual element of N; the property is not symmetric",
+          "values drawn from N reach a non-equivariant operator: -, <, CHOOSE, \\leq (10 occurrence(s)); permuting the set would change the transition relation"
+        ],
+        "flags": [
+          {
+            "operator": "-",
+            "reason": "arithmetic on an atom",
+            "definition": "Linearize",
+            "line": 24,
+            "tainted_operands": [
+              "r"
+            ]
+          },
+          {
+            "operator": "<",
+            "reason": "order on identities is not preserved by pi",
+            "definition": "Linearize",
+            "line": 57,
+            "tainted_operands": [
+              "l2"
+            ]
+          },
+          {
+            "operator": "\\leq",
+            "reason": "order on identities is not preserved",
+            "definition": "Linearize",
+            "line": 5,
+            "tainted_operands": [
+              "x",
+              "y"
+            ]
+          },
+          {
+            "operator": "CHOOSE",
+            "reason": "TLC's CHOOSE returns a fixed but arbitrary element; pi(CHOOSE x: P) need not equal CHOOSE x: pi(P), so the transition relation is not equivariant",
+            "definition": "Linearize",
+            "line": 5,
+            "tainted_operands": []
+          },
+          {
+            "operator": "CHOOSE",
+            "reason": "TLC's CHOOSE returns a fixed but arbitrary element; pi(CHOOSE x: P) need not equal CHOOSE x: pi(P), so the transition relation is not equivariant",
+            "definition": "Linearize",
+            "line": 54,
+            "tainted_operands": []
+          },
+          {
+            "operator": "<",
+            "reason": "order on identities is not preserved by pi",
+            "definition": "Linearize",
+            "line": 57,
+            "tainted_operands": [
+              "l2",
+              "r"
+            ]
+          },
+          {
+            "operator": "CHOOSE",
+            "reason": "TLC's CHOOSE returns a fixed but arbitrary element; pi(CHOOSE x: P) need not equal CHOOSE x: pi(P), so the transition relation is not equivariant",
+            "definition": "Linearize",
+            "line": 54,
+            "tainted_operands": []
+          },
+          {
+            "operator": "CHOOSE",
+            "reason": "TLC's CHOOSE returns a fixed but arbitrary element; pi(CHOOSE x: P) need not equal CHOOSE x: pi(P), so the transition relation is not equivariant",
+            "definition": "Linearize",
+            "line": 46,
+            "tainted_operands": []
+          },
+          {
+            "operator": "-",
+            "reason": "arithmetic on an atom",
+            "definition": "TypeOK",
+            "line": 231,
+            "tainted_operands": [
+              "v"
+            ]
+          },
+          {
+            "operator": "-",
+            "reason": "arithmetic on an atom",
+            "definition": "TypeOK",
+            "line": 231,
+            "tainted_operands": [
+              "v"
+            ]
+          }
+        ],
+        "value_checks": {
+          "F": {
+            "invariant": false,
+            "checked": 2,
+            "witness": "swap(n1,n2)",
+            "rendered": "{n1}",
+            "reason": "value-changes-under-permutation"
+          },
+          "GST": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "R": {
+            "invariant": true,
+            "checked": 2,
+            "witness": null,
+            "reason": "invariant-under-generators"
+          },
+          "n1": {
+            "invariant": false,
+            "checked": 2,
+            "witness": "swap(n1,n2)",
+            "rendered": "n1",
+            "reason": "value-changes-under-permutation"
+          },
+          "n2": {
+            "invariant": false,
+            "checked": 2,
+            "witness": "swap(n1,n2)",
+            "rendered": "n2",
+            "reason": "value-changes-under-permutation"
+          },
+          "n3": {
+            "invariant": false,
+            "checked": 2,
+            "witness": "swap(n2,n3)",
+            "rendered": "n3",
+            "reason": "value-changes-under-permutation"
+          }
+        },
+        "unknown_operators": {
+          "<recursive:Descendants>": 2,
+          "<recursive:OrderSet>": 2,
+          "<computed-head>": 2,
+          "<recursive:Linearize>": 1
+        },
+        "liveness_warning": false,
+        "liveness_reasons": [],
+        "group_order": 6,
+        "manual_symmetry_in_config": null
+      }
+    ],
+    "selected": [],
+    "notes": []
+  },
+  "history": {
+    "retained": [
+      "vs",
+      "es",
+      "round",
+      "log"
+    ],
+    "dropped": [],
+    "verdict": "none",
+    "reasons": [
+      "every variable is observable or influences an observable one, so no view abstraction is possible"
+    ],
+    "evidence": {
+      "vs": {
+        "name": "vs",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 11,
+        "read_in_guard": 42,
+        "read_in_init": 0,
+        "read_in_property": 10,
+        "writes": 13,
+        "influences": [
+          "vs",
+          "vs",
+          "vs",
+          "vs",
+          "vs",
+          "vs",
+          "vs",
+          "vs",
+          "vs",
+          "vs",
+          "vs"
+        ]
+      },
+      "es": {
+        "name": "es",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 11,
+        "read_in_guard": 9,
+        "read_in_init": 0,
+        "read_in_property": 8,
+        "writes": 13,
+        "influences": [
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es"
+        ]
+      },
+      "round": {
+        "name": "round",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read by checked property/invariant TypeOK",
+          "read outside an assignment right-hand side while TLC checks for deadlock, so it decides whether a state is a deadlock"
+        ],
+        "read_in_rhs": 5,
+        "read_in_guard": 9,
+        "read_in_init": 0,
+        "read_in_property": 20,
+        "writes": 11,
+        "influences": [
+          "round",
+          "round",
+          "round",
+          "round",
+          "round"
+        ]
+      },
+      "log": {
+        "name": "log",
+        "observable": true,
+        "observable_reasons": [
+          "read by checked property/invariant Agreement",
+          "read by checked property/invariant Agreement",
+          "read by checked property/invariant Agreement",
+          "read by checked property/invariant Agreement",
+          "read by checked property/invariant Agreement",
+          "read by checked property/invariant Agreement",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness",
+          "read by checked property/invariant Liveness"
+        ],
+        "read_in_rhs": 13,
+        "read_in_guard": 0,
+        "read_in_init": 0,
+        "read_in_property": 22,
+        "writes": 19,
+        "influences": [
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log"
+        ]
+      }
+    },
+    "liveness_warning": false,
+    "liveness_reasons": [],
+    "view_operator": ""
+  },
+  "artifacts": {
+    "wrapper_module": "",
+    "wrapper_text": "",
+    "configs": {
+      "plain": "SPECIFICATION TerminatingSpec\n\nCONSTANTS\n    n1 = n1\n    n2 = n2\n    n3 = n3\n\nINVARIANT TypeOK\nINVARIANT Agreement\nINVARIANT Liveness\n\\* INVARIANT Falsy3\n\nCONSTRAINT StateConstraint\n"
+    },
+    "applicable": {
+      "plain": true,
+      "symmetry": false,
+      "view": false,
+      "both": false,
+      "manual": false
+    },
+    "notes": [
+      "no symmetry set was certified for this model",
+      "no view abstraction was certified for this model"
+    ]
+  },
+  "probe": {
+    "verdict": "probe-ok",
+    "seconds": 0.968,
+    "constants": {
+      "n1": "n1",
+      "n2": "n2",
+      "n3": "n3",
+      "N": "{n1, n2, n3}",
+      "F": "{n1}",
+      "R": "1..5",
+      "IsQuorum": "",
+      "IsBlocking": "",
+      "Leader": "",
+      "GST": "3"
+    },
+    "error_lines": []
+  },
+  "analysis_seconds": 1.065,
+  "notes": [
+    "no symmetry set was certified for this model",
+    "no view abstraction was certified for this model"
+  ]
+}
