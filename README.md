@@ -2,8 +2,12 @@
 
 **Automatic symmetry detection and view abstraction for TLA+ / TLC.**
 
-> Repository: <https://github.com/emiroow/symview-tla-symmetry-view> · release `v1.0.0`
+**Author:** Anita Jabali Hasani
+
+> Repository: <https://github.com/anitahasani-jh/tla-plus-symmetry-view-analysis> · release `v1.0.0`
+
 > Persian report: [`docs/report_fa.md`](docs/report_fa.md) · soundness: [`docs/soundness_report_fa.md`](docs/soundness_report_fa.md)
+
 > Slides: [`docs/slides/index.html`](docs/slides/index.html) · progress report: [`docs/progress_report_fa.md`](docs/progress_report_fa.md)
 
 SymView reads a TLA+ specification together with its TLC configuration, decides
@@ -16,14 +20,14 @@ the original and one configuration per experimental arm, then runs TLC and
 records every state count, every timeout and every violation.
 
 ```
-   .tla + .cfg ──► parser (AST, 100% token coverage)
-                      │
-   TLC constant probe ─┴─► exact values of the model values
-                      │
-        symmetry analysis (S1–S5) ──► candidate + verdict + reason
-        history analysis  (influence graph) ──► droppable variables + view
-                      │
-                      └─► <Module>_SymView.tla + per-arm .cfg ──► TLC runs
+  .tla + .cfg ──► parser (AST, 100% token coverage)
+                     │
+  TLC constant probe ─┴─► exact values of the model values
+                     │
+       symmetry analysis (S1–S5) ──► candidate + verdict + reason
+       history analysis  (influence graph) ──► droppable variables + view
+                     │
+                     └─► <Module>_SymView.tla + per-arm .cfg ──► TLC runs
 ```
 
 ---
@@ -34,27 +38,27 @@ records every state count, every timeout and every violation.
 bash setup.sh                     # dependencies + TLC check + smoke test
 export PYTHONPATH=src             # or install the package with: pip install -e .
 python -m symview analyze \
-    --spec-dir benchmarks/public/transaction_commit \
-    --module TCommit --config TCommit.cfg
+   --spec-dir benchmarks/public/transaction_commit \
+   --module TCommit --config TCommit.cfg
 ```
 
 ```
 SYMMETRY
-  [ACCEPT] RM = {r1, r2, r3}  (group order 6)
-           - RM is used only through permutation-equivariant operators and no
-             other constant distinguishes its elements
-  selected: RM
+ [ACCEPT] RM = {r1, r2, r3}  (group order 6)
+          - RM is used only through permutation-equivariant operators and no
+            other constant distinguishes its elements
+ selected: RM
 VIEW
-  verdict   : none
-  retained  : rmState
+ verdict   : none
+ retained  : rmState
 ```
 
 Run the arms through TLC:
 
 ```bash
 python -m symview report \
-    --spec-dir benchmarks/lab/LabLog --module LabLog --config LabLog.cfg \
-    --arms direct plain symmetry view both
+   --spec-dir benchmarks/lab/LabLog --module LabLog --config LabLog.cfg \
+   --arms direct plain symmetry view both
 ```
 
 Full reproduction of the study:
@@ -115,17 +119,17 @@ Narrative summary, limitations and threats to validity: [`docs/report_fa.md`](do
 
 ```
 src/symview/            the tool
-  lex.py  parse_tla.py  parse_cfg.py   TLA+ and .cfg front end
-  operators.py         operator table generated from SANY's own table
-  context.py           module resolution + TLC constant probe
-  values.py            concrete values, permutation invariance
-  analysis/            program.py, equivariance.py, symmetry.py, history.py
-  codegen.py  pipeline.py  tlc.py  mutate.py  cli.py
+ lex.py  parse_tla.py  parse_cfg.py   TLA+ and .cfg front end
+ operators.py         operator table generated from SANY's own table
+ context.py           module resolution + TLC constant probe
+ values.py            concrete values, permutation invariance
+ analysis/            program.py, equivariance.py, symmetry.py, history.py
+ codegen.py  pipeline.py  tlc.py  mutate.py  cli.py
 benchmarks/
-  public/              pinned public specifications (MIT, provenance hashed)
-  lab/                 hand-written models with authored ground truth
-  support/             TLAPS stub + community modules (documented)
-  fetch_public_specs.py
+ public/              pinned public specifications (MIT, provenance hashed)
+ lab/                 hand-written models with authored ground truth
+ support/             TLAPS stub + community modules (documented)
+ fetch_public_specs.py
 config/                corpus.yaml (pre-registration), subset.yaml, experiment.yaml
 experiments/           parser robustness, subset selection, study, survey
 results/raw/           every run, timeout and crash, as JSON + logs
